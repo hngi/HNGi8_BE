@@ -10,3 +10,6 @@
 * run `cd HNGi8_BE` in the terminal
 * run `npm install` in the terminal
 * run `npm run start-dev` in the terminal
+
+### Linting your code:
+* run `npm run lint:fix` to fix all auto-fixable problems 
