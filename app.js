@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const logger = require('morgan');
-
+const homeRouter = require('./routes/routes');
 const { handleError } = require('./utils/error');
 
 const app = express();
@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use((err, req, res, next) => {
   next(handleError(res, err));
 });
+app.use('/v1', homeRouter);
 // Unknown endpoints middleware
 app.use('*', (req, res) => {
   const url = req.originalUrl;
