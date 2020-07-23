@@ -16,5 +16,4 @@ const mentorLoginSchema = Schema({
    
 })
 
-const MentorLogin = mongoose.model("MentorLogin", mentorLoginSchema);
-module.exports = MentorLogin; 
+module.exports = mongoose.model("MentorLogin", mentorLoginSchema);

@@ -53,11 +53,10 @@ const mentorApplicationSchema = Schema({
         required: true
     },
    
-    date: {
+    createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now()
         }
 })
 
-const MentorApplication = mongoose.model("MentorApplication", mentorApplicationSchema);
-module.exports = MentorApplication; 
+module.exports= mongoose.model("Mentors", mentorApplicationSchema);
