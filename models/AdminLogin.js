@@ -2,14 +2,12 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const internLoginSchema = Schema({
-
+const AdminLoginSchema = Schema({
   email: {
     type: String,
     required: true,
     unique: true
   },
-
   password: {
     type: String,
     required: true
@@ -17,4 +15,4 @@ const internLoginSchema = Schema({
 
 });
 
-module.exports = mongoose.model('InternLogin', internLoginSchema);
+module.exports = mongoose.model('AdminLogin', AdminLoginSchema);

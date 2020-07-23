@@ -1,62 +1,62 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema
+const { Schema } = mongoose;
 
 const mentorApplicationSchema = Schema({
 
-    fullName:{
-        type: String,
-        required: true,
-    },
+  fullName: {
+    type: String,
+    required: true
+  },
 
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-        minlength: 3
-    },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    minlength: 3
+  },
 
-    email: {
-        type: String,
-        required: true,
-        unique: true
-        },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
 
-    password: {
-            type: String,
-            required: true
-        },
+  password: {
+    type: String,
+    required: true
+  },
 
-    phoneNumber:{
-        type: Number,
-        required: true,
-        unique: true
-    },
+  phoneNumber: {
+    type: Number,
+    required: true,
+    unique: true
+  },
 
-     address: {
-            type: String,
-            required: true
-            },
+  address: {
+    type: String,
+    required: true
+  },
 
-    city: {
-            type: String,
-            required: true
-            },
+  city: {
+    type: String,
+    required: true
+  },
 
-    state: {
-             type: String,
-            required: true
-                },
+  state: {
+    type: String,
+    required: true
+  },
 
-    country:{
-        type: String,
-        required: true
-    },
-   
-    createdAt: {
-        type: Date,
-        default: Date.now()
-        }
-})
+  country: {
+    type: String,
+    required: true
+  },
 
-module.exports= mongoose.model("Mentors", mentorApplicationSchema);
+  createdAt: {
+    type: Date,
+    default: Date.now()
+  }
+});
+
+module.exports = mongoose.model('Mentors', mentorApplicationSchema);
