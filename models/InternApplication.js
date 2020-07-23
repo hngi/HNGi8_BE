@@ -57,5 +57,4 @@ const internApplicationSchema = Schema({
         }
 })
 
-const InternApplication = mongoose.model("internApplication", internApplicationSchema);
-module.exports = InternApplication; 
+module.exports = mongoose.model("Interns", internApplicationSchema);

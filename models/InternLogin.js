@@ -17,6 +17,4 @@ const internLoginSchema = Schema({
    
 })
 
-const InternLogin = mongoose.model("InternLogin", internLoginSchema);
-
-module.exports = InternLogin; 
+module.exports= mongoose.model("InternLogin", internLoginSchema);
