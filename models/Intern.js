@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const internSchema = Schema({
+const internsSchema = Schema({
   name: {
     type: String,
     required: true
@@ -54,4 +54,4 @@ applicationState: {
 },
 });
 
-module.exports = mongoose.model('Interns', internSchema);
+module.exports = mongoose.model('Interns', internsSchema);
