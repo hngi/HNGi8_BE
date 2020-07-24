@@ -1,29 +1,61 @@
-// Third party imports
-const express = require('express');
-const bodyParser = require('body-parser');
+/* eslint-disable no-console */
+const chalk = require('chalk');
+const http = require('http');
+const app = require('./app');
+const config = require('./config');
 
+/**
+ * Normalize a port into a number, string, or false.
+ */
 
-// Local imports
-const {ErrorHandler,handleError} = require('./utils/error');
+function normalizePort(val) {
+  const port = parseInt(val, 10);
 
-const PORT = process.env.PORT || 3000
-const app = express();
+  // eslint-disable-next-line no-restricted-globals
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
 
+  if (port >= 0) {
+    // port number
+    return port;
+  }
 
-app.use(bodyParser.json());
+  return false;
+}
 
-// Express error middleware 
-app.use((err,req,res,next) => {
-    handleError(res,err);
-})
-// Unknown endpoints middleware
-app.use('*',(req,res) => {
-  const url = req.originalUrl;
-  res.status(404).send({
-    status: 'error',
-    message: `Oops. ${req.method} ${url} not found on this website`
-  });
-})
-app.listen(PORT,() => {
-    console.log(`Server is listening in port ${PORT}`);
-})
+const PORT = normalizePort(config.port);
+const server = http.createServer(app);
+
+const errorHandler = (error) => {
+  if (error.syscal !== 'listen') {
+    throw error;
+  }
+
+  const address = server.address();
+  const bind = typeof address === 'string' ? `pipe ${address}` : `port: ${PORT}`;
+  switch (error.code) {
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges.`);
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use.`);
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+};
+
+server.on('error', errorHandler);
+server.on('listening', () => {
+  const address = server.address();
+  const bind = typeof address === 'string' ? `pipe ${address}` : `port ${PORT}`;
+  const log = `${chalk.yellow('[?]')} ${chalk.green('connecting... ')}`;
+  console.log(`listening on ${bind}`);
+  console.log(log);
+});
+
+server.listen(PORT);

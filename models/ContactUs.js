@@ -5,8 +5,6 @@ const contactUsSchema = Schema({
     name: {
         type: String,
         required: true,
-        unique: true,
-        minlength: 3
     },
 
     email: {
@@ -25,5 +23,4 @@ const contactUsSchema = Schema({
 }
 })
 
-const ContactUs = mongoose.model("ContactUs", contactUsSchema);
-module.exports = ContactUs; 
+module.exports = mongoose.model("Contacts", contactUsSchema);
