@@ -12,35 +12,36 @@ const mentorSchema = Schema({
     required: true,
     unique: true
   },
-  phone_number: {
+  phoneNumber: {
     type: Number,
     required: true
   },
-  cv_link: {
+  cvLink: {
     type: String,
     default: 'blank'
   },
-  application_state: {
+  applicationState: {
     type: String,
     enum: ['accepted', 'declined', 'pending'],
     default: 'pending'
   },
-  employment_status: {
+  employmentStatus: {
     type: String,
     enum: ['employed', 'unemployed', 'student'],
     default: 'unemployed'
   },
   country: {
-    type: String
+    type: String,
+    required: true
   },
-  state_of_residence: {
+  stateOfResidence: {
     type: String
   },
   interest: {
     type: String
   }
 }, {
-  timestamp: true
+  timestamps: true
 });
 
-module.exports = mongoose.model('Mentor', mentorSchema);
+module.exports = mongoose.model('Mentors', mentorSchema);
