@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const mentorSchema = Schema({
-
   name: {
     type: String,
     required: true
@@ -21,11 +20,14 @@ const mentorSchema = Schema({
     type: String,
     default: 'blank'
   },
-
-  employed_status: {
+  application_state: {
+    type: String,
+    enum: ['accepted', 'declined', 'pending'],
+    default: 'pending'
+  },
+  employment_status: {
     type: String,
     enum: ['employed', 'unemployed', 'student'],
-    required: true,
     default: 'unemployed'
   },
   country: {
@@ -34,7 +36,6 @@ const mentorSchema = Schema({
   state_of_residence: {
     type: String
   },
-
   interest: {
     type: String
   }
