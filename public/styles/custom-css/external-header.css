@@ -1,0 +1,109 @@
+:root {
+  --text-color: #7e5ae3;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+nav {
+  /* margin: 3rem auto 60px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4rem;
+  max-height: max-content;
+  color: var(--text-color);
+}
+
+nav > div {
+  margin-left: auto;
+}
+
+nav h4 {
+  color: #9272c2;
+  margin: 0;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  margin: 0 1rem;
+  padding: 0;
+  list-style-type: none;
+  font-weight: 600;
+  background-color: inherit;
+}
+
+nav ul li {
+  margin: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li a {
+  cursor: pointer;
+  color: var(--text-color);
+  margin: 0.25rem 0;
+  position: relative;
+}
+
+nav ul li:not(:last-of-type) a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0.25rem;
+  border-radius: 20px;
+  background-color: var(--text-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+nav ul li:not(:last-of-type):hover a::after,
+nav ul li.active a::after {
+  opacity: 1;
+}
+
+nav ul li.active a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+nav ul li a.btn {
+  background-color: #9272c2;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a.btn:hover {
+  background-color: #9272c2;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1000px) {
+  nav ul li.nav-item:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+  }
+}
