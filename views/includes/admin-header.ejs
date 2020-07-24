@@ -1,99 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title><%- title %></title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/bootstrap-css/bootstrap.css" />
+    <link rel="stylesheet" href="./styles/custom-css/admin-header.css" />
+    <script src="./js/bootstrap-js/popper.js"></script>
+    <script src="./js/bootstrap-js/jquery.js"></script>
+    <script src="./js/bootstrap-js/bootstrap.js"></script>
+  </head>
 
-<head>
-  <title><%- title %></title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/bootstrap-css/bootstrap.css" />
-  <script src="./js/bootstrap-js/popper.js"></script>
-  <script src="./js/bootstrap-js/jquery.js"></script>
-  <script src="./js/bootstrap-js/bootstrap.js"></script>
-</head>
-
-<body>
-  <div class="container">
-    <header>
-      <nav class="nav">
-        <h4 class="nav-item">Dashboard</h4>
-        <ul class="nav-links">
-          <li class="nav-item d-sm-none d-lg-flex" id="currentDate">28 Sep 2020, Saturday.</li>
-          <!-- bell icon -->
-          <li class="nav-item" id="notification">
-            <svg width="22" height="33" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M16 7.87384C16 6.15412 15.3679 4.50484 14.2426 3.28882C13.1174 2.0728 11.5913 1.38965 10 1.38965C8.4087 1.38965 6.88258 2.0728 5.75736 3.28882C4.63214 4.50484 4 6.15412 4 7.87384C4 15.4387 1 17.6001 1 17.6001H19C19 17.6001 16 15.4387 16 7.87384Z"
-                stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M11.7295 21.9233C11.5537 22.2509 11.3013 22.5228 10.9977 22.7117C10.6941 22.9007 10.3499 23.0002 9.99951 23.0002C9.64914 23.0002 9.30491 22.9007 9.0013 22.7117C8.69768 22.5228 8.44534 22.2509 8.26953 21.9233"
-                stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </li>
-          <li class="nav-item d-flex">
-            <img src="img/img.jpg" alt="user's profile photo" id="userPhoto">
-            <a class="d-flex justify-content-between align-items-center">
-              <span id="userName">Feranmi Olowookere</span>
-              <svg class="pl-1" width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 1L8.49998 6L0.999981 1" stroke="#7E5AE3" />
+  <body>
+    <div class="container">
+      <header>
+        <nav class="nav">
+          <h4 class="nav-item">Dashboard</h4>
+          <ul class="nav-links">
+            <li class="nav-item d-sm-none d-lg-flex" id="currentDate">
+              28 Sep 2020, Saturday.
+            </li>
+            <!-- bell icon -->
+            <li class="nav-item" id="notification">
+              <svg
+                width="22"
+                height="33"
+                viewBox="0 0 20 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 7.87384C16 6.15412 15.3679 4.50484 14.2426 3.28882C13.1174 2.0728 11.5913 1.38965 10 1.38965C8.4087 1.38965 6.88258 2.0728 5.75736 3.28882C4.63214 4.50484 4 6.15412 4 7.87384C4 15.4387 1 17.6001 1 17.6001H19C19 17.6001 16 15.4387 16 7.87384Z"
+                  stroke="#573F7B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.7295 21.9233C11.5537 22.2509 11.3013 22.5228 10.9977 22.7117C10.6941 22.9007 10.3499 23.0002 9.99951 23.0002C9.64914 23.0002 9.30491 22.9007 9.0013 22.7117C8.69768 22.5228 8.44534 22.2509 8.26953 21.9233"
+                  stroke="#573F7B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </div>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      min-width: 100vw;
-      max-width: 100%;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .container nav {
-      /* margin: 3rem auto 60px; */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 4rem;
-      color: #7E5AE3;
-    }
-
-    nav h4 {
-      color: #9272C2;
-      margin: 0;
-      font-weight: 700;
-    }
-
-    nav ul {
-      display: flex;
-      margin: 0 1rem;
-      padding: 0;
-      list-style-type: none;
-      font-weight: 600;
-    }
-
-    nav ul li {
-      margin: 0 0.625rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #userPhoto {
-      margin: 0 1.25rem 0 0;
-      height: 2rem;
-      width: 2rem;
-      object-fit: cover;
-    }
-  </style>
+            </li>
+            <li class="nav-item d-flex">
+              <img
+                src="img/img.jpg"
+                alt="user's profile photo"
+                id="userPhoto"
+              />
+              <a class="d-flex justify-content-between align-items-center">
+                <span id="userName">Feranmi Olowookere</span>
+                <svg
+                  class="pl-1"
+                  width="17"
+                  height="7"
+                  viewBox="0 0 17 7"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M16 1L8.49998 6L0.999981 1" stroke="#7E5AE3" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </body>
+</html>
