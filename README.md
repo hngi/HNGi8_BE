@@ -10,7 +10,7 @@
 * run `cd HNGi8_BE` in the terminal
 * run `git remote add upstream https://github.com/hngi/HNGi8_BE.git `
 * run `yarn install` in the terminal
-* run `yarn dev` in the termina
+* run `yarn dev` in the terminal
 * Before you push any code, always run `git pull upstream develop`
 
 ### Linting your code:
