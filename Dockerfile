@@ -5,7 +5,8 @@ FROM node:12.18.2
 LABEL maintainer='timothymayor24@gmail.com'
 
 # Creating ad work directory for the application
-WORKDIR /usr/src/app
+# WORKDIR /usr/src/app
+WORKDIR /app
 
 # copy package.json to install require dependencies
 COPY package.json yarn.lock ./
