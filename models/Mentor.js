@@ -18,6 +18,7 @@ const mentorSchema = Schema({
   },
   cvLink: {
     type: String,
+    required: true,
     default: 'blank'
   },
   applicationState: {
