@@ -1,9 +1,11 @@
 const express = require('express');
 
-const { homePage } = require('../../controller/views/index');
+const { homePage, login } = require('../../controller/views/index');
 
 const viewRouter = express.Router();
 
 viewRouter.get('/', homePage);
+
+viewRouter.get('/login', login);
 
 module.exports = viewRouter;
