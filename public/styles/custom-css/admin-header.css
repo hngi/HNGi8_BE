@@ -19,7 +19,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  min-height: 4rem;
+  max-height: max-content;
   color: #7e5ae3;
 }
 
