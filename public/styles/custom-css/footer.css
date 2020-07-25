@@ -1,0 +1,75 @@
+footer {
+  background-color: #F5F4FA;
+  padding-top: 3.5rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  color: #573F7B
+}
+
+footer div.container {
+  border-bottom: 1.5px solid #9272C2;
+  margin-bottom: 2rem;
+}
+
+footer a {
+  color: #573F7B;
+}
+
+footer h4 {
+  color: #573F7B;
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer li:not(:first-of-type) {
+  margin-top: 0.75rem;
+}
+
+footer form {
+  margin: 1rem auto 4rem;
+  max-width: 40rem;
+  display: flex;
+}
+
+footer form input.form-control {
+  border: 1px solid #573F7B70;
+  height: 3rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  outline: none;
+  border-radius: 10px;
+  min-width: 25rem;
+  max-width: 30rem;;
+}
+
+footer form button {
+  background-color: #573F7B;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  transform: scale(1.00);
+  transition: transform 0.3s ease-in-out;
+}
+
+footer form button:hover {
+  /* background-color: #573F7B; */
+  transform: scale(1.05);
+}
+
+footer form button:active, 
+footer form button:visited {
+  border: none;
+  outline: none;
+}
+
+footer small {
+  font-weight: 300;
+  text-align: center;
+  display: block;
+}

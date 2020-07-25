@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const http = require('http');
 const app = require('./app');
 const config = require('./config');
+const database = require('./db/database');
 
 /**
  * Normalize a port into a number, string, or false.
@@ -55,6 +56,10 @@ server.on('listening', () => {
   const bind = typeof address === 'string' ? `pipe ${address}` : `port ${PORT}`;
   const log = `${chalk.yellow('[?]')} ${chalk.green('connecting... ')}`;
   console.log(`listening on ${bind}`);
+  console.log('\n \t Attempting to connect to database...');
+
+  // connect to mongodb
+  database.connect();
   console.log(log);
 });
 
