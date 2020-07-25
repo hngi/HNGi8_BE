@@ -32,17 +32,7 @@ const internApplicationSchema = Schema({
     unique: true
   },
 
-  address: {
-    type: String,
-    required: true
-  },
-
-  city: {
-    type: String,
-    required: true
-  },
-
-  state: {
+  track: {
     type: String,
     required: true
   },
@@ -52,7 +42,17 @@ const internApplicationSchema = Schema({
     required: true
   },
 
-  date: {
+  state: {
+    type: String,
+    required: true
+  },
+  employmentStatus: {
+    type: String,
+    enum: ['employed', 'unemployed', 'student'],
+    default: 'unemployed'
+  },
+
+  about: {
     type: Date,
     default: Date.now
   }
