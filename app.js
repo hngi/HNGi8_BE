@@ -30,7 +30,7 @@ app.use(flash());
 
 // All routes goes here
 /// api routes which will be irrivent now
-app.use('/api/v1/auth', apiRouter);
+app.use('/api/v1', apiRouter);
 /// view routes
 app.use('/', viewRouter);
 
