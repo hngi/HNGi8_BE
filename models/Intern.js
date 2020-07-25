@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const { Schema } = mongoose;
 const internApplicationSchema = Schema({
@@ -57,4 +58,5 @@ const internApplicationSchema = Schema({
   }
 });
 
+internApplicationSchema.plugin(uniqueValidator);
 module.exports = mongoose.model('Interns', internApplicationSchema);
