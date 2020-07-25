@@ -3,6 +3,9 @@ const homePage = (req, res) => {
 };
 
 const login = (req, res) => {
+  if (req.session.auth) {
+    res.redirect('/dashboard');
+  }
   res.render('pages/login', { title: 'Login' });
 };
 
@@ -14,9 +17,19 @@ const mentorSignup = (req, res) => {
   res.render('pages/mentor-signup', { title: 'Mentor Signup' });
 };
 
+const mentors = (req, res) => {
+  res.render('pages/mentors', { title: 'Mentors' });
+};
+
+const dashboard = (req, res) => {
+  res.render('pages/dashboard');
+};
+
 module.exports = {
   internSignup,
   homePage,
   login,
   mentorSignup,
+  mentors,
+  dashboard
 };
