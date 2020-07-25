@@ -24,9 +24,7 @@ app.use('/v1', homeRouter);
 app.use('/', viewRouter);
 
 // Express error middleware
-app.use((err, req, res, next) => {
-  next(handleError(res, err));
-});
+app.use((err, req, res, next) => handleError(res, err));
 
 // Unknown endpoints middleware
 app.use('*', (req, res) => {
