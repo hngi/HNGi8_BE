@@ -9,12 +9,16 @@ const login = (req, res) => {
   res.render('pages/login', { title: 'Login' });
 };
 
-const intern = (req, res) => {
-  res.render('pages/intern', { title: 'intern' });
+const internSignup = (req, res) => {
+  res.render('pages/intern-signup', { title: 'Apply' });
 };
 
-const mentor = (req, res) => {
-  res.render('pages/mentor', { title: 'mentor' });
+const mentorSignup = (req, res) => {
+  res.render('pages/mentor-signup', { title: 'Mentor Signup' });
+};
+
+const mentors = (req, res) => {
+  res.render('pages/mentors', { title: 'Mentors' });
 };
 
 const dashboard = (req, res) => {
@@ -22,9 +26,10 @@ const dashboard = (req, res) => {
 };
 
 module.exports = {
-  intern,
+  internSignup,
   homePage,
   login,
-  mentor,
+  mentorSignup,
+  mentors,
   dashboard
 };
