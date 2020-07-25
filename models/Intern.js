@@ -2,57 +2,61 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const { Schema } = mongoose;
-const internsSchema = Schema({
-  name: {
+const internApplicationSchema = Schema({
+  fullName: {
     type: String,
     required: true
   },
-  internId:{
-    type: Number,
-    required: true
+
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    minlength: 3
   },
+
   email: {
     type: String,
     required: true,
     unique: true
   },
-  phoneNumber: {
-    type: Number,
-  },
-  cvLink: {
+
+  password: {
     type: String,
-    required: true,
-    default: ''
-  },
-  interest: {
-    type: String, 
     required: true
   },
+
+  phoneNumber: {
+    type: Number,
+    required: true,
+    unique: true
+  },
+
+  address: {
+    type: String,
+    required: true
+  },
+
+  city: {
+    type: String,
+    required: true
+  },
+
+  state: {
+    type: String,
+    required: true
+  },
+
   country: {
     type: String,
     required: true
   },
-  state: {
-    type: String
-  }, 
-  employmentStatus: {
-    type: String,
-    enum: ['employed', 'unemployed', 'student'],
-    default: 'unemployed'
-  },
-  about: {
-    type: String
-  },
-  registrationDate:{
-    type:Date,
-    default:Date.now
-},
-applicationState: {
-  type: String,
-  enum: ['accepted', 'declined', 'pending'],
-  default: 'pending'
-},
+
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-adminSchema.plugin(uniqueValidator)
-module.exports = mongoose.model('Interns', internsSchema);
+internApplicationSchema.plugin(uniqueValidator);
+module.exports = mongoose.model('Interns', internApplicationSchema);
