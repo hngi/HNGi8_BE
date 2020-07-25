@@ -17,10 +17,7 @@ viewRouter.get('/login', login);
 
 viewRouter.get('/apply', internSignup);
 
-viewRouter.get('/mentors/signup', mentorSignup);
-
-viewRouter.get('/mentor', mentor);
-
+viewRouter.get('/mentors/apply', mentorSignup);
 
 /// INTERN ROUTES ///
 
