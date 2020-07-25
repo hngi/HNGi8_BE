@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const { Schema } = mongoose;
 const internsSchema = Schema({
@@ -17,12 +18,11 @@ const internsSchema = Schema({
   },
   phoneNumber: {
     type: Number,
-    required: true
   },
   cvLink: {
     type: String,
     required: true,
-    default: 'blank'
+    default: ''
   },
   interest: {
     type: String, 
@@ -54,4 +54,5 @@ applicationState: {
 },
 });
 
+adminSchema.plugin(uniqueValidator)
 module.exports = mongoose.model('Interns', internsSchema);
