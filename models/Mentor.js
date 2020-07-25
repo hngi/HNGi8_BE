@@ -33,7 +33,7 @@ const mentorSchema = Schema({
   },
   country: {
     type: String,
-    required: true
+    required: [true, 'is required']
   },
   stateOfResidence: {
     type: String
