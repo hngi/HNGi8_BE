@@ -1,6 +1,9 @@
+/* eslint-disable new-cap */
+/* eslint-disable no-console */
 const { isEmpty, isEmail } = require('validator');
 const bcrypt = require('bcryptjs');
 const Admins = require('../models/AdminLogin');
+const contactModel = require('../models/Contact');
 
 const homePage = (req, res) => {
   res.json('Home page');
@@ -41,13 +44,31 @@ const login = (req, res) => {
   });
 };
 
-exports.logout = (req, res) => {
+const logout = (req, res) => {
   req.session.auth = false;
   req.session.email = null;
   res.redirect('/');
 };
 
+const contact = (req, res) => {
+  const {
+    name, email, subject, message
+  } = req.body;
+  const newContact = new contactModel({
+    name, email, subject, message
+  });
+  newContact.save().then(() => {
+    req.flash('success', 'Thanks for contacting us...');
+    res.redirect('/');
+  }).catch((err) => {
+    console.log(err);
+    req.flash('error', 'comment not saved please try again');
+    res.redirect('/contact');
+  });
+};
 module.exports = {
   homePage,
-  login
+  login,
+  logout,
+  contact
 };
