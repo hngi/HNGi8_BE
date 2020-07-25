@@ -10,11 +10,15 @@ const login = (req, res) => {
 };
 
 const intern = (req, res) => {
-  res.render('pages/intern', { title: 'intern' });
+  res.render('pages/intern', { title: 'Intern' });
 };
 
-const mentor = (req, res) => {
-  res.render('pages/mentor', { title: 'mentor' });
+const contact = (req, res) => {
+  res.render('pages/contact', { title: 'Contact' });
+};
+
+const mentors = (req, res) => {
+  res.render('pages/mentors', { title: 'Mentors' });
 };
 
 const dashboard = (req, res) => {
@@ -25,6 +29,7 @@ module.exports = {
   intern,
   homePage,
   login,
-  mentor,
-  dashboard
+  mentors,
+  dashboard,
+  contact
 };

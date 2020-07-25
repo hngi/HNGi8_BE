@@ -5,8 +5,9 @@ const {
   homePage,
   login,
   intern,
-  mentor,
-  dashboard
+  mentors,
+  dashboard,
+  contact
 } = require('../../controller/views/index');
 
 const viewRouter = express.Router();
@@ -17,6 +18,8 @@ viewRouter.get('/login', login);
 
 viewRouter.get('/intern', intern);
 
-viewRouter.get('/mentors', mentor);
+viewRouter.get('/contact', contact);
+
+viewRouter.get('/mentors', mentors);
 viewRouter.get('/dashboard', auth, dashboard);
 module.exports = viewRouter;
