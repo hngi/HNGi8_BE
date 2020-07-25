@@ -1,22 +1,22 @@
 footer {
-  background-color: #F5F4FA;
+  background-color: #f5f4fa;
   padding-top: 3.5rem;
   padding-bottom: 1rem;
   width: 100%;
-  color: #573F7B
+  color: #573f7b;
 }
 
 footer div.container {
-  border-bottom: 1.5px solid #9272C2;
+  border-bottom: 1.5px solid #9272c2;
   margin-bottom: 2rem;
 }
 
 footer a {
-  color: #573F7B;
+  color: #573f7b;
 }
 
 footer h4 {
-  color: #573F7B;
+  color: #573f7b;
   font-weight: 400;
   margin-bottom: 1.25rem;
 }
@@ -31,38 +31,39 @@ footer li:not(:first-of-type) {
 
 footer form {
   margin: 1rem auto 4rem;
-  max-width: 40rem;
+  max-width: 90%;
   display: flex;
 }
 
 footer form input.form-control {
-  border: 1px solid #573F7B70;
+  border: 1px solid #573f7b70;
   height: 3rem;
   line-height: 1rem;
   font-size: 1rem;
   outline: none;
-  border-radius: 10px;
-  min-width: 25rem;
-  max-width: 30rem;;
+  border-radius: 5px;
+  min-width: 20rem;
+  max-width: 30rem;
 }
 
 footer form button {
-  background-color: #573F7B;
+  background-color: #573f7b;
   border: none;
   outline: none;
   border-radius: 5px;
   padding: 0.5rem 2rem;
   color: #fff;
-  transform: scale(1.00);
+  height: 3rem;
+  transform: scale(1);
   transition: transform 0.3s ease-in-out;
 }
 
 footer form button:hover {
-  /* background-color: #573F7B; */
+  background-color: #573f7b;
   transform: scale(1.05);
 }
 
-footer form button:active, 
+footer form button:active,
 footer form button:visited {
   border: none;
   outline: none;
@@ -72,4 +73,39 @@ footer small {
   font-weight: 300;
   text-align: center;
   display: block;
+}
+
+@media (max-width: 768px) {
+  footer form {
+    margin: 0 0.5rem;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  footer form input {
+    margin-bottom: 1rem;
+    width: 80%;
+  }
+
+  footer form button {
+    width: max-content;
+    margin: auto;
+    /* transform: scale(0.95); */
+  }
+
+  footer form button:hover {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 320px) {
+  footer form {
+    margin: 0 0.125rem;
+    width: 90% !important;
+    padding: 0 0.25rem;
+  }
+
+  footer form input {
+    width: 18rem !important;
+  }
 }
