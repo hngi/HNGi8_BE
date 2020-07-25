@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
+
 const { Schema } = mongoose;
 const internsSchema = Schema({
   name: {
