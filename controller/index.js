@@ -7,7 +7,7 @@ const homePage = (req, res) => {
 };
 
 // Admin Login
-const login = async (req, res) => {
+const login = (req, res) => {
   const { email, password } = req.body;
   if (isEmpty(email) || isEmpty(password)) {
     req.flash('error', 'All fields are required');
@@ -18,7 +18,7 @@ const login = async (req, res) => {
     res.redirect('/login');
   }
 
-  await Admins.findOne({ email }).then((admin) => {
+  Admins.findOne({ email }).then((admin) => {
     if (!admin) {
       req.flash('error', 'Email does not exist in our record');
       res.redirect('/login');
