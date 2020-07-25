@@ -4,6 +4,12 @@
 
 body {
     background-color: #Fff;
+    background-image: url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Ellipse_29_awtaml.svg),
+    url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Rectangle_572_pvzmxr.svg);
+    background-position: bottom 80px left 0,
+    top 100px right 0;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
     /* background-image: url(/public/img/Rectangle\ 572.png),
     url(/public/img/Ellipse\ 29.png); */
 }
