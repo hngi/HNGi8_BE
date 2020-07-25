@@ -23,6 +23,6 @@ const contactUsSchema = Schema({
     required: true
   }
 });
-contactUsSchema.plugin(uniqueValidator);
 
-module.exports = mongoose.model('Contacts', contactUsSchema);
+contactUsSchema.plugin(uniqueValidator);
+module.exports = mongoose.model('Contact', contactUsSchema);
