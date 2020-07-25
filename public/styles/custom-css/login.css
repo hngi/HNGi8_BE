@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #Fff;
+    background-image: url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Ellipse_29_awtaml.svg),
+    url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Rectangle_572_pvzmxr.svg);
+    background-position: bottom 80px left 0,
+    top 100px right 0;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    /* background-image: url(/public/img/Rectangle\ 572.png),
+    url(/public/img/Ellipse\ 29.png); */
+}
+
+
+
+.form {
+    position: relative;
+}
+
+div.login-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 432px !important;
+    margin: auto;
+    margin-top: 170px;
+}
+
+.logo {
+    max-width: 72px;
+    margin-bottom: 15px;
+}
+
+input#email,
+input#password {
+    margin-bottom: 30px;
+    height: 3rem !important;
+    max-width: 392px !important;
+    border: 2px solid #9272c2 !important;
+    border-radius: 5px !important;
+    background-color: #F5F4FA;
+}
+
+input#password {
+    margin-bottom: 15px;
+    background-color: #F5F4FA;
+}
+
+.form-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    font-size: 12px;
+    color: rgba(39, 39, 76, 0.8);
+}
+
+input#defaultCheck1.form-check-input {
+    position: absolute;
+    top: -2px;
+    background-color: #9272C2;
+}
+
+.submit-btn {
+    margin-bottom: 200px;
+}
+
+button.submit-btn:link,
+button.submit-btn:visited,
+button.submit-btn {
+    width: 238px !important;
+    height: 3rem;
+    margin-top: 30px;
+    background-color: #f5f4fa;
+    color: #9272C2;
+    border:1.5px solid #9272C2;;
+}
+
+button.submit-btn:hover,
+button.submit-btn:active,
+button.submit-btn:focus{
+    color: #f5f4fa;
+    background-color: #9272C2 !important;
+    border:1.5px solid #9272C2;;
+}
+
+
+
+
+.mail-icon {
+    position: absolute;
+    color: #9272c2;
+    right: 20px;
+    top: 58px;
+    font-size: 25px;
+}
+
+
+.password-icon {
+    position: absolute;
+    color: #9272c2;
+    right: 20px;
+    top: 135px;
+    font-size: 25px;
+}

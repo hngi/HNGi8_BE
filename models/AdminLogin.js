@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
-const { Schema } = mongoose;
-
-const AdminLoginSchema = Schema({
-  email: {
+const adminSchema = mongoose.Schema({
+  name: { type: String, require: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  role: {
     type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true
+    enum: ['superAdmin', 'admin'],
+    default: 'admin'
   }
-
+}, {
+  timestamps: true
 });
 
-module.exports = mongoose.model('AdminLogin', AdminLoginSchema);
+adminSchema.plugin(uniqueValidator);
+module.exports = mongoose.model('Admins', adminSchema);

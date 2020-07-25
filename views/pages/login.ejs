@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../head/index') %>
+  <link rel="stylesheet" href="/styles/bootstrap-css/bootstrap.css">
+  <link rel="stylesheet" href="/styles/custom-css/login.css">
+  <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/public/img/favicon.ico" type="image/x-icon">
+</head>
+
+
+
+  <%- include('../includes/external-header')-%>
+  
+
+  
+<div class="bg-img-1"></div>
+<div class="bg-img-2"></div>
+
+  <div class="login-container">
+
+    <div class="form text-center">
+      <img src="/img/Zuri.png" alt="" class="logo">
+
+      <form action="">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+        <ion-icon name="mail-outline" class="mail-icon"></ion-icon>
+
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <ion-icon name="lock-closed-outline" class="password-icon"></ion-icon>
+
+
+        <div class="form-check text-left form-text">
+          <span>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Remember Me
+            </label>
+          </span>
+
+          <span>Forgot Password?</span>
+        </div>
+        <div>
+          <button type="submit" class="btn submit-btn btn-primary">Sign in</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="/styles/custom-css/login.css">
+  <%- include('../includes/footer')-%>
+
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+</body>
+
+</html>
