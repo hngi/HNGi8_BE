@@ -3,7 +3,7 @@ const express = require('express');
 const {
   homePage,
   login,
-  intern,
+  internSignup,
   mentorSignup,
 } = require('../../controller/views/index');
 
@@ -13,7 +13,7 @@ viewRouter.get('/', homePage);
 
 viewRouter.get('/login', login);
 
-viewRouter.get('/intern', intern);
+viewRouter.get('/apply', internSignup);
 
 viewRouter.get('/mentors/signup', mentorSignup);
 
