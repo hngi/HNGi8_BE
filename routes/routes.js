@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.get('/', homePage);
 router.post('/mentor/apply', upload.none(), applicationValidationRules(), mentorApplication);
-router.post('/login', login);
+router.post('/auth', login);
 
 module.exports = router;
