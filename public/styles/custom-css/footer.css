@@ -2,7 +2,7 @@ footer {
   background-color: #f5f4fa;
   padding-top: 3.5rem;
   padding-bottom: 1rem;
-  max-width: 100%;
+  width: 100%;
   color: #573f7b;
 }
 
@@ -53,6 +53,7 @@ footer form button {
   border-radius: 5px;
   padding: 0.5rem 2rem;
   color: #fff;
+  height: 3rem;
   transform: scale(1);
   transition: transform 0.3s ease-in-out;
 }
@@ -76,11 +77,14 @@ footer small {
 
 @media (max-width: 768px) {
   footer form {
+    margin: 0 0.5rem;
     flex-direction: column;
+    width: 80%;
   }
 
   footer form input {
     margin-bottom: 1rem;
+    width: 80%;
   }
 
   footer form button {
@@ -91,5 +95,17 @@ footer small {
 
   footer form button:hover {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 320px) {
+  footer form {
+    margin: 0 0.125rem;
+    width: 90% !important;
+    padding: 0 0.25rem;
+  }
+
+  footer form input {
+    width: 18rem !important;
   }
 }
