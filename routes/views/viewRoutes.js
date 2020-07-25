@@ -1,6 +1,7 @@
 const express = require('express');
 
-const { homePage, login, intern, mentors } = require('../../controller/views/index');
+const { homePage, login, intern, mentor } = require('../../controller/views/index');
+
 const { mentor } = require('../../controller/views');
 
 const viewRouter = express.Router();
@@ -12,7 +13,6 @@ viewRouter.get('/login', login);
 viewRouter.get('/intern', intern);
 
 viewRouter.get('/mentor', mentor);
-
 
 
 /// INTERN ROUTES ///
@@ -40,8 +40,6 @@ viewRouter.get('/mentor', mentor);
 
 // // GET request for list of all Employees.
 // router.get('/interns', intern_controller.intern_list);
-
-
 
 
 module.exports = viewRouter;

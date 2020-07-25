@@ -1,9 +1,9 @@
 const homePage = (req, res) => {
-  res.render('pages/homePage', { title: 'home page' });
+  res.render('pages/homePage', { title: 'Home' });
 };
 
 const login = (req, res) => {
-  res.render('pages/login', { title: 'login' });
+  res.render('pages/login', { title: 'Login' });
 };
 
 const intern = (req, res) => {
@@ -18,5 +18,4 @@ module.exports = {
   intern,
   homePage,
   login,
-  mentor
 };
