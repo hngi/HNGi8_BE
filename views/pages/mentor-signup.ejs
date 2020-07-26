@@ -1,0 +1,123 @@
+<%- include('../includes/external-header')-%>
+<link rel="stylesheet" href="../styles/custom-css/mentor-signup.css">
+<div class="container d-flex flex-column align-items-center">
+  <div class="intro row">
+    <div class="col px-2">
+      <h1>Welcome to the internship.</h1>
+      <a href="#" class="btn"></a>
+    </div>
+    <div class="col px-2 d-none d-md-block">
+      <img src="../img/signup-logo.svg" alt="" class="img-fluid">
+    </div>
+  </div>
+
+  <form action="#" method="post">
+    <p class="px-2">Register here:</p>
+
+    <!-- Name & Email -->
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="name">Full Name</label>
+        <div class="input-group">
+          <input name="name" type="text" class="form-control w-100" id="fname" placeholder="e.g. John Doe" required>
+          <div class="invalid-feedback"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="email">Email</label>
+        <div class="input-group">
+          <input type="email" class="form-control w-100" id="email" placeholder="e.g. johndoe@example.com" required>
+          <div class="invalid-feedback"></div>
+        </div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="phone">Phone Number</label>
+        <input type="phone" class="form-control" id="phone" maxlength="16" placeholder="e.g. 08023414785" required="">
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Expertise and CV Link -->
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="expertise">Expertise/Track</label>
+        <div class="input-group">
+          <select name="expertise" class="form-control w-100" id="expertise" required>
+            <option value="" selected disabled>Select Field</option>
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="mobile">Mobile Development</option>
+            <option value="design">UI/UX Design</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="cvLink">CV Link</label>
+        <input type="url" class="form-control" id="cvLink" placeholder="Enter CV link." required>
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="employmentStatus">Employment Status</label>
+        <select class="form-control" name="employmentStatus" id="employmentStatus">
+          <option disabled selected>Select Option</option>
+          <option value="employed">Employed</option>
+          <option value="unemployed">Unemployed</option>
+        </select>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="state">State of Residence</label>
+        <input type="text" class="form-control" id="state" placeholder="State of Residence" required>
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <div class="row px-2">
+      <label for="reason">Tell us about yourself and why you want to work with us?</label>
+      <textarea class="form-control" name="reason" id="reason" rows="5" placeholder="Write here..." ></textarea>
+    </div>
+    <div class="row">
+      <button type="submit" class="submit-btn mx-auto">Submit</button>
+    </div>
+  </form>
+</div>
+
+<!-- <div class="row">
+    <div class="col">
+      <button class="btn btn-primary btn-block btn-color py-3 mt-3 mb-4" id="signup-btn" type="submit" data-toggle=""
+        data-target="#exampleModal">Sign Up</button>
+    </div>
+  </div> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body d-flex flex-column align-items-center">
+            <div>
+              <img src="../img/logo.svg" alt="logo">
+            </div>
+            <svg width="50" height="49" viewBox="0 0 50 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5 18.4L25 30.9L45 18.4L25 5.9L5 18.4ZM50 18.4V43.4C50 44.7261 49.4732 45.9979 48.5355 46.9355C47.5979 47.8732 46.3261 48.4 45 48.4H5C3.67392 48.4 2.40215 47.8732 1.46447 46.9355C0.526784 45.9979 0 44.7261 0 43.4V18.4C0 16.575 0.975 15 2.425 14.125L25 0L47.575 14.125C49.025 15 50 16.575 50 18.4Z"
+                fill="#337AB7"></path>
+            </svg>
+
+            <h2>Registration Successful !</h2>
+            <p class="text-center"> A verification link has been sent to your email address, kindly check your mail and
+              click to verify your account.</p>
+
+            <button id="login-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Login</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+</form>
+
+<%- include('../includes/footer') %>

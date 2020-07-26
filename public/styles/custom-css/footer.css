@@ -2,7 +2,7 @@ footer {
   background-color: #f5f4fa;
   padding-top: 3.5rem;
   padding-bottom: 1rem;
-  max-width: 100%;
+  width: 100%;
   color: #573f7b;
 }
 
@@ -29,10 +29,11 @@ footer li:not(:first-of-type) {
   margin-top: 0.75rem;
 }
 
-footer form {
+footer .container form {
   margin: 1rem auto 4rem;
   max-width: 90%;
   display: flex;
+  padding: 0;
 }
 
 footer form input.form-control {
@@ -42,7 +43,6 @@ footer form input.form-control {
   font-size: 1rem;
   outline: none;
   border-radius: 5px;
-  min-width: 20rem;
   max-width: 30rem;
 }
 
@@ -53,6 +53,7 @@ footer form button {
   border-radius: 5px;
   padding: 0.5rem 2rem;
   color: #fff;
+  height: 3rem;
   transform: scale(1);
   transition: transform 0.3s ease-in-out;
 }
@@ -74,22 +75,46 @@ footer small {
   display: block;
 }
 
-@media (max-width: 768px) {
-  footer form {
+@media (max-width: 970px) {
+  footer .container div.row div {
+    text-align: center;
+  }
+
+  div.contact li:not(:first-of-type),
+  div.social-media li:not(:first-of-type) {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  footer .container form {
+    margin: 0 auto 2rem;
     flex-direction: column;
+    max-width: 90%;
   }
 
-  footer form input {
+  footer .container form input.form-control {
     margin-bottom: 1rem;
+    max-width: 90%;
   }
 
-  footer form button {
+  footer .container form button {
     width: max-content;
     margin: auto;
     /* transform: scale(0.95); */
   }
 
-  footer form button:hover {
+  footer .container form button:hover {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 575px) {
+  footer .container form {
+    max-width: 80%;
+    padding: 0 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
