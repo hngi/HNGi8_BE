@@ -1,6 +1,5 @@
 const router = require('express').Router(); 
-const Contacts = require("../models/ContactUs")
-
+const Contacts = require("../models/Contact")
 
 
 // post 
@@ -20,36 +19,14 @@ router.post("/", (req, res) => {
 
   Contacts.create(contacts)
   .then(contacts, () => {
-      res.redirect("/contact")
-      console.log(contacts)
-  })
-  .catch( function(err){
-    res.send(err)
-    console.log(err)
+    req.flash('success', 'Thanks for contacting us...');
+    res.redirect('/');
+  }).catch((err) => {
+    console.log(err);
+    req.flash('error', 'comment not saved please try again');
+    res.redirect('/contact');
+  });
 })
-})
-
-
-// UPDATE contactus
-router.post('/contact/update/:id', (req, res) => {
-    Contacts.findById(req.params.id, (err, contacts) => {
-        if (!contacts)
-            res.status(404).send("data is not found");
-        else {
-            contacts.name = req.body.name
-            contacts.email = req.body.email
-            contacts.subject = req.body.subject
-            contacts.message = req.body.message
-           
-            Contacts.save().then(contact => {
-                res.redirect("/contact")
-            })
-            .catch(err => {
-                res.json({msg: "falied"});
-            });
-        }
-    });
-});
 
 
 
