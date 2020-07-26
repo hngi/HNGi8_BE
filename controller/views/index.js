@@ -17,6 +17,10 @@ const mentorSignup = (req, res) => {
   res.render('pages/mentor-signup', { title: 'Mentor Signup' });
 };
 
+const faqs = (req, res) => {
+  res.render('pages/faqs', { title: 'FAQs' });
+};
+
 const mentors = (req, res) => {
   res.render('pages/mentors', { title: 'Mentors' });
 };
@@ -41,5 +45,6 @@ module.exports = {
   mentors,
   dashboard,
   lastInternship,
-  contact
+  contact,
+  faqs
 };
