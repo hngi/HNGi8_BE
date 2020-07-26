@@ -1,12 +1,12 @@
 const homePage = (req, res) => {
-  res.render('pages/homePage', { title: 'Home' });
+  res.render('pages/homePage', { title: 'Home', currentPage: 'home' });
 };
 
 const login = (req, res) => {
   if (req.session.auth) {
     res.redirect('/dashboard');
   }
-  res.render('pages/login', { title: 'Login' });
+  res.render('pages/login', { title: 'Login', currentPage: 'login' });
 };
 
 const internSignup = (req, res) => {
@@ -18,11 +18,11 @@ const mentorSignup = (req, res) => {
 };
 
 const mentors = (req, res) => {
-  res.render('pages/mentors', { title: 'Mentors' });
+  res.render('pages/mentors', { title: 'Mentors', currentPage: 'mentors' });
 };
 
 const contact = (req, res) => {
-  res.render('pages/contact', { title: 'Contact' });
+  res.render('pages/contact', { title: 'Contact', currentPage: 'contact' });
 };
 
 const dashboard = (req, res) => {
@@ -30,7 +30,7 @@ const dashboard = (req, res) => {
 };
 
 const lastInternship = (req, res) => {
-  res.render('pages/hngi7', { title: 'HNGi7 Summary' });
+  res.render('pages/hngi7', { title: 'HNGi7 Summary', currentPage: 'hngi7' });
 };
 
 module.exports = {
