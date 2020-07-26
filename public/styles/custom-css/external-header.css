@@ -90,20 +90,49 @@ nav ul li a:hover {
   text-decoration: none;
 }
 
-nav ul li a.btn {
-  background-color: #9272c2;
-  color: #fff;
+nav ul li button.btn {
+  border: 1px solid #9272c2;
+  color: #9272c2 !important;
+  margin: 0.25rem 0;
+  /* color: #fff !important; */
   transition: transform 0.3s ease-in-out;
 }
 
-nav ul li a.btn:hover {
+nav ul li button.btn:hover {
   background-color: #9272c2;
-  color: #fff;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+nav ul li.dropdown > div.join-zuri {
+  min-width: 5rem;
+  width: 114px;
+  height: max-content;
+  border-radius: 5px;
+  border: 1px solid #9272c2;
+  padding: 0.5rem;
+  color: #9272c2;
+}
+
+nav ul li.dropdown > div.join-zuri a {
+  width: 100%;
+  color: #9272c2;
+  padding: 0.5rem;
+  border: 1px solid #9272c2;
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+nav ul li.dropdown > div.join-zuri a:hover {
+  transition: transform 0.3s ease-in-out;
+  background-color: #9272c2;
+  color: #fff !important;
   transform: scale(1.05);
 }
 
 @media (max-width: 1000px) {
-  nav ul li.nav-item:not(:last-of-type) {
+  nav ul li.nav-item {
     margin-bottom: 0.5rem;
   }
 }
