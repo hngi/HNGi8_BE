@@ -9,6 +9,13 @@ const login = (req, res) => {
   res.render('pages/login', { title: 'Login' });
 };
 
+const intern = (req, res) => {
+  res.render('pages/intern', { title: 'Intern' });
+};
+
+const contact = (req, res) => {
+  res.render('pages/contact', { title: 'Contact' });
+
 const internSignup = (req, res) => {
   res.render('pages/intern-signup', { title: 'Apply' });
 };
@@ -29,7 +36,8 @@ module.exports = {
   internSignup,
   homePage,
   login,
-  mentorSignup,
   mentors,
-  dashboard
-};
+  dashboard,
+  contact,
+  intern,
+  mentorSignup};

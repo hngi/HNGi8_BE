@@ -4,9 +4,12 @@ const auth = require('../../middleware/auth');
 const {
   homePage,
   login,
+  intern,
+  mentors,
+  dashboard,
+  contact,
   internSignup,
   mentorSignup,
-  dashboard
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
@@ -21,6 +24,10 @@ viewRouter.get('/apply', internSignup);
 
 viewRouter.get('/mentors/apply', mentorSignup);
 
+viewRouter.get('/contact', contact);
+
 viewRouter.get('/mentors', mentors);
+
 viewRouter.get('/dashboard', auth, dashboard);
+
 module.exports = viewRouter;
