@@ -1,7 +1,7 @@
 const { body, validationResult } = require('express-validator');
 const Intern = require('../models/Intern');
 
-// Application rules
+// Intern Application rules
 const applicationValidationRules = () => [
   body('fullName').isString(),
   body('email').isEmail(),
