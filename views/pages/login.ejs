@@ -23,11 +23,21 @@
     <div class="form text-center">
       <img src="/img/Zuri.png" alt="" class="logo">
 
-      <form action="">
-        <input type="email" class="form-control" id="email" placeholder="Email">
+      <form action="/api/v1/auth" method="POST">
+        <% if(messages.error){ %>
+          <div class="alert alert-danger">
+              <%- messages.error %>
+          </div>
+      <% } %>
+      <% if(messages.success){ %>
+          <div class="alert alert-success">
+              <%- messages.success %>
+          </div>
+      <% } %>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
         <ion-icon name="mail-outline" class="mail-icon"></ion-icon>
 
-        <input type="password" class="form-control" id="password" placeholder="Password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         <ion-icon name="lock-closed-outline" class="password-icon"></ion-icon>
 
 

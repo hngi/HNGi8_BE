@@ -1,22 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title><%- title %></title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/bootstrap-css/bootstrap.css" />
-    <link rel="stylesheet" href="./styles/custom-css/admin-header.css" />
-    <script src="./js/bootstrap-js/popper.js"></script>
-    <script src="./js/bootstrap-js/jquery.js"></script>
-    <script src="./js/bootstrap-js/bootstrap.js"></script>
+<%- include('./head') %>
+    <link rel="stylesheet" href="../styles/custom-css/admin-header.css" />
   </head>
 
-  <body>
-    <div class="container">
-      <header>
+<head>
+  <title><%- title %></title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/bootstrap-css/bootstrap.css" />
+  <link rel="stylesheet" href="../styles/custom-css/admin-header.css" />
+  <script src="../js/bootstrap-js/popper.js"></script>
+  <script src="../js/bootstrap-js/jquery.js"></script>
+  <script src="../js/bootstrap-js/bootstrap.js"></script>
+</head>
+
+<body>
+        <!-- start of sidebar -->
+        <div class="sidebar d-flex flex-column justify-content-start" id="sidebar">
+          <!-- logo -->
+          <div class="logo-section d-flex w-100 align-items-center justify-content-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="19" viewBox="0 0 41 19" fill="none">
+              <path
+                d="M5.808 14.304L12.24 4.176V1.2H0.96V4.896H7.272L0.84 15.024V18H12.36V14.304H5.808ZM21.7986 6V12.552C21.7986 14.256 20.8866 15.024 19.5666 15.024C18.4146 15.024 17.4786 14.328 17.4786 12.84V6H13.8786V13.368C13.8786 16.608 15.9426 18.336 18.3666 18.336C19.9506 18.336 21.1506 17.76 21.7986 16.872V18H25.3986V6H21.7986ZM31.6388 8.136V6H28.0388V18H31.6388V12.576C31.6388 10.2 33.7508 9.6 35.2388 9.84V5.76C33.7268 5.76 32.1188 6.528 31.6388 8.136Z"
+                fill="white" />
+              <path
+                d="M38.7216 4.944C39.8976 4.944 40.8816 3.96 40.8816 2.784C40.8816 1.608 39.8976 0.623999 38.7216 0.623999C37.5456 0.623999 36.5616 1.608 36.5616 2.784C36.5616 3.96 37.5456 4.944 38.7216 4.944ZM36.9216 18H40.5216V6H36.9216V18Z"
+                fill="#EEC5CD" />
+            </svg>
+            <p class="role ml-4 text-white m-0">Administrator</p>
+          </div>
+          <ul class="sidebar__links p-0">
+            <li>
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path
+                    d="M5 11H23M11 23V11M7 5H21C22.1046 5 23 5.89543 23 7V21C23 22.1046 22.1046 23 21 23H7C5.89543 23 5 22.1046 5 21V7C5 5.89543 5.89543 5 7 5Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" /></svg>Dashboard</a>
+            </li>
+            <!-- users -->
+            <li>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+                  <path
+                    d="M19 23.4146V21.4146C19 20.3537 18.5786 19.3363 17.8284 18.5861C17.0783 17.836 16.0609 17.4146 15 17.4146H7C5.93913 17.4146 4.92172 17.836 4.17157 18.5861C3.42143 19.3363 3 20.3537 3 21.4146V23.4146M25 23.4146V21.4146C24.9993 20.5283 24.7044 19.6673 24.1614 18.9669C23.6184 18.2664 22.8581 17.7661 22 17.5446M18 5.54455C18.8604 5.76485 19.623 6.26525 20.1676 6.96686C20.7122 7.66847 21.0078 8.53138 21.0078 9.41955C21.0078 10.3077 20.7122 11.1706 20.1676 11.8722C19.623 12.5738 18.8604 13.0742 18 13.2946M15 9.41455C15 11.6237 13.2091 13.4146 11 13.4146C8.79086 13.4146 7 11.6237 7 9.41455C7 7.20541 8.79086 5.41455 11 5.41455C13.2091 5.41455 15 7.20541 15 9.41455Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" /></svg>Users<svg
+                  xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
+                  <path
+                    d="M14.6992 2.2029L12.9721 0.519531L7.34973 5.98748L1.72737 0.519531L0.000244141 2.2029L7.34973 9.36615L14.6992 2.2029Z"
+                    fill="#EEC5CD" /></svg></a>
+                    <ul class="sub-list">
+                      <li class="sub-list-item"><a href="#">Admins</a></li>
+                      <li class="sub-list-item"><a href="#">Interns</a></li>
+                      <li class="sub-list-item"><a href="#">Mentors</a></li>
+                      <li class="sub-list-item"><a href="#">Sponsors</a></li>
+                    </ul>
+            </li>
+            <!-- features -->
+            <li>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <g clip-path="url(#clip0)">
+                    <g>
+                      <mask id="path-1-inside-1" fill="white">
+                        <path
+                          d="M23.3933 16.1068L15.9135 23.5886C15.7197 23.7826 15.4896 23.9366 15.2363 24.0416C14.983 24.1466 14.7115 24.2007 14.4373 24.2007C14.1631 24.2007 13.8916 24.1466 13.6383 24.0416C13.3851 23.9366 13.155 23.7826 12.9612 23.5886L4 14.6355V4.20068H14.4321L23.3933 13.1642C23.7819 13.5552 24 14.0842 24 14.6355C24 15.1869 23.7819 15.7158 23.3933 16.1068Z" />
+                        <path
+                          d="M10 9.20068C10 9.75297 9.55228 10.2007 9 10.2007C8.44772 10.2007 8 9.75297 8 9.20068C8 8.6484 8.44772 8.20068 9 8.20068C9.55228 8.20068 10 8.6484 10 9.20068Z" />
+                      </mask>
+                      <path
+                        d="M23.3933 16.1068L24.1005 16.8138L24.1026 16.8117L23.3933 16.1068ZM15.9135 23.5886L15.2063 22.8816L15.2059 22.882L15.9135 23.5886ZM12.9612 23.5886L13.6688 22.882L13.668 22.8812L12.9612 23.5886ZM4 14.6355H3C3 14.9009 3.10548 15.1554 3.29321 15.3429L4 14.6355ZM4 4.20068V3.20068C3.44772 3.20068 3 3.6484 3 4.20068H4ZM14.4321 4.20068L15.1393 3.49367C14.9518 3.30608 14.6974 3.20068 14.4321 3.20068V4.20068ZM23.3933 13.1642L24.1026 12.4593L24.1005 12.4572L23.3933 13.1642ZM22.6861 15.3998L15.2063 22.8816L16.6207 24.2956L24.1005 16.8138L22.6861 15.3998ZM15.2059 22.882C15.105 22.983 14.9851 23.0632 14.8533 23.1179L15.6193 24.9653C15.994 24.81 16.3344 24.5823 16.6211 24.2952L15.2059 22.882ZM14.8533 23.1179C14.7214 23.1725 14.5801 23.2007 14.4373 23.2007V25.2007C14.843 25.2007 15.2446 25.1207 15.6193 24.9653L14.8533 23.1179ZM14.4373 23.2007C14.2946 23.2007 14.1532 23.1725 14.0214 23.1179L13.2553 24.9653C13.63 25.1207 14.0317 25.2007 14.4373 25.2007V23.2007ZM14.0214 23.1179C13.8895 23.0632 13.7697 22.983 13.6688 22.882L12.2536 24.2952C12.5402 24.5823 12.8806 24.81 13.2553 24.9653L14.0214 23.1179ZM13.668 22.8812L4.70679 13.9281L3.29321 15.3429L12.2544 24.296L13.668 22.8812ZM5 14.6355V4.20068H3V14.6355H5ZM4 5.20068H14.4321V3.20068H4V5.20068ZM13.7249 4.9077L22.6861 13.8712L24.1005 12.4572L15.1393 3.49367L13.7249 4.9077ZM22.684 13.8691C22.8864 14.0727 23 14.3483 23 14.6355H25C25 13.8201 24.6774 13.0377 24.1026 12.4593L22.684 13.8691ZM23 14.6355C23 14.9228 22.8864 15.1983 22.684 15.4019L24.1026 16.8117C24.6774 16.2333 25 15.451 25 14.6355H23ZM9 9.20068V11.2007C10.1046 11.2007 11 10.3053 11 9.20068H9ZM9 9.20068H7C7 10.3053 7.89543 11.2007 9 11.2007V9.20068ZM9 9.20068V7.20068C7.89543 7.20068 7 8.09611 7 9.20068H9ZM9 9.20068H11C11 8.09611 10.1046 7.20068 9 7.20068V9.20068Z"
+                        fill="white" mask="url(#path-1-inside-1)" />
+                    </g>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <rect width="28" height="28" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>Features</a>
+            </li>
+            <!-- news -->
+            <li>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path
+                    d="M18 6H20C20.5304 6 21.0391 6.21071 21.4142 6.58579C21.7893 6.96086 22 7.46957 22 8V22C22 22.5304 21.7893 23.0391 21.4142 23.4142C21.0391 23.7893 20.5304 24 20 24H8C7.46957 24 6.96086 23.7893 6.58579 23.4142C6.21071 23.0391 6 22.5304 6 22V8C6 7.46957 6.21071 6.96086 6.58579 6.58579C6.96086 6.21071 7.46957 6 8 6H10M11 4H17C17.5523 4 18 4.44772 18 5V7C18 7.55228 17.5523 8 17 8H11C10.4477 8 10 7.55228 10 7V5C10 4.44772 10.4477 4 11 4Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" /></svg>News</a>
+            </li>
+            <!-- <li><a href="#">Settings</a></li> -->
+            <!-- logout -->
+            <li>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <g>
+                    <path
+                      d="M17 5H21C21.5304 5 22.0391 5.21071 22.4142 5.58579C22.7893 5.96086 23 6.46957 23 7V21C23 21.5304 22.7893 22.0391 22.4142 22.4142C22.0391 22.7893 21.5304 23 21 23H17M12 19L17 14M17 14L12 9M17 14H5"
+                      stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </svg>Log Out</a>
+            </li>
+          </ul>
+        </div>
+        <!-- end of sidebar -->
+    <div class="body">
+      <!-- nav container -->
+      <div class="container">
         <nav class="nav">
+          <button id="sidebarToggler" class="btn d-lg-none">
+            <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" >
+              <path
+                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+              </svg></button>
           <h4 class="nav-item">Dashboard</h4>
           <ul class="nav-links">
             <li class="nav-item d-sm-none d-lg-flex" id="currentDate">
@@ -24,52 +113,42 @@
             </li>
             <!-- bell icon -->
             <li class="nav-item" id="notification">
-              <svg
-                width="22"
-                height="33"
-                viewBox="0 0 20 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="22" height="33" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16 7.87384C16 6.15412 15.3679 4.50484 14.2426 3.28882C13.1174 2.0728 11.5913 1.38965 10 1.38965C8.4087 1.38965 6.88258 2.0728 5.75736 3.28882C4.63214 4.50484 4 6.15412 4 7.87384C4 15.4387 1 17.6001 1 17.6001H19C19 17.6001 16 15.4387 16 7.87384Z"
-                  stroke="#573F7B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+                  stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path
                   d="M11.7295 21.9233C11.5537 22.2509 11.3013 22.5228 10.9977 22.7117C10.6941 22.9007 10.3499 23.0002 9.99951 23.0002C9.64914 23.0002 9.30491 22.9007 9.0013 22.7117C8.69768 22.5228 8.44534 22.2509 8.26953 21.9233"
-                  stroke="#573F7B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+                  stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </li>
             <li class="nav-item d-flex">
-              <img
-                src="img/img.jpg"
-                alt="user's profile photo"
-                id="userPhoto"
-              />
+              <img src="img/img.jpg" alt="user's profile photo" id="userPhoto" />
               <a class="d-flex justify-content-between align-items-center">
-                <span id="userName">Feranmi Olowookere</span>
-                <svg
-                  class="pl-1"
-                  width="17"
-                  height="7"
-                  viewBox="0 0 17 7"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <span id="userName" class="d-sm-none d-lg-flex">Feranmi Olowookere</span>
+                <svg class="pl-1" width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 1L8.49998 6L0.999981 1" stroke="#7E5AE3" />
                 </svg>
               </a>
             </li>
           </ul>
         </nav>
-      </header>
+      </div>
 
+      <!-- rest of body -->
 
-    </div>
+  <script>
+    const toggler = document.getElementById('sidebarToggler')
+    const sidebar = document.getElementById('sidebar')
+
+    toggler.addEventListener('click', () => {
+      sidebar.classList.toggle('show')
+    })
+
+    window.addEventListener('click', (e) => {
+      // console.log(e.target);
+      if (!sidebar.contains(e.target) && !toggler.contains(e.target)) {
+        sidebar.classList.remove('show')
+      }
+    })
+  </script>
