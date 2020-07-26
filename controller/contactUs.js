@@ -1,6 +1,6 @@
 const Contacts = require("../models/Contact")
 
-// post 
+// post contactUs form
 const contact = (req, res) => {
 
     const name = req.body.name
