@@ -11,8 +11,21 @@
     </div>
   </div>
 
-  <form action="#" method="post">
-    <p class="px-2">Register here:</p>
+  <form action="/api/v1/apply" method="post">
+    <% if(messages.error){ %>
+      <% messages.error.forEach(function(err){ %> 
+        <div class="alert alert-danger">
+          <%- err %>
+      </div>
+      <%})%>
+  <% } %>
+  <% if(messages.success){ %>
+    <div class="alert alert-success">
+        <%- messages.success %>
+    </div>
+  <% } %>
+
+  <p class="px-2">Register here:</p>
 
     <!-- Name & Email -->
     <div class="row">
