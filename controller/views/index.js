@@ -26,7 +26,11 @@ const contact = (req, res) => {
 };
 
 const dashboard = (req, res) => {
-  res.render('pages/dashboard');
+  res.render('pages/dashboard', { title: 'Dashboard' });
+};
+
+const lastInternship = (req, res) => {
+  res.render('pages/hngi7', { title: 'HNGi7 Summary' });
 };
 
 module.exports = {
@@ -36,5 +40,6 @@ module.exports = {
   mentorSignup,
   mentors,
   dashboard,
+  lastInternship,
   contact
 };
