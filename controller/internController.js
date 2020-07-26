@@ -1,8 +1,8 @@
 const { body, validationResult } = require('express-validator');
 const Intern = require('../models/Intern');
 
-// Intern Application rules
-const applicationValidationRules = () => [
+// Intern Validation rules
+const internValidationRules = () => [
   body('fullName').isString(),
   body('email').isEmail(),
   body('phoneNumber').isMobilePhone()
@@ -48,6 +48,6 @@ const internApply = async (req, res, next) => {
 };
 
 module.exports = {
-  applicationValidationRules,
+  internValidationRules,
   internApply
 };
