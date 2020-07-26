@@ -17,6 +17,11 @@ const mentorSchema = Schema({
     type: Number,
     required: true
   },
+  track: {
+    type: String,
+    enum: ['frontend', 'mobile', 'design', 'backend'],
+    required: true
+  },
   cvLink: {
     type: String,
     required: true,

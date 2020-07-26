@@ -8,7 +8,8 @@ const {
   mentorSignup,
   dashboard,
   lastInternship,
-  contact
+  contact,
+  faqs
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
@@ -26,6 +27,8 @@ viewRouter.get('/contact', contact);
 viewRouter.get('/mentors/apply', mentorSignup);
 
 viewRouter.get('/mentors', mentors);
+
+viewRouter.get('/faqs', faqs);
 
 viewRouter.get('/dashboard', auth, dashboard);
 
