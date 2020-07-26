@@ -7,17 +7,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  min-width: 100vw;
-  max-width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-} */
-
 nav {
   /* margin: 3rem auto 60px; */
   display: flex;
