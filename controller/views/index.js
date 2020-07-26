@@ -22,7 +22,11 @@ const mentors = (req, res) => {
 };
 
 const dashboard = (req, res) => {
-  res.render('pages/dashboard');
+  res.render('pages/dashboard', { title: 'Dashboard' });
+};
+
+const lastInternship = (req, res) => {
+  res.render('pages/hngi7', { title: 'HNGi7' });
 };
 
 module.exports = {
@@ -31,5 +35,6 @@ module.exports = {
   login,
   mentorSignup,
   mentors,
-  dashboard
+  dashboard,
+  lastInternship,
 };
