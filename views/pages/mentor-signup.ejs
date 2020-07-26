@@ -11,7 +11,19 @@
     </div>
   </div>
 
-  <form action="#" method="post">
+  <form action="/api/v1/mentors/apply" method="post">
+    <% if(messages.error){ %>
+      <% messages.error.forEach(function(err){ %> 
+        <div class="alert alert-danger">
+          <%- err %>
+      </div>
+      <%})%>
+  <% } %>
+  <% if(messages.success){ %>
+    <div class="alert alert-success">
+        <%- messages.success %>
+    </div>
+<% } %>
     <p class="px-2">Register here:</p>
 
     <!-- Name & Email -->
@@ -28,13 +40,13 @@
       <div class="col-md mb-3 p-0 px-2">
         <label for="email">Email</label>
         <div class="input-group">
-          <input type="email" class="form-control w-100" id="email" placeholder="e.g. johndoe@example.com" required>
+          <input type="email" class="form-control w-100" id="email" name="email" placeholder="e.g. johndoe@example.com" required>
           <div class="invalid-feedback"></div>
         </div>
       </div>
       <div class="col-md mb-3 p-0 px-2">
         <label for="phone">Phone Number</label>
-        <input type="phone" class="form-control" id="phone" maxlength="16" placeholder="e.g. 08023414785" required="">
+        <input type="phone" name="phoneNumber" class="form-control" id="phone" maxlength="16" placeholder="e.g. 08023414785" required="">
         <div class="invalid-feedback"></div>
       </div>
     </div>
@@ -44,7 +56,7 @@
       <div class="col-md mb-3 p-0 px-2">
         <label for="expertise">Expertise/Track</label>
         <div class="input-group">
-          <select name="expertise" class="form-control w-100" id="expertise" required>
+          <select name="track" class="form-control w-100" id="expertise" required>
             <option value="" selected disabled>Select Field</option>
             <option value="frontend">Frontend</option>
             <option value="backend">Backend</option>
@@ -56,7 +68,7 @@
       </div>
       <div class="col-md mb-3 p-0 px-2">
         <label for="cvLink">CV Link</label>
-        <input type="url" class="form-control" id="cvLink" placeholder="Enter CV link." required>
+        <input type="url" class="form-control" id="cvLink" name="cvLink" placeholder="Enter CV link." required>
         <div class="invalid-feedback"></div>
       </div>
     </div>
@@ -72,14 +84,22 @@
       </div>
       <div class="col-md mb-3 p-0 px-2">
         <label for="state">State of Residence</label>
-        <input type="text" class="form-control" id="state" placeholder="State of Residence" required>
+        <input type="text" name="stateOfResidence" class="form-control" id="state" placeholder="State of Residence" required>
         <div class="invalid-feedback"></div>
       </div>
     </div>
-
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="name">Country of Residence</label>
+        <div class="input-group">
+          <input name="country" type="text" class="form-control w-100" id="fname" placeholder="e.g. Nigeria" required>
+          <div class="invalid-feedback"></div>
+        </div>
+      </div>
+    </div>
     <div class="row px-2">
       <label for="reason">Tell us about yourself and why you want to work with us?</label>
-      <textarea class="form-control" name="reason" id="reason" rows="5" placeholder="Write here..." ></textarea>
+      <textarea class="form-control" name="interest" id="reason" rows="5" placeholder="Write here..." ></textarea>
     </div>
     <div class="row">
       <button type="submit" class="submit-btn mx-auto">Submit</button>

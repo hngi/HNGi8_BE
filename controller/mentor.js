@@ -1,7 +1,5 @@
 const { body, validationResult } = require('express-validator');
 const Mentor = require('../models/Mentor');
-const { ErrorHandler } = require('../utils/error');
-const responseHandler = require('../utils/responseHandler');
 // Application rules
 const applicationValidationRules = () => [
   body('name').isString(),
@@ -15,8 +13,12 @@ const mentorApplication = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     const err = errors.array();
-    const message = `${err[0].msg} in ${err[0].param}`;
-    return next(new ErrorHandler(400, message));
+    err.forEach((er) => {
+      const message = `${er.msg} in ${er.param}`;
+      req.flash('error', message);
+    });
+    // return next(new ErrorHandler(400, message));
+    return res.redirect('/mentors/apply');
   }
 
   const { email } = req.body;
@@ -24,16 +26,22 @@ const mentorApplication = async (req, res, next) => {
     // check if the email is already in use
     const mentor = await Mentor.findOne({ email });
     if (mentor) {
-      throw new ErrorHandler(400, 'Email already used for application');
+      req.flash('error', 'Email address already used for application');
+      res.redirect('/mentors/apply');
+    //   throw new ErrorHandler(400, 'Email already used for application');
     }
     // create the new mentor application
     let newMentor = new Mentor(req.body);
     // save the application
     newMentor = await newMentor.save();
+    console.log(newMentor);
     // return the response on success
-    return responseHandler(res, 201, 'Application successful', { mentor: newMentor });
+    req.flash('success', 'Application successful. We will reach out to you.');
+    return res.redirect('/mentors/apply');
+    // return responseHandler(res, 201, 'Application successful', { mentor: newMentor });
   } catch (err) {
-    return next(err);
+    req.flash('error', err.message);
+    return res.redirect('/mentors/apply');
   }
 };
 
