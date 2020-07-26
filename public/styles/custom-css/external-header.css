@@ -136,3 +136,24 @@ nav ul li.dropdown > div.join-zuri a:hover {
     margin-bottom: 0.5rem;
   }
 }
+
+@media (max-width: 991px) {
+  nav > .navbar-collapse ul {
+    margin-top: 1rem;
+  }
+
+  nav > .navbar-collapse ul li.nav-item {
+    margin-left: 0 !important;
+    justify-content: start;
+  }
+
+  nav > .navbar-collapse ul li button.btn,
+  nav > .navbar-collapse li.dropdown > div.join-zuri {
+    width: 100%;
+  }
+
+  nav ul li.dropdown > div.join-zuri a:hover,
+  nav ul li button.btn:hover {
+    transform: scale(1);
+  }
+}
