@@ -15,6 +15,13 @@ const intern = (req, res) => {
 
 const contact = (req, res) => {
   res.render('pages/contact', { title: 'Contact' });
+
+const internSignup = (req, res) => {
+  res.render('pages/intern-signup', { title: 'Apply' });
+};
+
+const mentorSignup = (req, res) => {
+  res.render('pages/mentor-signup', { title: 'Mentor Signup' });
 };
 
 const mentors = (req, res) => {
@@ -26,10 +33,11 @@ const dashboard = (req, res) => {
 };
 
 module.exports = {
-  intern,
+  internSignup,
   homePage,
   login,
   mentors,
   dashboard,
-  contact
-};
+  contact,
+  intern,
+  mentorSignup};
