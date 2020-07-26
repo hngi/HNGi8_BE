@@ -30,7 +30,7 @@ const dashboard = (req, res) => {
 };
 
 const lastInternship = (req, res) => {
-  res.render('pages/hngi7', { title: 'HNGi7' });
+  res.render('pages/hngi7', { title: 'HNGi7 Summary' });
 };
 
 module.exports = {
