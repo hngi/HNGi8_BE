@@ -7,7 +7,8 @@ const {
   internSignup,
   mentorSignup,
   dashboard,
-  lastInternship
+  lastInternship,
+  contact
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
@@ -20,6 +21,8 @@ viewRouter.get('/login', login);
 
 viewRouter.get('/apply', internSignup);
 
+viewRouter.get('/contact', contact);
+
 viewRouter.get('/mentors/apply', mentorSignup);
 
 viewRouter.get('/mentors', mentors);
@@ -27,4 +30,5 @@ viewRouter.get('/mentors', mentors);
 viewRouter.get('/dashboard', auth, dashboard);
 
 viewRouter.get('/hngi7', lastInternship);
+
 module.exports = viewRouter;
