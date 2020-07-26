@@ -29,10 +29,11 @@ footer li:not(:first-of-type) {
   margin-top: 0.75rem;
 }
 
-footer form {
+footer .container form {
   margin: 1rem auto 4rem;
   max-width: 90%;
   display: flex;
+  padding: 0;
 }
 
 footer form input.form-control {
@@ -42,7 +43,6 @@ footer form input.form-control {
   font-size: 1rem;
   outline: none;
   border-radius: 5px;
-  min-width: 20rem;
   max-width: 30rem;
 }
 
@@ -75,37 +75,46 @@ footer small {
   display: block;
 }
 
-@media (max-width: 768px) {
-  footer form {
-    margin: 0 0.5rem;
+@media (max-width: 970px) {
+  footer .container div.row div {
+    text-align: center;
+  }
+
+  div.contact li:not(:first-of-type),
+  div.social-media li:not(:first-of-type) {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  footer .container form {
+    margin: 0 auto 2rem;
     flex-direction: column;
-    width: 80%;
+    max-width: 90%;
   }
 
-  footer form input {
+  footer .container form input.form-control {
     margin-bottom: 1rem;
-    width: 80%;
+    max-width: 90%;
   }
 
-  footer form button {
+  footer .container form button {
     width: max-content;
     margin: auto;
     /* transform: scale(0.95); */
   }
 
-  footer form button:hover {
+  footer .container form button:hover {
     transform: scale(1);
   }
 }
 
-@media (max-width: 320px) {
-  footer form {
-    margin: 0 0.125rem;
-    width: 90% !important;
+@media (max-width: 575px) {
+  footer .container form {
+    max-width: 80%;
     padding: 0 0.25rem;
-  }
-
-  footer form input {
-    width: 18rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
