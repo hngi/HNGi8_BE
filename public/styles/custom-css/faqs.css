@@ -1,0 +1,25 @@
+div.card-header{
+    background-color: #f5f4fa;
+}
+
+button.btn-link {
+    color: #573F7B;
+}
+
+button.btn-link:hover {
+    color: #a079db;
+    text-decoration: none;
+}
+
+div.card {
+    margin-bottom: 10px;
+}
+
+div.card-body {
+    font-family: poppins, sans-serif;
+    color: #a079db;
+}
+
+div#accordion {
+    margin-bottom: 80px;
+}

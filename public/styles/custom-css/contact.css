@@ -1,0 +1,117 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+section.hero {
+    margin: 0 30px 0 30px;
+}
+
+.form-container {
+    margin-top: 50px;
+    max-width: 800px;
+    height: 670px;
+    background-color: #f5f4fa;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 100px;
+}
+
+.form-container p {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 24px;
+    padding-top: 40px;
+    color: #573F7B;
+}
+
+
+input#email,
+input#name,
+input#subject {
+    width: 400px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input#name,
+input#subject,
+input#email {
+    margin-top: 20px;
+}
+
+
+#message {
+    margin-top: 20px;
+    width: 400px;
+    height: 250px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+form .btn {
+    background-color: #9272C2;
+    color: #fff;
+    width: 200px;
+    margin-top: 20px;
+}
+
+form .btn:hover {
+    color: #fff;
+    background-color: #caaef5;
+}
+
+
+@media (max-width: 514px) {
+
+    section.hero {
+        margin: 0 10px 0 10px;
+    }
+    
+
+    .form-container p {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 20px;
+        padding-top: 40px;
+        color: #573F7B;
+    }
+
+    input#email,
+    input#name,
+    input#subject {
+    width: 250px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input#name {
+    margin-top: 20px;
+}
+
+input#email {
+    margin-top: 20px;
+}
+
+#message {
+    margin-top: 20px;
+    width: 250px;
+    height: 300px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+}
