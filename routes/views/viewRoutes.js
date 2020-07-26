@@ -6,7 +6,8 @@ const {
   login,
   internSignup,
   mentorSignup,
-  dashboard
+  dashboard,
+  contact
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
@@ -18,6 +19,8 @@ viewRouter.get('/', homePage);
 viewRouter.get('/login', login);
 
 viewRouter.get('/apply', internSignup);
+
+viewRouter.get('/contact', contact);
 
 viewRouter.get('/mentors/apply', mentorSignup);
 
