@@ -1,5 +1,6 @@
 const { body, validationResult } = require('express-validator');
 const Mentor = require('../models/Mentor');
+const responseHandler = require('../utils/responseHandler');
 // Application rules
 const applicationValidationRules = () => [
   body('name').isString(),
@@ -45,7 +46,47 @@ const mentorApplication = async (req, res, next) => {
   }
 };
 
+const getAllMentors = async (req, res, next) => {
+  try {
+    const mentors = await Mentor.find({});
+    return responseHandler(res, 200, 'All mentors', { mentors });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+const getAllPendingMentors = async (req, res, next) => {
+  try {
+    const mentors = await Mentor.find({ applicationState: 'pending' });
+    return responseHandler(res, 200, 'All pending mentors', { mentors });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+const getAllActiveMentors = async (req, res, next) => {
+  try {
+    const mentors = await Mentor.find({ applicationState: 'accepted' });
+    return responseHandler(res, 200, 'All active mentors', { mentors });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+const getAllDeclinedMentors = async (req, res, next) => {
+  try {
+    const mentors = await Mentor.find({ applicationState: 'declined' });
+    return responseHandler(res, 200, 'All decliined mentors', { mentors });
+  } catch (err) {
+    return next(err);
+  }
+};
+
 module.exports = {
   applicationValidationRules,
-  mentorApplication
+  mentorApplication,
+  getAllMentors,
+  getAllActiveMentors,
+  getAllDeclinedMentors,
+  getAllPendingMentors
 };
