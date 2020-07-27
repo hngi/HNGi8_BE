@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 const { body, validationResult } = require('express-validator');
 const Intern = require('../models/Intern');
+const responseHandler = require('../utils/responseHandler');
 
 // Intern Validation rules
 const internValidationRules = () => [
-  body('fullName').isString(),
+  body('name').isString(),
   body('email').isEmail(),
   body('phoneNumber').isMobilePhone()
 ];
