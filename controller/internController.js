@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { body, validationResult } = require('express-validator');
 const Intern = require('../models/Intern');
 
@@ -30,10 +31,10 @@ const internApply = async (req, res, next) => {
       res.redirect('/apply');
     //   throw new ErrorHandler(400, 'Email already used for application');
     }
-    
+
     // create the new intern application
     let newIntern = new Intern(req.body);
-    
+
     // save the application
     newIntern = await newIntern.save();
     console.log(newIntern);

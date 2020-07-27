@@ -29,6 +29,7 @@ const login = (req, res) => {
       bcrypt.compare(password, admin.password, (err, result) => {
         if (result) {
           req.session.auth = true;
+          req.session.name = admin.name;
           req.session.email = admin.email;
           req.session.role = admin.role;
           req.flash('success', 'Welcome back, You\'re logged in');
@@ -47,6 +48,8 @@ const login = (req, res) => {
 const logout = (req, res) => {
   req.session.auth = false;
   req.session.email = null;
+  req.session.name = null;
+  req.session.role = null;
   res.redirect('/');
 };
 
