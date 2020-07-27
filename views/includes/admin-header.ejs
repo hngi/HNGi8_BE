@@ -30,11 +30,14 @@
         <li class="nav-item d-flex">
           <img src="img/img.jpg" alt="user's profile photo" id="userPhoto" />
           <a class="d-flex justify-content-between align-items-center">
-            <span id="userName" class="d-sm-none d-lg-flex">Feranmi Olowookere</span>
+            <span id="userName" class="d-sm-none d-lg-flex"><%= name %></span>
             <svg class="pl-1" width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 1L8.49998 6L0.999981 1" stroke="#7E5AE3" />
             </svg>
           </a>
+        </li>
+        <li class="nav-item d-sm-none d-lg-flex" id="logout">
+          <a href="/api/v1/logout">Logout</a>
         </li>
       </ul>
     </nav>
