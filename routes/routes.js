@@ -1,6 +1,8 @@
 const express = require('express');
 
-const { homePage, login, contact, logout } = require('../controller');
+const {
+  homePage, login, contact, logout
+} = require('../controller');
 
 const { mentorApplication, applicationValidationRules } = require('../controller/mentor');
 
