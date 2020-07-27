@@ -67,7 +67,7 @@ const getAllPendingMentors = async (req, res, next) => {
 const getAllActiveMentors = async (req, res, next) => {
   try {
     const mentors = await Mentor.find({ applicationState: 'accepted' });
-    return responseHandler(res, 200, 'All pending mentors', { mentors });
+    return responseHandler(res, 200, 'All active mentors', { mentors });
   } catch (err) {
     return next(err);
   }
@@ -76,7 +76,7 @@ const getAllActiveMentors = async (req, res, next) => {
 const getAllDeclinedMentors = async (req, res, next) => {
   try {
     const mentors = await Mentor.find({ applicationState: 'declined' });
-    return responseHandler(res, 200, 'All pending mentors', { mentors });
+    return responseHandler(res, 200, 'All decliined mentors', { mentors });
   } catch (err) {
     return next(err);
   }
