@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+body{
+    background: url(/public/img/Desktop\ -\ 20.png);
+}
+p,a,h1,h2,h3,h4,h5,h6{
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile{
+    text-align: center;
+}
+.profile-pic{
+    max-width: 250px;
+    height: 250px;
+    border-radius: 100px;
+    display: block;
+    margin: auto;
+}
+.name-bio{
+    font-style: normal;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 60px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.stack-bio{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+
+.accept-decline-buttons{
+    text-align: center;
+    margin-top: 5%;
+}
+.approve{
+    outline: none;
+    border: 1px solid #4DB48E;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    width: 255px;
+    height: 60px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #4DB48E;
+    margin-right: 30px;
+}
+.decline{
+    outline: none;
+    border: 1px solid #F8444F;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    width: 255px;
+    height: 60px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #F8444F;
+}
+
+.con-head{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 60px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+
+.pd-con{
+    background: #FFFFFF;
+    box-shadow: 2px 8px 20px rgba(181, 181, 181, 0.2);
+    max-width: 487px;
+    padding: 47px;
+    height: 463px;
+    display: block;
+    margin: auto;
+}
+.pd-dis-con{
+    clear: both;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.pd-title{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.pd-subs{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+
+.ps-con{
+    background: #FFFFFF;
+    box-shadow: 2px 8px 20px rgba(181, 181, 181, 0.2);
+    max-width: 386px;
+    height: 463px;
+    padding: 47px;
+    display: block;
+    margin: auto;
+}
+.ps-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.ps-subs{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+
+.xp-con{
+    background: #FFFFFF;
+    box-shadow: 2px 8px 20px rgba(181, 181, 181, 0.2);
+    max-width: 487px;
+    padding: 47px;
+    display: block;
+    margin: auto;
+}
+.xp-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.xp-head{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.xp-sub{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.xp-desciption{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+
+.eb-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.eb-stud{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.28px;
+    color: #573F7B;    
+}
+.eb-sub{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.28px;
+    color: #573F7B;
+}
+.ebb-con{
+    background: #FFFFFF;
+    box-shadow: 2px 8px 20px rgba(181, 181, 181, 0.2);
+    max-width: 386px;
+    height: 503px;
+    padding: 47px;
+    display: block;
+    margin: auto;
+}
+
+.top{
+    margin-top: 40px;
+}
+.bottom{
+    margin-bottom: 5%;
+}
+
+.section{
+    margin-top: 10%;
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+.approve{
+    margin-bottom: 5%;
+    margin-right: 0px;
+}
+.con-head{
+    text-align: center;
+}
+.topper{
+    margin-top: 10%;
+}
+}
