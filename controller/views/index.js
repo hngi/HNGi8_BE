@@ -30,7 +30,7 @@ const contact = (req, res) => {
 };
 
 const dashboard = (req, res) => {
-  res.render('pages/dashboard', { title: 'Dashboard' });
+  res.render('pages/dashboard', { title: 'Dashboard', name: req.session.name });
 };
 
 const lastInternship = (req, res) => {

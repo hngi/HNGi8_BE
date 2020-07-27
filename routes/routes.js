@@ -1,6 +1,8 @@
 const express = require('express');
 
-const { homePage, login, contact } = require('../controller');
+const {
+  homePage, login, contact, logout
+} = require('../controller');
 
 const {
   mentorApplication, applicationValidationRules, getAllMentors,
@@ -14,6 +16,7 @@ const router = express.Router();
 router.get('/', homePage);
 router.post('/auth', login);
 router.post('/contact-us', contact);
+router.get('/logout', logout);
 router.post('/apply', internValidationRules(), internApply);
 
 // mentor routes
