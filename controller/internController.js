@@ -35,10 +35,12 @@ const internApply = async (req, res, next) => {
 
     // create the new intern application
     let newIntern = new Intern(req.body);
+    console.log(req.body);
 
     // save the application
     newIntern = await newIntern.save();
     console.log(newIntern);
+
     // return the response on success
     req.flash('success', 'Application successful. We will reach out to you.');
     return res.redirect('/apply');
