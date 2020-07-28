@@ -41,13 +41,13 @@
       <div class="col-md mb-3 p-0 px-2">
         <label for="email">Email</label>
         <div class="input-group">
-          <input type="email" class="form-control w-100" id="email" placeholder="e.g. johndoe@example.com" required>
+          <input type="email" class="form-control w-100" id="email" name="email" placeholder="e.g. johndoe@example.com" required>
           <div class="invalid-feedback"></div>
         </div>
       </div>
       <div class="col-md mb-3 p-0 px-2">
         <label for="phone">Phone Number</label>
-        <input type="phone" class="form-control" id="phone" maxlength="16" placeholder="e.g. 08023414785" required="">
+        <input type="phone" name="phoneNumber" class="form-control" id="phone" maxlength="16" placeholder="e.g. 08023414785" required="">
         <div class="invalid-feedback"></div>
       </div>
     </div>
@@ -56,12 +56,12 @@
     <div class="row">
       <div class="col-md mb-3 p-0 px-2">
         <label for="country">Country</label>
-        <input type="text" class="form-control" id="country" placeholder="Enter Country" required>
+        <input name="country" type="text" class="form-control" id="country" placeholder="Enter Country" required>
         <div class="invalid-feedback"></div>
       </div>
       <div class="col-md mb-3 p-0 px-2">
         <label for="state">State</label>
-        <input type="text" class="form-control" id="state" placeholder="Enter State" required>
+        <input name="state" type="text" class="form-control" id="state" placeholder="Enter State" required>
         <div class="invalid-feedback"></div>
       </div>
     </div>
@@ -71,7 +71,7 @@
           <div class="col-md mb-3 p-0 px-2">
             <label for="track">Track</label>
             <div class="input-group">
-              <select name="expertise" class="form-control w-100" id="expertise" required>
+              <select name="track" class="form-control w-100" id="expertise" required>
                 <option value="" selected disabled>Select Field</option>
                 <option value="frontend">Frontend</option>
                 <option value="backend">Backend</option>

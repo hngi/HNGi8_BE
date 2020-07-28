@@ -2,17 +2,11 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const { Schema } = mongoose;
+
 const internApplicationSchema = Schema({
-  fullName: {
+  name: {
     type: String,
     required: true
-  },
-
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-    minlength: 3
   },
 
   email: {
@@ -21,25 +15,19 @@ const internApplicationSchema = Schema({
     unique: true
   },
 
-  password: {
-    type: String,
-    required: true
-  },
-
   phoneNumber: {
     type: Number,
-    required: true,
-    unique: true
+    required: true
   },
 
   address: {
     type: String,
-    required: true
+    required: false
   },
 
   city: {
     type: String,
-    required: true
+    required: false
   },
 
   state: {
@@ -52,11 +40,37 @@ const internApplicationSchema = Schema({
     required: true
   },
 
+  track: {
+    type: String,
+    enum: ['frontend', 'mobile', 'design', 'backend'],
+    required: true
+  },
+
+  employmentStatus: {
+    type: String,
+    enum: ['employed', 'unemployed', 'student'],
+    default: 'unemployed'
+  },
+
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+
+  password: {
+    type: String,
+    required: false
+  },
+
+username: {
+  type: String,
+  required: false,
+  index: {unique: false},
+  minlength: 3
+}
+
 });
+
 
 internApplicationSchema.plugin(uniqueValidator);
 module.exports = mongoose.model('Interns', internApplicationSchema);
