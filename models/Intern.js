@@ -22,12 +22,12 @@ const internApplicationSchema = Schema({
 
   address: {
     type: String,
-    required: true
+    required: false
   },
 
   city: {
     type: String,
-    required: true
+    required: false
   },
 
   state: {
@@ -40,6 +40,18 @@ const internApplicationSchema = Schema({
     required: true
   },
 
+  track: {
+    type: String,
+    enum: ['frontend', 'mobile', 'design', 'backend'],
+    required: true
+  },
+
+  employmentStatus: {
+    type: String,
+    enum: ['employed', 'unemployed', 'student'],
+    default: 'unemployed'
+  },
+
   date: {
     type: Date,
     default: Date.now
@@ -47,13 +59,13 @@ const internApplicationSchema = Schema({
 
   password: {
     type: String,
-    required: true
+    required: false
   },
 
 username: {
   type: String,
-  required: true,
-  unique: true,
+  required: false,
+  index: {unique: false},
   minlength: 3
 }
 
