@@ -1,12 +1,12 @@
 // import DOM elements
-const form = document.getElementById('mentorSignupForm'),
+const form = document.getElementById('internSignupForm'),
   fullName = document.getElementById('fullName'),
   firstName = document.getElementById('firstName'),
   lastName = document.getElementById('lastName'),
   email = document.getElementById('email'),
   phoneNo = document.getElementById('phoneNo'),
   track = document.getElementById('track'),
-  cvLink = document.getElementById('cvLink'),
+  // cvLink = document.getElementById('cvLink'),
   employmentStatus = document.getElementById('employmentStatus'),
   state = document.getElementById('state'),
   country = document.getElementById('country'),
@@ -66,13 +66,26 @@ function checkEmail(input) {
 // full name validation
 function checkFullName(input) {
   input.value = input.value.trim();
-  const fullNameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+ [a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð]+$/u;
+  const fullNameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+ [ ]{1,}[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð]+$/u;
   const nameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
 
   if (fullNameRegex.test(input.value)) {
     checkLength(input, 2);
   } else if (nameRegex.test(input.value) && input.value.length >= 2) {
     showError(input, 'Please enter your last name');
+  } else if (input.value !== '') {
+    showError(input, 'Please enter a valid name');
+  } else {
+    clearError(input);
+  }
+}
+
+// check names
+function checkName(input) {
+  const re = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+
+  if (re.test(input.value)) {
+    checkLength(input, 2);
   } else if (input.value !== '') {
     showError(input, 'Please enter a valid name');
   } else {
@@ -220,7 +233,7 @@ employmentStatus.addEventListener('change', () => {
   showSuccess(employmentStatus);
 });
 
-cvLink.addEventListener('input', () => {
+/* cvLink.addEventListener('input', () => {
   clearError(cvLink);
   setTimeout(() => {
     if (cvLink.value !== '') {
@@ -229,7 +242,7 @@ cvLink.addEventListener('input', () => {
       clearError(cvLink);
     }
   }, 2000);
-});
+}); */
 
 country.addEventListener('input', () => {
   clearError(country);
@@ -252,7 +265,7 @@ form.addEventListener('submit', (event) => {
   // checkName(lastName);
   checkEmail(email);
   checkPhone(phoneNo);
-  checkURL(cvLink);
+  // checkURL(cvLink);
 
   checkRequired([
     fullName,
@@ -261,7 +274,7 @@ form.addEventListener('submit', (event) => {
     email,
     phoneNo,
     track,
-    cvLink,
+    // cvLink,
     employmentStatus,
     state,
     country,
