@@ -16,7 +16,7 @@ body {
 
 
 
-.form {
+section {
     position: relative;
 }
 
@@ -92,7 +92,7 @@ button.submit-btn:focus{
     position: absolute;
     color: #9272c2;
     right: 20px;
-    top: 58px;
+    top: 12px;
     font-size: 25px;
 }
 
@@ -101,6 +101,6 @@ button.submit-btn:focus{
     position: absolute;
     color: #9272c2;
     right: 20px;
-    top: 135px;
+    top: 12px;
     font-size: 25px;
 }
