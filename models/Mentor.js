@@ -4,7 +4,11 @@ const uniqueValidator = require('mongoose-unique-validator');
 const { Schema } = mongoose;
 
 const mentorSchema = Schema({
-  name: {
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
     type: String,
     required: true
   },
@@ -21,6 +25,14 @@ const mentorSchema = Schema({
     type: String,
     enum: ['frontend', 'mobile', 'design', 'backend'],
     required: true
+  },
+  gender: {
+    type: String,
+    required: true,
+    enum: ['male', 'female']
+  },
+  dob: {
+    type: Date
   },
   cvLink: {
     type: String,
