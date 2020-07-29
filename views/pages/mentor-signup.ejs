@@ -1,0 +1,149 @@
+<%- include('../includes/external-header')-%>
+<link rel="stylesheet" href="../styles/custom-css/mentor-signup.css">
+<div class="container d-flex flex-column align-items-center">
+  <div class="intro row">
+    <div class="col px-2">
+      <h1>Inspire the next great developers.</h1>
+      <!-- <a href="#" class="btn"></a> -->
+    </div>
+    <div class="col px-2 d-none d-md-block">
+      <img src="../img/signup-logo.svg" alt="" class="img-fluid">
+    </div>
+  </div>
+
+  <form action="/api/v1/mentors/apply" method="post" id="mentorSignupForm">
+    <% if(messages.error){ %>
+    <% messages.error.forEach(function(err){ %>
+    <div class="alert alert-danger">
+      <%- err %>
+    </div>
+    <%})%>
+    <% } %>
+    <% if(messages.success){ %>
+    <div class="alert alert-success">
+      <%- messages.success %>
+    </div>
+    <% } %>
+    <p class="px-2">Apply here:</p>
+
+    <!-- Name & Email -->
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="firstName">First Name</label>
+        <input name="firstName" type="text" class="form-control w-100" id="firstName" placeholder="e.g. John">
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="lastName">Last Name</label>
+        <input name="lastName" type="text" class="form-control w-100" id="lastName" placeholder="e.g. Doe">
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="email">Email</label>
+        <input type="email" class="form-control w-100" id="email" name="email" placeholder="e.g. johndoe@example.com">
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="phoneNo">Phone Number</label>
+        <input type="text" name="phoneNumber" class="form-control" id="phoneNo" maxlength="16"
+          placeholder="e.g. +2348012345678">
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Expertise and CV Link -->
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="track">Expertise/Track</label>
+        <select name="track" class="form-control w-100" id="track">
+          <option value="" selected disabled>Select Field</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="mobile">Mobile Development</option>
+          <option value="design">UI/UX Design</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="cvLink">CV Link</label>
+        <input type="url" class="form-control" id="cvLink" name="cvLink" placeholder="Enter CV link.">
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <!-- employment status -->
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="employmentStatus">Employment Status</label>
+        <select class="form-control" name="employmentStatus" id="employmentStatus">
+          <option disabled selected value="">Select Option</option>
+          <option value="employed">Employed</option>
+          <option value="unemployed">Unemployed</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <!-- country of residence -->
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="country">Country of Residence</label>
+        <!-- <input name="country" type="text" class="form-control w-100" id="country" placeholder="e.g. Nigeria"> -->
+        <select name="country" class="form-control w-100" id="country">
+          <option selected disabled value="">Select Country</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+      <!-- state of residence -->
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="state">State of Residence</label>
+        <input type="text" name="stateOfResidence" class="form-control" id="state" placeholder="State of Residence">
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <!-- gender and date of birth -->
+    <div class="row">
+      <!-- gender -->
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="gender">Gender</label>
+        <select class="form-control" name="gender" id="gender">
+          <option disabled selected value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+      <!-- Date of Birth -->
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="dob">Date of Birth</label>
+        <input name="dob" type="date" class="form-control w-100" id="dob">
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <!-- short description -->
+    <div class="row px-2">
+      <label for="aboutYou">Tell us about yourself and why you want to work with us?</label>
+      <textarea class="form-control" name="interest" id="aboutYou" rows="5" placeholder="Write here..."></textarea>
+      <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- terms checkbox -->
+    <div class="px-2 mt-3 d-flex align-items-center flex-wrap">
+      <input type="checkbox" id="agreed" class="custom-checkbox mr-2 mb-2">
+      <label for="agreed" style="width: 90%;">
+        I have read and accept the <a href="#">Terms & Conditions.</a>
+      </label>
+      <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="submit-btn mx-auto" id="submitBtn">Submit</button>
+    </div>
+  </form>
+</div>
+
+</form>
+<script src="../../js/custom-js/mentor-signup.js"></script>
+<%- include('../includes/footer') %>

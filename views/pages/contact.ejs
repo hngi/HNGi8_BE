@@ -1,0 +1,31 @@
+<%- include('../includes/external-header')-%>
+<link rel="stylesheet" href="/styles/custom-css/contact.css">
+
+<section class="hero">
+    <div class="container form-container text-center">
+        <p>Get in Touch</p>
+        <form action="/api/v1/contact-us" method="POST" id="contact-form" >
+            <div>
+                <input type="text" name="name" id="name" placeholder="Name">
+            </div>
+            
+            <div>
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+
+            <div>
+                <input type="text" name="subject" id="subject" placeholder="Subject">
+            </div>
+
+            <div>
+                <textarea name="message" form="contact-form" id="message" placeholder="Message"></textarea>
+            </div>
+
+            <div>
+                <button class="btn">Send</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<%- include('../includes/footer')-%>

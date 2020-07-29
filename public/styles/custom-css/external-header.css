@@ -1,0 +1,148 @@
+:root {
+  --text-color: #7e5ae3;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  /* margin: 3rem auto 60px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4rem;
+  max-height: max-content;
+  color: var(--text-color);
+}
+
+nav > div {
+  margin-left: auto;
+}
+
+nav h4 {
+  color: #9272c2;
+  margin: 0;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  margin: 0 1rem;
+  padding: 0;
+  list-style-type: none;
+  font-weight: 600;
+  background-color: inherit;
+}
+
+nav ul li {
+  margin: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li a {
+  cursor: pointer;
+  color: var(--text-color);
+  margin: 0.25rem 0;
+  position: relative;
+}
+
+nav ul li:not(:last-of-type) a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0.25rem;
+  border-radius: 20px;
+  background-color: var(--text-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+nav ul li:not(:last-of-type):hover a::after,
+nav ul li.active a::after {
+  opacity: 1;
+}
+
+nav ul li.active a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+nav ul li button.btn {
+  border: 1px solid #9272c2;
+  color: #9272c2 !important;
+  margin: 0.25rem 0;
+  /* color: #fff !important; */
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li button.btn:hover {
+  background-color: #9272c2;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+nav ul li.dropdown > div.join-zuri {
+  min-width: 5rem;
+  width: 114px;
+  height: max-content;
+  border-radius: 5px;
+  border: 1px solid #9272c2;
+  padding: 0.5rem;
+  color: #9272c2;
+}
+
+nav ul li.dropdown > div.join-zuri a {
+  width: 100%;
+  color: #9272c2;
+  padding: 0.5rem;
+  border: 1px solid #9272c2;
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+nav ul li.dropdown > div.join-zuri a:hover {
+  transition: transform 0.3s ease-in-out;
+  background-color: #9272c2;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1000px) {
+  nav ul li.nav-item {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  nav > .navbar-collapse ul {
+    margin-top: 1rem;
+  }
+
+  nav > .navbar-collapse ul li.nav-item {
+    margin-left: 0 !important;
+    justify-content: start;
+  }
+
+  nav > .navbar-collapse ul li button.btn,
+  nav > .navbar-collapse li.dropdown > div.join-zuri {
+    width: 100%;
+  }
+
+  nav ul li.dropdown > div.join-zuri a:hover,
+  nav ul li button.btn:hover {
+    transform: scale(1);
+  }
+}
