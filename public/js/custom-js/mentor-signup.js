@@ -323,6 +323,7 @@ form.addEventListener('submit', (event) => {
 
   if (agreed.checked) {
     clearError(agreed);
+    showSuccess(agreed);
     if (!Object.values(validated).includes(false)) {
       form.submit();
     }
