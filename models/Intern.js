@@ -4,7 +4,12 @@ const uniqueValidator = require('mongoose-unique-validator');
 const { Schema } = mongoose;
 
 const internApplicationSchema = Schema({
-  fullName: {
+  firstName: {
+    type: String,
+    required: true
+  },
+
+  lastName: {
     type: String,
     required: true
   },
@@ -20,22 +25,12 @@ const internApplicationSchema = Schema({
     required: true
   },
 
-  address: {
-    type: String,
-    required: false
-  },
-
-  city: {
-    type: String,
-    required: false
-  },
-
-  state: {
+  country: {
     type: String,
     required: true
   },
 
-  country: {
+  state: {
     type: String,
     required: true
   },
@@ -52,15 +47,41 @@ const internApplicationSchema = Schema({
     default: 'unemployed'
   },
 
+  gender: {
+    type: String,
+    enum: ['male', 'female'],
+    default: 'female'
+  },
+
+  birthDate: {
+    type: Date,
+    required: true
+},
+
   date: {
     type: Date,
     default: Date.now
   },
+}, 
+{
+  timestamps: true
+});
 
-  password: {
-    type: String,
-    required: false
-  },
+
+//   address: {
+//     type: String,
+//     required: false
+//   },
+
+//   city: {
+//     type: String,
+//     required: false
+//   },
+
+//   password: {
+//     type: String,
+//     required: false
+//   },
 
 // username: {
 //   type: String,
@@ -68,8 +89,6 @@ const internApplicationSchema = Schema({
 //   index: {unique: false},
 //   minlength: 3
 // }
-
-});
 
 
 internApplicationSchema.plugin(uniqueValidator);
