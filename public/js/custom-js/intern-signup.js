@@ -269,7 +269,9 @@ state.addEventListener('input', () => {
 });
 
 aboutYou.addEventListener('input', () => {
-  aboutYou.value = aboutYou.value.trim();
+  setTimeout(() => {
+    aboutYou.value = aboutYou.value.trim();
+  }, 5000);
   clearError(aboutYou);
   setTimeout(() => {
     if (aboutYou.value !== '') {
