@@ -6,13 +6,17 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.nav-container,
+.nav-container div {
+  background-color: #fff !important;
+}
 
 nav {
   /* margin: 3rem auto 60px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 4rem;
+  min-height: 5rem;
   max-height: max-content;
   color: var(--text-color);
 }
