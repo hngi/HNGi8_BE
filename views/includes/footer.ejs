@@ -11,7 +11,7 @@
         <li><a href="mailto:hello@hng.tech">hello@hng.tech</a></li>
         <li><a href="tel:+2348123456789">+234 (0) 812 345 6789</a></li>
       </div>
-    
+
       <div class="visit col-6 col-lg-3 mb-3">
         <h4>Visit</h4>
         <p>3 Birrel Avenue, Sabo. Yaba, Lagos State, Nigeria
@@ -31,9 +31,14 @@
       <button type="submit" class="mx-auto">Subscribe</button>
     </form>
   </div>
-  
-  <small>2020 HNG Internship. All Rights Reserved.</small>
+
+  <% let date = new Date(), 
+      year = date.getFullYear();
+  %>
+
+  <small>&#169; <%- year %> HNG Internship. All Rights Reserved.</small>
 </footer>
-<link rel="stylesheet" href="../styles/custom-css/footer.css">
+<link rel="stylesheet" href="../../styles/custom-css/footer.css">
 </body>
+
 </html>

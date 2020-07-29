@@ -11,43 +11,53 @@
     </div>
   </div>
 
-  <form action="/api/v1/apply" method="post">
+  <form action="/api/v1/apply" method="post" id="internSignupForm">
     <% if(messages.error){ %>
-      <% messages.error.forEach(function(err){ %> 
-        <div class="alert alert-danger">
-          <%- err %>
-      </div>
-      <%})%>
-  <% } %>
-  <% if(messages.success){ %>
-    <div class="alert alert-success">
-        <%- messages.success %>
+    <% messages.error.forEach(function(err){ %>
+    <div class="alert alert-danger">
+      <%- err %>
     </div>
-  <% } %>
+    <%})%>
+    <% } %>
+    <% if(messages.success){ %>
+    <div class="alert alert-success">
+      <%- messages.success %>
+    </div>
+    <% } %>
 
-  <p class="px-2">Register here:</p>
+    <p class="px-2">Apply here:</p>
 
     <!-- Name & Email -->
     <div class="row">
       <div class="col-md mb-3 p-0 px-2">
-        <label for="name">Full Name</label>
-        <div class="input-group">
-          <input name="name" type="text" class="form-control w-100" id="fname" placeholder="e.g. John Doe" required>
-          <div class="invalid-feedback"></div>
-        </div>
+        <label for="fullName">Full Name</label>
+        <input name="fullName" type="text" class="form-control w-100" id="fullName" placeholder="e.g. John Doe">
+        <div class="invalid-feedback"></div>
       </div>
+      <!-- 
+       <div class="col-md mb-3 p-0 px-2">
+        <label for="firstName">First Name</label>
+        <input name="name" type="text" class="form-control w-100" id="firstName" placeholder="e.g. John">
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="lastName">Last Name</label>
+        <input name="name" type="text" class="form-control w-100" id="lastName" placeholder="e.g. Doe">
+        <div class="invalid-feedback"></div>
+      </div> -->
     </div>
+
+    <!-- email and phone number -->
     <div class="row">
       <div class="col-md mb-3 p-0 px-2">
         <label for="email">Email</label>
-        <div class="input-group">
-          <input type="email" class="form-control w-100" id="email" name="email" placeholder="e.g. johndoe@example.com" required>
-          <div class="invalid-feedback"></div>
-        </div>
+        <input type="email" class="form-control w-100" id="email" name="email" placeholder="e.g. johndoe@example.com">
+        <div class="invalid-feedback"></div>
       </div>
       <div class="col-md mb-3 p-0 px-2">
-        <label for="phone">Phone Number</label>
-        <input type="phone" name="phoneNumber" class="form-control" id="phone" maxlength="16" placeholder="e.g. 08023414785" required="">
+        <label for="phoneNo">Phone Number</label>
+        <input type="tel" name="phoneNumber" class="form-control" id="phoneNo" maxlength="16"
+          placeholder="e.g. 08023414785">
         <div class="invalid-feedback"></div>
       </div>
     </div>
@@ -55,46 +65,51 @@
     <!-- Country and State -->
     <div class="row">
       <div class="col-md mb-3 p-0 px-2">
-        <label for="country">Country</label>
-        <input name="country" type="text" class="form-control" id="country" placeholder="Enter Country" required>
+        <label for="country">Country
+          <!-- of Residence --></label>
+        <!-- <input name="country" type="text" class="form-control" id="country" placeholder="Enter Country"> -->
+        <select name="country" class="form-control w-100" id="country">
+          <option selected disabled value="">Select Country</option>
+        </select>
         <div class="invalid-feedback"></div>
       </div>
       <div class="col-md mb-3 p-0 px-2">
-        <label for="state">State</label>
-        <input name="state" type="text" class="form-control" id="state" placeholder="Enter State" required>
+        <label for="state">State
+          <!-- of Residence --></label>
+        <input name="state" type="text" class="form-control" id="state" placeholder="Enter State">
         <div class="invalid-feedback"></div>
       </div>
     </div>
 
-        <!-- Track and Employment Status -->
-        <div class="row">
-          <div class="col-md mb-3 p-0 px-2">
-            <label for="track">Track</label>
-            <div class="input-group">
-              <select name="track" class="form-control w-100" id="expertise" required>
-                <option value="" selected disabled>Select Field</option>
-                <option value="frontend">Frontend</option>
-                <option value="backend">Backend</option>
-                <option value="mobile">Mobile Development</option>
-                <option value="design">UI/UX Design</option>
-              </select>
-              <div class="invalid-feedback"></div>
-            </div>
-          </div>
-          <div class="col-md mb-3 p-0 px-2">
-            <label for="employmentStatus">Employment Status</label>
-            <select class="form-control" name="employmentStatus" id="employmentStatus">
-              <option disabled selected>Select Option</option>
-              <option value="employed">Employed</option>
-              <option value="unemployed">Unemployed</option>
-            </select>
-          </div>
-        </div>
-    
-    <!-- Description -->
+    <!-- Track and Employment Status -->
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="track">Track</label>
+        <select name="track" class="form-control w-100" id="track">
+          <option value="" selected disabled value="">Select Field</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="mobile">Mobile Development</option>
+          <option value="design">UI/UX Design</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="employmentStatus">Employment Status</label>
+        <select class="form-control" name="employmentStatus" id="employmentStatus">
+          <option disabled selected value="">Select Option</option>
+          <option value="employed">Employed</option>
+          <option value="unemployed">Unemployed</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Short Description -->
     <div class="row px-2">
-      <label for="description">Tell us about yourself and why you want to work with us?</label>
-      <textarea class="form-control" name="reason" id="reason" rows="5" placeholder="Write here..." ></textarea>
+      <label for="aboutYou">Tell us about yourself and why you want to work with us?</label>
+      <textarea class="form-control" name="reason" id="aboutYou" rows="5" placeholder="Write here..."></textarea>
+      <div class="invalid-feedback"></div>
     </div>
     <div class="row">
       <button type="submit" class="submit-btn mx-auto">Submit</button>
@@ -134,5 +149,5 @@
       </div>
     </div> -->
 </form>
-
+<script src="../../js/custom-js/intern-signup.js"></script>
 <%- include('../includes/footer') %>
