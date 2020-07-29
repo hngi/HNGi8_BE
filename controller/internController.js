@@ -5,7 +5,7 @@ const responseHandler = require('../utils/responseHandler');
 
 // Intern Validation rules
 const internValidationRules = () => [
-  body('name').isString(),
+  body('fullName').isString(),
   body('email').isEmail(),
   body('phoneNumber').isMobilePhone()
 ];
