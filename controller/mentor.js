@@ -3,7 +3,8 @@ const Mentor = require('../models/Mentor');
 const responseHandler = require('../utils/responseHandler');
 // Application rules
 const applicationValidationRules = () => [
-  body('name').isString(),
+  body('firstName').isString(),
+  body('lastName').isString(),
   body('email').isEmail(),
   body('phoneNumber').isMobilePhone(),
   body('cvLink').optional().isURL()
@@ -31,15 +32,17 @@ const mentorApplication = async (req, res, next) => {
       res.redirect('/mentors/apply');
     //   throw new ErrorHandler(400, 'Email already used for application');
     }
+    // Fix the date of birth in req.body
+    req.body.dob = new Date(req.body.dob);
     // create the new mentor application
     let newMentor = new Mentor(req.body);
     // save the application
     newMentor = await newMentor.save();
-    console.log(newMentor);
+    console.log('New mentor: ', newMentor);
     // return the response on success
     req.flash('success', 'Application successful. We will reach out to you.');
-    return res.redirect('/mentors/apply');
-    // return responseHandler(res, 201, 'Application successful', { mentor: newMentor });
+    // return res.redirect('/mentors/apply');
+    return responseHandler(res, 201, 'Application successful', { mentor: newMentor });
   } catch (err) {
     req.flash('error', err.message);
     return res.redirect('/mentors/apply');
