@@ -288,7 +288,21 @@ a{
     letter-spacing: -0.28px;
     color: #573F7B;
 }
-
+.move{
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    z-index: 2;
+}
+#con{
+    position: relative;
+}
+.move-2{
+    position: absolute;
+    top: 450px;
+    left: 750px;
+    z-index: 2;
+}
 .view-more{
     text-align: center;
     background: #9272C2;
@@ -508,6 +522,35 @@ a{
     font-size: 80px;
     
 }
+.move{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+}
+.move-2{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+}
+.car-img{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.txt-box-6{
+    margin: auto;
+}
 #cur-cur{
     position: relative;
     top: 0;
@@ -534,6 +577,10 @@ a{
     font-size: 10px;
     font-weight: 600;
     line-height: inherit;
+}
+.car-img{
+    position: absolute;
+    left: 12%;
 }
 }
 
@@ -634,10 +681,15 @@ a{
      }
      .txt-box-6{
          padding: 30px;
+         max-width: 350px;
      }
      .car-dis{
-         line-height: inherit;
+        line-height: 24px;
+        font-size: 12px;
      }
+     .car-head{
+        line-height: inherit;
+    }
      .head-6{
          margin-bottom: 10%;
          font-size: 30px;
@@ -684,6 +736,35 @@ a{
     }
     .starting-hero{
         margin-top: 10%;
+    }
+    .car-img{
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .txt-box-6{
+        margin: auto;
+    }
+    .move{
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 5%;
+    }
+    .move-2{
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 5%;
     }
 }
 
@@ -783,11 +864,16 @@ a{
      padding: 10px;
  }
  .txt-box-6{
-     padding: 30px;
+    padding: 30px;
+    margin: auto;
+    max-width: 300px;
  }
  .car-dis{
      line-height: inherit;
  }
+ .car-head{
+    line-height: inherit;
+}
  .head-6{
      margin-bottom: 10%;
      font-size: 30px;
@@ -838,5 +924,36 @@ a{
 .bas{
     width: 210px;
     font-size: 18px;
+}
+.move-2{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+}
+.move{
+   position: relative;
+   top: 0;
+   left: 0;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   padding-bottom: 5%;
+  margin-top: 0px;
+}
+.car-img{
+   position: relative;
+   top: 0;
+   left: 0;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100%;
+}
+.carousel-control-prev, .carousel-control-next {
+   display: none;
 }
 }
