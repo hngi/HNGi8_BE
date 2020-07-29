@@ -62,12 +62,12 @@ const internApplicationSchema = Schema({
     required: false
   },
 
-username: {
-  type: String,
-  required: false,
-  index: {unique: false},
-  minlength: 3
-}
+// username: {
+//   type: String,
+//   required: false,
+//   index: {unique: false},
+//   minlength: 3
+// }
 
 });
 
