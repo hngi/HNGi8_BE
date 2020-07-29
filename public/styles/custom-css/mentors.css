@@ -513,3 +513,14 @@ body{
 }
 
 }
+
+@media(max-width: 332px){
+	.sec1 {
+		margin-top: 20em;
+	}
+
+	.ment-title h2 {
+
+	font-size: 24px;
+
+	}
