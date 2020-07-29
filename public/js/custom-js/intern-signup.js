@@ -1,6 +1,6 @@
 // import DOM elements
 const form = document.getElementById('internSignupForm'),
-  fullName = document.getElementById('fullName'),
+  // fullName = document.getElementById('fullName'),
   firstName = document.getElementById('firstName'),
   lastName = document.getElementById('lastName'),
   email = document.getElementById('email'),
@@ -10,7 +10,10 @@ const form = document.getElementById('internSignupForm'),
   employmentStatus = document.getElementById('employmentStatus'),
   state = document.getElementById('state'),
   country = document.getElementById('country'),
+  gender = document.getElementById('gender'),
+  dob = document.getElementById('dob'),
   aboutYou = document.getElementById('aboutYou'),
+  agreed = document.getElementById('agreed'),
   submitBtn = document.getElementById('submitBtn');
 
 // object for storing validation status (variable)
@@ -85,7 +88,7 @@ function checkFullName(input) {
 
 // check names
 function checkName(input) {
-  const re = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+  const re = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]+$/u;
 
   if (re.test(input.value)) {
     checkLength(input, 2);
@@ -172,6 +175,8 @@ function getFieldName(input) {
       return 'Employment Status';
     case 'PhoneNo':
       return 'Phone Number';
+    case 'Dob':
+      return 'Date of Birth';
     case 'AboutYou':
       return 'A Short Description';
     default:
@@ -180,12 +185,28 @@ function getFieldName(input) {
 }
 
 // event listeners
-fullName.addEventListener('input', () => {
+/* fullName.addEventListener('input', () => {
   clearError(fullName);
 });
 fullName.addEventListener('blur', () => {
   fullName.value = fullName.value.trim();
   checkFullName(fullName);
+}); */
+
+firstName.addEventListener('input', () => {
+  clearError(firstName);
+});
+firstName.addEventListener('blur', () => {
+  firstName.value = firstName.value.trim();
+  checkName(firstName);
+});
+
+lastName.addEventListener('input', () => {
+  clearError(lastName);
+});
+lastName.addEventListener('blur', () => {
+  lastName.value = lastName.value.trim();
+  checkName(lastName);
 });
 
 email.addEventListener('input', () => {
@@ -223,7 +244,7 @@ employmentStatus.addEventListener('change', () => {
 
 country.addEventListener('change', () => {
   clearError(country);
-  showSuccess(country)
+  showSuccess(country);
 });
 
 state.addEventListener('input', () => {
@@ -232,6 +253,23 @@ state.addEventListener('input', () => {
 state.addEventListener('blur', () => {
   state.value = state.value.trim();
   checkLength(state, 3);
+});
+
+gender.addEventListener('change', () => {
+  clearError(gender);
+  showSuccess(gender);
+});
+
+dob.addEventListener('change', () => {
+  if (Boolean(+dob.value.split('-')[0] > 1900)) {
+    clearError(dob);
+    showSuccess(dob);
+  } else if (Boolean(+dob.value.split('-')[0] > 999)) {
+    setTimeout(() => {
+      clearError(dob);
+      showError(dob, 'Invalid Year');
+    }, 2000);
+  }
 });
 
 aboutYou.addEventListener('input', () => {
@@ -248,17 +286,17 @@ aboutYou.addEventListener('blur', () => {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  checkFullName(fullName);
-  // checkName(firstName);
-  // checkName(lastName);
+  // checkFullName(fullName);
+  checkName(firstName);
+  checkName(lastName);
   checkEmail(email);
   checkPhone(phoneNo);
   // checkURL(cvLink);
 
   checkRequired([
-    fullName,
-    // firstName,
-    // lastName,
+    // fullName,
+    firstName,
+    lastName,
     email,
     phoneNo,
     track,
@@ -266,11 +304,18 @@ form.addEventListener('submit', (event) => {
     employmentStatus,
     state,
     country,
+    gender,
+    dob,
     aboutYou,
   ]);
 
-  if (!Object.values(validated).includes(false)) {
-    form.submit();
+  if (agreed.checked) {
+    clearError(agreed);
+    if (!Object.values(validated).includes(false)) {
+      form.submit();
+    }
+  } else {
+    showError(agreed, 'Please accept the Terms and Conditions to continue.');
   }
 });
 
