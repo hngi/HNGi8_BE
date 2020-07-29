@@ -181,6 +181,7 @@ function getFieldName(input) {
 
 // event listeners
 fullName.addEventListener('input', () => {
+  fullName.value = fullName.value.trim();
   clearError(fullName);
 
   setTimeout(() => {
@@ -189,6 +190,7 @@ fullName.addEventListener('input', () => {
 });
 
 /* firstName.addEventListener('input', () => {
+  firstName.value = firstName.value.trim();
   clearError(firstName);
 
   setTimeout(() => {
@@ -197,6 +199,7 @@ fullName.addEventListener('input', () => {
 });
 
 lastName.addEventListener('input', () => {
+  lastName.value = lastName.value.trim();
   clearError(lastName);
 
   setTimeout(() => {
@@ -205,6 +208,7 @@ lastName.addEventListener('input', () => {
 }); */
 
 email.addEventListener('input', () => {
+  email.value = email.value.trim();
   clearError(email);
   setTimeout(() => {
     if (email.value !== '') {
@@ -216,6 +220,7 @@ email.addEventListener('input', () => {
 });
 
 phoneNo.addEventListener('input', () => {
+  phoneNo.value = phoneNo.value.trim();
   clearError(phoneNo);
   setTimeout(() => {
     if (phoneNo.value !== '') {
@@ -237,6 +242,7 @@ employmentStatus.addEventListener('change', () => {
 });
 
 cvLink.addEventListener('input', () => {
+  cvLink.value = cvLink.value.trim();
   clearError(cvLink);
   setTimeout(() => {
     if (cvLink.value !== '') {
@@ -247,7 +253,7 @@ cvLink.addEventListener('input', () => {
   }, 2000);
 });
 
-country.addEventListener('input', () => {
+country.addEventListener('change', () => {
   clearError(country);
   setTimeout(() => {
     checkLength(country, 3);
@@ -255,6 +261,7 @@ country.addEventListener('input', () => {
 });
 
 state.addEventListener('input', () => {
+  state.value = state.value.trim();
   clearError(state);
   setTimeout(() => {
     checkLength(state, 3);
@@ -262,7 +269,13 @@ state.addEventListener('input', () => {
 });
 
 aboutYou.addEventListener('input', () => {
+  aboutYou.value = aboutYou.value.trim();
   clearError(aboutYou);
+  setTimeout(() => {
+    if (aboutYou.value !== '') {
+      showSuccess(aboutYou);
+    }
+  }, 2000);
 });
 
 // form submissions
