@@ -43,22 +43,31 @@ h1 {
 }
 
 .container > form {
-  min-width: 20rem;
+  min-width: 18rem;
   max-width: 50rem;
   margin-bottom: 2rem;
 }
 
 .container > form input.form-control,
 .container > form select.form-control {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   height: 3rem !important;
   /* max-width: 392px !important; */
-  border: 1px solid #bfbaba !important;
+  border: 1px solid #bfbaba;
   border-radius: 5px !important;
 }
 
+.container > form select.form-control {
+  -moz-appearance: 'window';
+  -webkit-appearance: none;
+  background-position: right 0.5em bottom 50%;
+  background-repeat: no-repeat;
+  background-image: url('../../img/icons/select-arrow.svg');
+  padding-right: 30px;
+}
+
 .container > form textarea.form-control {
-  border: 1px solid #bfbaba !important;
+  border: 1px solid #bfbaba;
   border-radius: 5px !important;
 }
 
@@ -66,7 +75,7 @@ h1 {
   width: 238px !important;
   height: 3rem;
   margin-top: 30px;
-  background-color: #573F7B;
+  background-color: #573f7b;
   color: #fff;
   border: 1.5px solid #9272c2;
   border-radius: 5px;
@@ -78,4 +87,15 @@ h1 {
   color: #fff;
   background-color: #9272c2 !important;
   border: 1.5px solid #9272c2;
+}
+
+/* validation styling */
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  border-color: #dc3545 !important;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: #28a745 !important;
 }
