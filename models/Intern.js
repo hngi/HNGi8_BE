@@ -4,7 +4,7 @@ const uniqueValidator = require('mongoose-unique-validator');
 const { Schema } = mongoose;
 
 const internApplicationSchema = Schema({
-  name: {
+  fullName: {
     type: String,
     required: true
   },
