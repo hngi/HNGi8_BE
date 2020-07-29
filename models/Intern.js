@@ -53,7 +53,7 @@ const internApplicationSchema = Schema({
     default: 'female'
   },
 
-  birthDate: {
+  dob: {
     type: Date,
     required: true
 },
