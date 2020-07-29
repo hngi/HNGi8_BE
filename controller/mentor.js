@@ -37,12 +37,12 @@ const mentorApplication = async (req, res, next) => {
     // create the new mentor application
     let newMentor = new Mentor(req.body);
     // save the application
+    // eslint-disable-next-line no-unused-vars
     newMentor = await newMentor.save();
-    console.log('New mentor: ', newMentor);
     // return the response on success
     req.flash('success', 'Application successful. We will reach out to you.');
-    // return res.redirect('/mentors/apply');
-    return responseHandler(res, 201, 'Application successful', { mentor: newMentor });
+    return res.redirect('/mentors/apply');
+    // return responseHandler(res, 201, 'Application successful', { mentor: newMentor });
   } catch (err) {
     req.flash('error', err.message);
     return res.redirect('/mentors/apply');
