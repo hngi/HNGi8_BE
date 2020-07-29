@@ -182,53 +182,33 @@ function getFieldName(input) {
 // event listeners
 fullName.addEventListener('input', () => {
   clearError(fullName);
-
-  setTimeout(() => {
-    fullName.value = fullName.value.trim();
-    checkFullName(fullName);
-  }, 2500);
 });
-
-/* firstName.addEventListener('input', () => {
-  clearError(firstName);
-  
-  setTimeout(() => {
-    firstName.value = firstName.value.trim();
-    checkName(firstName);
-  }, 2500);
+fullName.addEventListener('blur', () => {
+  fullName.value = fullName.value.trim();
+  checkFullName(fullName);
 });
-
-lastName.addEventListener('input', () => {
-  clearError(lastName);
-  
-  setTimeout(() => {
-    lastName.value = lastName.value.trim();
-    checkName(lastName);
-  }, 2500);
-}); */
 
 email.addEventListener('input', () => {
-  email.value = email.value.trim();
   clearError(email);
-  setTimeout(() => {
-    if (email.value !== '') {
-      checkEmail(email);
-    } else {
-      clearError(email);
-    }
-  }, 2000);
+});
+email.addEventListener('blur', () => {
+  if (email.value !== '') {
+    checkEmail(email);
+  } else {
+    clearError(email);
+  }
 });
 
 phoneNo.addEventListener('input', () => {
   phoneNo.value = phoneNo.value.trim();
   clearError(phoneNo);
-  setTimeout(() => {
-    if (phoneNo.value !== '') {
-      checkPhone(phoneNo);
-    } else {
-      clearError(phoneNo);
-    }
-  }, 2000);
+});
+phoneNo.addEventListener('blur', () => {
+  if (phoneNo.value !== '') {
+    checkPhone(phoneNo);
+  } else {
+    clearError(phoneNo);
+  }
 });
 
 track.addEventListener('change', () => {
@@ -255,29 +235,25 @@ cvLink.addEventListener('input', () => {
 
 country.addEventListener('change', () => {
   clearError(country);
-  setTimeout(() => {
-    checkLength(country, 3);
-  }, 2000);
+  showSuccess(country)
 });
 
 state.addEventListener('input', () => {
-  state.value = state.value.trim();
   clearError(state);
-  setTimeout(() => {
-    checkLength(state, 3);
-  }, 2000);
+});
+state.addEventListener('blur', () => {
+  state.value = state.value.trim();
+  checkLength(state, 3);
 });
 
 aboutYou.addEventListener('input', () => {
-  setTimeout(() => {
-    aboutYou.value = aboutYou.value.trim();
-  }, 5000);
   clearError(aboutYou);
-  setTimeout(() => {
-    if (aboutYou.value !== '') {
-      showSuccess(aboutYou);
-    }
-  }, 2000);
+});
+aboutYou.addEventListener('blur', () => {
+  aboutYou.value = aboutYou.value.trim();
+  if (aboutYou.value !== '') {
+    showSuccess(aboutYou);
+  }
 });
 
 // form submissions
