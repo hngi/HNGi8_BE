@@ -466,6 +466,10 @@ a{
     color: #573F7B;
     margin-bottom: 5%;
 }
+.car-img{
+    position: absolute;
+    left: 12%;
+}
 #spon-con{
     margin-bottom: 20px;
 }
