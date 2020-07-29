@@ -66,13 +66,16 @@ function checkEmail(input) {
 // full name validation
 function checkFullName(input) {
   input.value = input.value.trim();
-  const fullNameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+ [ ]{1,}[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð]+$/u;
-  const nameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+  const fullNameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]+ [a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð]+$/u;
+  const nameWithSpaceRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]+[ ]{2,}[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð]+$/u;
+  const nameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]+$/u;
 
   if (fullNameRegex.test(input.value)) {
     checkLength(input, 2);
   } else if (nameRegex.test(input.value) && input.value.length >= 2) {
     showError(input, 'Please enter your last name');
+  } else if (nameWithSpaceRegex.test(input.value)) {
+    showError(input, 'Please delete the extra whitespace');
   } else if (input.value !== '') {
     showError(input, 'Please enter a valid name');
   } else {
@@ -246,10 +249,16 @@ employmentStatus.addEventListener('change', () => {
 
 country.addEventListener('input', () => {
   clearError(country);
+  setTimeout(() => {
+    checkLength(country, 3);
+  }, 2000);
 });
 
 state.addEventListener('input', () => {
   clearError(state);
+  setTimeout(() => {
+    checkLength(state, 3);
+  }, 2000);
 });
 
 aboutYou.addEventListener('input', () => {
@@ -285,3 +294,26 @@ form.addEventListener('submit', (event) => {
     form.submit();
   }
 });
+
+// get countries list from API and populate select
+async function getCountriesList() {
+  const res = await fetch('https://restcountries.eu/rest/v2/all');
+
+  const data = await res.json();
+  return data.sort((a, b) => {
+    return a.value < b.value ? -1 : 1;
+  });
+}
+
+async function fillCountries() {
+  const countries = await getCountriesList();
+
+  countries.forEach((country) => {
+    // console.log(country);
+    document.getElementById(
+      'country'
+    ).innerHTML += `<option value='${country.name.trim()}'>${country.name.trim()}</option>`;
+  });
+}
+
+fillCountries();
