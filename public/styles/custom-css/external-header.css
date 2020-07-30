@@ -6,12 +6,12 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.nav-container,
+/* .nav-container,
 .nav-container div {
-  background-color: #fff !important;
-}
+  /* background-color: #fff !important; /
+} */
 
-nav {
+header {
   /* margin: 3rem auto 60px; */
   display: flex;
   justify-content: space-between;
@@ -21,17 +21,17 @@ nav {
   color: var(--text-color);
 }
 
-nav > div {
+/* header > nav {
   margin-left: auto;
-}
+} */
 
-nav h4 {
+header h4 {
   color: #9272c2;
   margin: 0;
   font-weight: 700;
 }
 
-nav ul {
+header ul {
   display: flex;
   margin: 0 1rem;
   padding: 0;
@@ -40,21 +40,21 @@ nav ul {
   background-color: inherit;
 }
 
-nav ul li {
+header ul li {
   margin: 0 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-nav ul li a {
+header ul li a {
   cursor: pointer;
   color: var(--text-color);
   margin: 0.25rem 0;
   position: relative;
 }
 
-nav ul li:not(:last-of-type) a::after {
+header ul li:not(:last-of-type) a::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -68,22 +68,22 @@ nav ul li:not(:last-of-type) a::after {
   transition: opacity 0.3s ease-in-out;
 }
 
-nav ul li:not(:last-of-type):hover a::after,
-nav ul li.active a::after {
+header ul li:not(:last-of-type):hover a::after,
+header ul li.active a::after {
   opacity: 1;
 }
 
-nav ul li.active a {
+header ul li.active a {
   color: var(--text-color);
   text-decoration: none;
 }
 
-nav ul li a:hover {
+header ul li a:hover {
   color: var(--text-color);
   text-decoration: none;
 }
 
-nav ul li button.btn {
+header ul li button.btn {
   border: 1px solid #9272c2;
   color: #9272c2 !important;
   margin: 0.25rem 0;
@@ -91,13 +91,13 @@ nav ul li button.btn {
   transition: transform 0.3s ease-in-out;
 }
 
-nav ul li button.btn:hover {
+header ul li button.btn:hover {
   background-color: #9272c2;
   color: #fff !important;
   transform: scale(1.05);
 }
 
-nav ul li.dropdown > div.join-zuri {
+header ul li.dropdown > div.join-zuri {
   min-width: 5rem;
   width: 114px;
   height: max-content;
@@ -107,7 +107,7 @@ nav ul li.dropdown > div.join-zuri {
   color: #9272c2;
 }
 
-nav ul li.dropdown > div.join-zuri a {
+header ul li.dropdown > div.join-zuri a {
   width: 100%;
   color: #9272c2;
   padding: 0.5rem;
@@ -117,7 +117,7 @@ nav ul li.dropdown > div.join-zuri a {
   margin: 0.5rem 0;
 }
 
-nav ul li.dropdown > div.join-zuri a:hover {
+header ul li.dropdown > div.join-zuri a:hover {
   transition: transform 0.3s ease-in-out;
   background-color: #9272c2;
   color: #fff !important;
@@ -125,28 +125,62 @@ nav ul li.dropdown > div.join-zuri a:hover {
 }
 
 @media (max-width: 1000px) {
-  nav ul li.nav-item {
+  header ul li.nav-item {
     margin-bottom: 0.5rem;
   }
 }
 
 @media (max-width: 991px) {
-  nav > .navbar-collapse ul {
+  header {
+    padding: 0.5rem 136px !important;
+  }
+
+  header > .navbar-collapse ul {
     margin-top: 1rem;
   }
 
-  nav > .navbar-collapse ul li.nav-item {
+  header > .navbar-collapse ul li.nav-item {
     margin-left: 0 !important;
     justify-content: start;
   }
 
-  nav > .navbar-collapse ul li button.btn,
-  nav > .navbar-collapse li.dropdown > div.join-zuri {
+  header > .navbar-collapse ul li button.btn,
+  header > .navbar-collapse li.dropdown > div.join-zuri {
     width: 100%;
   }
 
-  nav ul li.dropdown > div.join-zuri a:hover,
-  nav ul li button.btn:hover {
+  header ul li.dropdown > div.join-zuri a:hover,
+  header ul li button.btn:hover {
     transform: scale(1);
+  }
+}
+
+@media (min-width: 1025px) {
+  header {
+    padding: 0.5rem 136px !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1024px) {
+  header {
+    padding: 0.5rem 3.9% !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 990px) {
+  header {
+    padding: 0.5rem 5.668% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 2.5rem !important;
+  }
+}
+
+@media (max-width: 475px) {
+  header {
+    padding: 0.5rem 5% !important;
   }
 }

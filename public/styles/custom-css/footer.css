@@ -76,10 +76,6 @@ footer small {
 }
 
 @media (max-width: 970px) {
-  footer .container div.row div {
-    text-align: center;
-  }
-
   div.contact li:not(:first-of-type),
   div.social-media li:not(:first-of-type) {
     margin-top: 0.5rem;
@@ -109,3 +105,17 @@ footer small {
   }
 }
 
+@media (max-width: 425px) {
+  footer {
+    padding: 30px;
+  }
+  footer .container .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .container .row > div.col-6 {
+    padding: 0;
+    max-width: 100% !important;
+  }
+}
