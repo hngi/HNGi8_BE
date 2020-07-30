@@ -27,7 +27,7 @@ const internApplicationSchema = Schema({
 
   country: {
     type: String,
-    required: true
+    required: [true, 'is required']
   },
 
   state: {
