@@ -1,6 +1,7 @@
-.sidebar-container {
+.sidebar-container,
+.main {
   position: relative;
-  min-height: 100%;
+  min-height: max-content;
 }
 
 .sidebar {
@@ -8,9 +9,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
+  min-height: 100vh;
+  max-height: 100%;
   width: var(--sidebar-width);
-  position: fixed;
+  max-width: 75%;
+  position: absolute;
   z-index: 100;
   top: 0;
   left: 0;
@@ -18,19 +21,19 @@
   padding: 0 2rem;
   background-color: #9272c2;
   overflow-x: hidden;
-  transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
 }
 
-.sidebar.show {
-  transform: translateX(0);
+.sidebar.hide {
+  transform: translateX(-100%);
+  /* transform: translateX(0); */
 }
 
 #sidebarToggler {
   fill: #9272c2;
   position: absolute;
   left: 0;
-  top: 0.75rem;
+  top: 1.25rem;
   padding: 6px 0;
 }
 
@@ -42,7 +45,7 @@
 
 .sidebar div.logo-section {
   margin-top: 1rem;
-  height: 2rem;
+  height: 3rem;
   margin-bottom: 2.75rem;
 }
 
@@ -70,6 +73,23 @@
   color: #ffffff50;
 }
 
+.sidebar > ul > li {
+  position: relative;
+  width: 100%;
+}
+
+.sidebar > ul > li.show::after,
+.sidebar > ul > li:hover::after {
+  content: '';
+  position: absolute;
+  width: 0.5rem;
+  height: 3rem;
+  top: 2px;
+  right: -2rem;
+  border-radius: 20px;
+  background-color: #eec5cd;
+}
+
 .sidebar > ul li.active *,
 .sidebar > ul li:hover > a {
   color: #fff;
@@ -86,7 +106,7 @@
 }
 
 .sidebar > ul > li:hover a {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .sidebar ul li a svg:first-of-type {
@@ -110,15 +130,29 @@
   list-style-type: none;
 }
 
-.sidebar li.active ul.sub-list,
+.sidebar li.show svg:last-of-type:not(:first-of-type),
+.sidebar li:hover svg:last-of-type:not(:first-of-type) {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar li.show ul.sub-list,
 .sidebar li:hover ul.sub-list {
   display: block;
+  background-color: #ede8f310;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.sidebar > ul > li.show > a {
+  color: white;
 }
 
 .sidebar ul.sub-list li.sub-list-item {
   padding: 0.25rem;
   font-weight: 400;
   font-size: 1rem;
+  margin: 0.625rem auto;
 }
 
 .sidebar ul.sub-list li.sub-list-item:hover,
@@ -134,5 +168,33 @@
 }
 
 .sidebar ul.sub-list li.sub-list-item a:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
+}
+
+div.body {
+  height: max-content;
+  position: relative;
+  width: 100%;
+}
+
+/*container margins */
+.container-fluid {
+  padding: 0 30px;
+}
+
+@media (min-width: 992px) {
+  .sidebar.hide,
+  .sidebar {
+    transform: translateX(0);
+    left: -18rem;
+  }
+
+  .main {
+    transform: translateX(var(--sidebar-width));
+    width: calc(100% - var(--sidebar-width));
+  }
+
+  .container-fluid {
+    padding: 0 50px 0 30px;
+  }
 }

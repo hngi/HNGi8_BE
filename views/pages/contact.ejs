@@ -1,31 +1,72 @@
 <%- include('../includes/external-header')-%>
-<link rel="stylesheet" href="/styles/custom-css/contact.css">
 
-<section class="hero">
-    <div class="container form-container text-center">
-        <p>Get in Touch</p>
-        <form action="/api/v1/contact-us" method="POST" id="contact-form" >
-            <div>
-                <input type="text" name="name" id="name" placeholder="Name">
+<link rel="stylesheet" href="../styles/custom-css/contact-page.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<!--CONTENT-->
+<div class="container">
+    <div class="row contact-page"> 
+      <div class="col-lg-6">
+        <div class="contactp">
+          <div class="text-center" style="padding-top: 10px;">
+            <h4 class="header">Contact Us</h4>
+          </div>
+            
+            <div class="icons">
+              <img src="../img/location.svg">
+              <p class="text"> 3 Barrel Avenue Sabo Yaba,<br /> Lagos State, Nigeria.</p>
+            </div>
+            <div class="icons"> 
+              <img src="../img/mail.svg">
+              <p class="text"> hello@Zuri.tech</p>
+            </div>
+            <div class="icons">
+              <img src="../img/phone.svg">
+              <p class="text"> +234 816 087 7462</p>
             </div>
             
-            <div>
-                <input type="email" name="email" id="email" placeholder="Email">
+            <div class= "text-center">
+              <h4 class=" header-two">Connect With Us</h4>
             </div>
+            <div class="footer-icons text-center">
+              <a href="#"><img class="mr-3" src="../img/facebook.svg" alt="facebook"></a>
+              <a href="#"><img class="mr-3" src="../img/linkedIn.svg" alt="linkedIn"></a>
+              <a href="#"><img class="mr-3" src="../img/twitter.svg" alt="twitter"></a>
+              
+            </div>
+        </div>  
+      </div>
+      <div class="col-lg-6"> 
+        <div class="touch">
+          <h4 class="form-heading">Get in Touch</h4>
+        </div>
+        
+        <form class="info">
+          <div class="form-group">
+            <label class="sr-only" for="name">name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name">
+          </div>
 
-            <div>
-                <input type="text" name="subject" id="subject" placeholder="Subject">
-            </div>
-
-            <div>
-                <textarea name="message" form="contact-form" id="message" placeholder="Message"></textarea>
-            </div>
-
-            <div>
-                <button class="btn">Send</button>
-            </div>
+          <div class="form-group">
+            <label class="sr-only" for="email">email</label>
+            <input type="text" class="form-control" id="email" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="message">message</label>
+            <textarea cols="" rows="7" type="text" class="form-control" id="message" placeholder="Leave a Message"></textarea>
+          </div>
+          
+          <div class="contact-btn">
+            
+            <button type="submit" class=" btn send-btn ">Send</button>
+          </div>
         </form>
+        
+      </div>
+
     </div>
-</section>
+
+  </div>  
 
 <%- include('../includes/footer')-%>
