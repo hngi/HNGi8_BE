@@ -7,6 +7,7 @@
   --sidebar-width: 18rem;
 }
 
+.container-fluid nav,
 .container nav {
   /* margin: 3rem auto 60px; */
   display: flex;
@@ -51,6 +52,10 @@ nav ul li {
   color: #7e5ae3;
 }
 
+nav ul.nav-links {
+  margin-right: 0;
+}
+
 /* dropdown styling */
 .dropdown-toggle::after {
   display: none;
@@ -85,7 +90,8 @@ nav div.dropdown-menu a.dropdown-item svg {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 343px) {
+  .container-fluid nav h4.nav-item,
   .container nav h4.nav-item {
     font-size: 1.25rem;
   }
