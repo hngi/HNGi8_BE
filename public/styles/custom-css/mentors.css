@@ -289,7 +289,7 @@ body{
 
 	grid-column-gap: 45px;	
 
-	grid-row-gap: 40px;
+	grid-row-gap: 60px;
 
 	margin: 0 auto;	
 
@@ -312,6 +312,8 @@ body{
 	max-height: 370px;
 
 	padding: 10px;
+
+	margin-bottom: 30px;
 
 }
 
@@ -338,6 +340,8 @@ body{
 	align-items: center;
 
 	max-width: 300px;
+
+	max-height: 70px;
 
 	text-align: left;
 
@@ -512,6 +516,10 @@ body{
 	margin-bottom: 7em;
 }
 
+.mentor10 {
+	margin-bottom: -1em;
+}
+
 }
 
 @media(max-width: 332px){
@@ -524,3 +532,4 @@ body{
 	font-size: 24px;
 
 	}
+}
