@@ -1,29 +1,29 @@
 // import DOM elements
-const form = document.getElementById('internSignupForm'),
-  // fullName = document.getElementById('fullName'),
-  firstName = document.getElementById('firstName'),
-  lastName = document.getElementById('lastName'),
-  email = document.getElementById('email'),
-  phoneNo = document.getElementById('phoneNo'),
-  track = document.getElementById('track'),
-  // cvLink = document.getElementById('cvLink'),
-  employmentStatus = document.getElementById('employmentStatus'),
-  state = document.getElementById('state'),
-  country = document.getElementById('country'),
-  gender = document.getElementById('gender'),
-  dob = document.getElementById('dob'),
-  aboutYou = document.getElementById('aboutYou'),
-  agreed = document.getElementById('agreed'),
-  submitBtn = document.getElementById('submitBtn');
+const form = document.getElementById('internSignupForm');
+// fullName = document.getElementById('fullName'),
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const email = document.getElementById('email');
+const phoneNo = document.getElementById('phoneNo');
+const track = document.getElementById('track');
+// cvLink = document.getElementById('cvLink'),
+const employmentStatus = document.getElementById('employmentStatus');
+const state = document.getElementById('state');
+const country = document.getElementById('country');
+const gender = document.getElementById('gender');
+const dob = document.getElementById('dob');
+const aboutYou = document.getElementById('aboutYou');
+const agreed = document.getElementById('agreed');
+const submitBtn = document.getElementById('submitBtn');
 
 // object for storing validation status (variable)
-let validated = {};
+const validated = {};
 
 // Show input error message
 function showError(input, message) {
   const parent = input.parentElement;
   input.classList.add('is-invalid');
-  let error = parent.querySelector('div');
+  const error = parent.querySelector('div');
   error.className = 'invalid-feedback';
   error.innerText = input.value !== '' ? message : '';
   validated[input.id] = false;
@@ -103,7 +103,7 @@ function checkName(input) {
 function checkPhone(input) {
   const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
   // const length = String(Number(input.value)).length;
-  const length = input.value.length;
+  const { length } = input.value;
   if (length > 10 && length < 16) {
     if (!regex.test(input.value.trim())) {
       showError(input, 'Please enter a valid phone number');
@@ -124,7 +124,7 @@ function checkURL(input) {
   const regex = /^http(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_=]*)?$/;
 
   if (!regex.test(input.value)) {
-    showError(input, `Invalid URL, please begin with 'http://' or 'https://'`);
+    showError(input, 'Invalid URL, please begin with \'http://\' or \'https://\'');
   } else {
     showSuccess(input);
   }
@@ -132,7 +132,7 @@ function checkURL(input) {
 
 // Check Required fields
 function checkRequired(inputArr) {
-  inputArr.forEach(function (input) {
+  inputArr.forEach((input) => {
     if (input.value.trim() === '') {
       showRequired(input, `${getFieldName(input)} is required`);
     }
@@ -261,10 +261,10 @@ gender.addEventListener('change', () => {
 });
 
 dob.addEventListener('change', () => {
-  if (Boolean(+dob.value.split('-')[0] > 1900)) {
+  if (+dob.value.split('-')[0] > 1900) {
     clearError(dob);
     showSuccess(dob);
-  } else if (Boolean(+dob.value.split('-')[0] > 999)) {
+  } else if (+dob.value.split('-')[0] > 999) {
     setTimeout(() => {
       clearError(dob);
       showError(dob, 'Invalid Year');
@@ -306,7 +306,7 @@ form.addEventListener('submit', (event) => {
     country,
     gender,
     dob,
-    aboutYou,
+    aboutYou
   ]);
 
   if (agreed.checked) {
@@ -325,9 +325,7 @@ async function getCountriesList() {
   const res = await fetch('https://restcountries.eu/rest/v2/all');
 
   const data = await res.json();
-  return data.sort((a, b) => {
-    return a.value < b.value ? -1 : 1;
-  });
+  return data.sort((a, b) => (a.value < b.value ? -1 : 1));
 }
 
 async function fillCountries() {
