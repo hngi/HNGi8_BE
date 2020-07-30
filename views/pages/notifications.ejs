@@ -1,0 +1,88 @@
+<%- include('../includes/admin-header') %>
+<%- include('../includes/sidenav') %>
+<link rel="stylesheet" href="/styles/custom-css/notifications.css">
+
+<!-- notifications container -->
+<div class="container-fluid">
+  <!-- <button onclick="showNotification()">
+    Notification One
+  </button> -->
+  <div class="buttons">
+    <button role="button" type="button" class="clear-all">Clear All</button>
+    <button role="button" type="button" class="clear-selected">Clear Selected</button>
+  </div>
+
+  <div class="notifications-list">
+    <div class="notification unread">
+      <div class="info">
+        <h4>Notification One</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" checked name="notificationOne" id="notificationOne">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="notification unread">
+      <div class="info">
+        <h4>Notification Two</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" name="notificationTwo" id="notificationTwo">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="notification unread">
+      <div class="info">
+        <h4>Notification Three</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" name="notificationThree" id="notificationThree">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="notification">
+      <div class="info">
+        <h4>Notification Four</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" checked name="notificationFour" id="notificationFour">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="notification">
+      <div class="info">
+        <h4>Notification Five</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" checked name="notificationFive" id="notificationFive">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="detailed-notification">
+  <header class="d-flex justify-content-between align-items-center">
+    <h4>Notification One</h4>
+    <a href="#" class="delete-btn"><svg width="18" height="22" viewBox="0 0 18 22" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1.28571 19.5556C1.28775 20.2033 1.55932 20.8239 2.04112 21.2819C2.52291 21.7399 3.17578 21.9981 3.85714 22H14.1429C14.8242 21.9981 15.4771 21.7399 15.9589 21.2819C16.4407 20.8239 16.7122 20.2033 16.7143 19.5556V4.88889H1.28571V19.5556ZM18 1.22222H13.5L12.2143 0H5.78571L4.5 1.22222H0V3.66667H18V1.22222Z"
+          fill="#7E5AE3" />
+      </svg>
+    </a>
+  </header>
+  <p id="notificationBody">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
+    necessitatibus numquam
+    quidem
+    consequuntur ipsam nulla libero nobis cumque! Nostrum, odio?</p>
+</div>
+
+
+</div>
+<%- include('../includes/footer') %>
