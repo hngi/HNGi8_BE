@@ -1,5 +1,19 @@
 const Contacts = require("../models/Contact")
 
+
+// get all contacts
+const getAllContacts = (req, res) => {
+  Contacts.find({})
+    .then(contacts => {
+        res.render("contacts-admin", {contacts: contacts})
+    })  
+    .catch(err => {
+        res.send(err)
+    })
+}
+
+
+
 // post contactUs form
 const contact = (req, res) => {
 
@@ -28,5 +42,6 @@ const contact = (req, res) => {
 
 
 module.exports = {
-        contact
+        contact, 
+        getAllContacts
   }
