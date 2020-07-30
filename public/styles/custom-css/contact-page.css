@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* font-size: 15px; */
+  color: #fff;
+  /* font-weight: 300;
+  line-height: 26px; */
+  text-rendering: optimizeLegibility;
+}
+
+.contactp{
+  position: absolute;
+  top:50px;
+  left: -70px;
+  /* width: 350px; */
+  background-color: #9272C2;
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+.header{
+  padding: 15px 0;
+  font-weight: 600;
+  font-size: 36px;
+  /* padding-right: 40px; */
+}
+.icons{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.icons p{
+  margin-bottom: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 20px;
+
+}
+.icons img{
+  margin-left: 20px;
+  align-self: flex-start; 
+}
+.header-two{
+  font-weight: 600;
+  font-size: 36px;
+  border-bottom:1px solid white;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.form-heading{
+  color: #573F7B;
+  font-weight: 600;
+  padding: 20px 0;
+  font-size: 36px;
+}
+.contact-page{
+  position: relative;
+  width: 70%;
+  background-color: #F5F4FA;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  margin: 30px auto;
+  
+}
+.form-control {
+  background-color:rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  border: none;
+}
+::placeholder {
+  color: rgba(108, 87, 139, 0.8)  !important;
+  font-size: 18px !important;
+}
+.send-btn {
+  color: #fff !important;
+  background-color:#9272C2;
+  border-radius: 5px;  
+  font-size: 24px;
+  padding: .313em 3.125em;
+  margin-bottom: 30px;
+}
+.footer-icons {
+  margin-top:10px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 992px) {
+  .contactp{
+    position: static;
+    background-color: #9272C2;
+    box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  .contact-page{
+    position: static;
+    width: 100%;
+    margin: 30px 0;
+    
+  }
+
+  .form-heading, .contact-btn {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .header, .header-two, .form-heading {
+    font-size: 25px;
+  }
+
+  .send-btn {
+    font-size: 18px;
+  }
+
+  .icons p, ::placeholder {
+    font-size: 14px;
+  }
+}
