@@ -1,8 +1,12 @@
 const express = require('express');
 
 const {
-  homePage, login, contact, logout
+  homePage, login, logout
 } = require('../controller');
+
+const {
+  contact, getAllContacts
+} = require("../controller/contactUs")
 
 const {
   mentorApplication, applicationValidationRules, getAllMentors,
@@ -19,6 +23,7 @@ router.post('/auth', login);
 router.post('/contact-us', contact);
 router.get('/logout', logout);
 router.post('/apply', internValidationRules(), internApply);
+router.get('/notifications', getAllContacts)
 
 // mentor routes
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);

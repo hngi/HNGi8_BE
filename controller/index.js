@@ -74,6 +74,6 @@ const contact = (req, res) => {
 module.exports = {
   homePage,
   login,
-  logout,
-  contact
+  logout
+  // contact
 };
