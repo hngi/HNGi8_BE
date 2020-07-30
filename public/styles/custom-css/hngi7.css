@@ -8,7 +8,7 @@ body {
   background-size: 50px, contain, 50px;
 }
 
-header {
+header:not(.nav) {
   /* max-height: 15rem; */
   display: flex;
   flex-direction: column;
@@ -16,14 +16,14 @@ header {
   padding: 4rem 0;
 }
 
-header h1 {
+header:not(.nav) h1 {
   color: #573f7b;
   font-size: 2.5rem;
   font-weight: 600;
   /* margin-top: 4rem; */
 }
 
-header p {
+header:not(.nav) p {
   color: #27274c99;
   font-size: 1.125rem;
   /* margin-bottom: 4rem; */
@@ -39,7 +39,6 @@ main p {
   color: #573f7b;
   font-size: 1.5rem;
   width: 100%;
-  
 }
 
 main > p:last-of-type {
@@ -55,15 +54,15 @@ main > img {
 }
 
 @media (max-width: 600px) {
-  header {
+  header:not(.nav) {
     padding: 2rem 0.25rem;
   }
 
-  header h1 {
+  header:not(.nav) h1 {
     font-size: 2rem;
   }
 
-  header p {
+  header:not(.nav) p {
     font-size: 1rem;
     width: 100%;
     text-align: left;

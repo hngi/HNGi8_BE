@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-header {
+body > header:first-of-type {
   /* margin: 3rem auto 60px; */
   display: flex;
   justify-content: space-between;
