@@ -16,4 +16,7 @@ test:
 	
 all: setup install dev
 	# run `make all` to setup docker volume for node_modules, install dependencies and run the application
-	
+
+update:
+	git pull upstream develop
+	yarn install
