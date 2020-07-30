@@ -11,43 +11,47 @@
     </div>
   </div>
 
-  <form action="/api/v1/apply" method="post">
+  <form action="/api/v1/apply" method="post" id="internSignupForm">
     <% if(messages.error){ %>
-      <% messages.error.forEach(function(err){ %> 
-        <div class="alert alert-danger">
-          <%- err %>
-      </div>
-      <%})%>
-  <% } %>
-  <% if(messages.success){ %>
-    <div class="alert alert-success">
-        <%- messages.success %>
+    <% messages.error.forEach(function(err){ %>
+    <div class="alert alert-danger">
+      <%- err %>
     </div>
-  <% } %>
+    <%})%>
+    <% } %>
+    <% if(messages.success){ %>
+    <div class="alert alert-success">
+      <%- messages.success %>
+    </div>
+    <% } %>
 
-  <p class="px-2">Register here:</p>
+    <p class="px-2">Apply here:</p>
 
     <!-- Name & Email -->
     <div class="row">
       <div class="col-md mb-3 p-0 px-2">
-        <label for="name">Full Name</label>
-        <div class="input-group">
-          <input name="name" type="text" class="form-control w-100" id="fname" placeholder="e.g. John Doe" required>
-          <div class="invalid-feedback"></div>
-        </div>
+        <label for="firstName">First Name</label>
+        <input name="firstName" type="text" class="form-control w-100" id="firstName" placeholder="e.g. John">
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="lastName">Last Name</label>
+        <input name="lastName" type="text" class="form-control w-100" id="lastName" placeholder="e.g. Doe">
+        <div class="invalid-feedback"></div>
       </div>
     </div>
+
+    <!-- email and phone number -->
     <div class="row">
       <div class="col-md mb-3 p-0 px-2">
         <label for="email">Email</label>
-        <div class="input-group">
-          <input type="email" class="form-control w-100" id="email" name="email" placeholder="e.g. johndoe@example.com" required>
-          <div class="invalid-feedback"></div>
-        </div>
+        <input type="email" class="form-control w-100" id="email" name="email" placeholder="e.g. johndoe@example.com">
+        <div class="invalid-feedback"></div>
       </div>
       <div class="col-md mb-3 p-0 px-2">
-        <label for="phone">Phone Number</label>
-        <input type="phone" name="phoneNumber" class="form-control" id="phone" maxlength="16" placeholder="e.g. 08023414785" required="">
+        <label for="phoneNo">Phone Number</label>
+        <input type="text" name="phoneNumber" class="form-control" id="phoneNo" maxlength="16"
+          placeholder="e.g. +2348012345678">
         <div class="invalid-feedback"></div>
       </div>
     </div>
@@ -55,84 +59,87 @@
     <!-- Country and State -->
     <div class="row">
       <div class="col-md mb-3 p-0 px-2">
-        <label for="country">Country</label>
-        <input name="country" type="text" class="form-control" id="country" placeholder="Enter Country" required>
+        <label for="country">Country
+          <!-- of Residence --></label>
+        <!-- <input name="country" type="text" class="form-control" id="country" placeholder="Enter Country"> -->
+        <select name="country" class="form-control w-100" id="country">
+          <option selected disabled value="">Select Country</option>
+        </select>
         <div class="invalid-feedback"></div>
       </div>
       <div class="col-md mb-3 p-0 px-2">
-        <label for="state">State</label>
-        <input name="state" type="text" class="form-control" id="state" placeholder="Enter State" required>
+        <label for="state">State
+          <!-- of Residence --></label>
+        <input name="state" type="text" class="form-control" id="state" placeholder="Enter State">
         <div class="invalid-feedback"></div>
       </div>
     </div>
 
-        <!-- Track and Employment Status -->
-        <div class="row">
-          <div class="col-md mb-3 p-0 px-2">
-            <label for="track">Track</label>
-            <div class="input-group">
-              <select name="track" class="form-control w-100" id="expertise" required>
-                <option value="" selected disabled>Select Field</option>
-                <option value="frontend">Frontend</option>
-                <option value="backend">Backend</option>
-                <option value="mobile">Mobile Development</option>
-                <option value="design">UI/UX Design</option>
-              </select>
-              <div class="invalid-feedback"></div>
-            </div>
-          </div>
-          <div class="col-md mb-3 p-0 px-2">
-            <label for="employmentStatus">Employment Status</label>
-            <select class="form-control" name="employmentStatus" id="employmentStatus">
-              <option disabled selected>Select Option</option>
-              <option value="employed">Employed</option>
-              <option value="unemployed">Unemployed</option>
-            </select>
-          </div>
-        </div>
-    
-    <!-- Description -->
-    <div class="row px-2">
-      <label for="description">Tell us about yourself and why you want to work with us?</label>
-      <textarea class="form-control" name="reason" id="reason" rows="5" placeholder="Write here..." ></textarea>
+    <!-- gender and date of birth -->
+    <div class="row">
+      <!-- gender -->
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="gender">Gender</label>
+        <select class="form-control" name="gender" id="gender">
+          <option disabled selected value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+      <!-- Date of Birth -->
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="dob">Date of Birth</label>
+        <input name="dob" type="date" class="form-control w-100" id="dob">
+        <div class="invalid-feedback"></div>
+      </div>
     </div>
+    <!-- Track and Employment Status -->
+    <div class="row">
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="track">Track</label>
+        <select name="track" class="form-control w-100" id="track">
+          <option value="" selected disabled value="">Select Field</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="mobile">Mobile Development</option>
+          <option value="design">UI/UX Design</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md mb-3 p-0 px-2">
+        <label for="employmentStatus">Employment Status</label>
+        <select class="form-control" name="employmentStatus" id="employmentStatus">
+          <option disabled selected value="">Select Option</option>
+          <option value="employed">Employed</option>
+          <option value="unemployed">Unemployed</option>
+        </select>
+        <div class="invalid-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Short Description -->
+    <div class="row px-2">
+      <label for="aboutYou">Tell us about yourself and why you want to work with us?</label>
+      <textarea class="form-control" name="reason" id="aboutYou" rows="5" placeholder="Write here..."></textarea>
+      <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- terms checkbox -->
+    <div class="px-2 mt-3 d-flex align-items-center flex-wrap">
+      <input type="checkbox" id="agreed" class="custom-checkbox mr-2 mb-2">
+      <label for="agreed" style="width: 90%;">
+        I have read and accept the <a href="#">Terms & Conditions.</a>
+      </label>
+      <div class="invalid-feedback"></div>
+    </div>
+
     <div class="row">
       <button type="submit" class="submit-btn mx-auto">Submit</button>
     </div>
   </form>
 </div>
 
-<!-- <div class="row">
-    <div class="col">
-      <button class="btn btn-primary btn-block btn-color py-3 mt-3 mb-4" id="signup-btn" type="submit" data-toggle=""
-        data-target="#exampleModal">Sign Up</button>
-    </div>
-  </div> -->
-
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body d-flex flex-column align-items-center">
-            <div>
-              <img src="../img/logo.svg" alt="logo">
-            </div>
-            <svg width="50" height="49" viewBox="0 0 50 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M5 18.4L25 30.9L45 18.4L25 5.9L5 18.4ZM50 18.4V43.4C50 44.7261 49.4732 45.9979 48.5355 46.9355C47.5979 47.8732 46.3261 48.4 45 48.4H5C3.67392 48.4 2.40215 47.8732 1.46447 46.9355C0.526784 45.9979 0 44.7261 0 43.4V18.4C0 16.575 0.975 15 2.425 14.125L25 0L47.575 14.125C49.025 15 50 16.575 50 18.4Z"
-                fill="#337AB7"></path>
-            </svg>
-
-            <h2>Registration Successful !</h2>
-            <p class="text-center"> A verification link has been sent to your email address, kindly check your mail and
-              click to verify your account.</p>
-
-            <button id="login-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Login</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
 </form>
-
+<script src="../../js/custom-js/intern-signup.js"></script>
 <%- include('../includes/footer') %>
