@@ -1,16 +1,14 @@
 <%- include('../includes/external-header')-%>
 
-<link rel="stylesheet" href="/styles/bootstrap-css/bootstrap.css">
-<link rel="stylesheet" href="/styles/custom-css/contact-page.css">
+<link rel="stylesheet" href="../styles/custom-css/contact-page.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 
 <!--CONTENT-->
-
 <div class="container">
     <div class="row contact-page"> 
       <div class="col-lg-6">
-        <div class="contact">
+        <div class="contactp">
           <div class="text-center" style="padding-top: 10px;">
             <h4 class="header">Contact Us</h4>
           </div>
@@ -44,7 +42,7 @@
           <h4 class="form-heading">Get in Touch</h4>
         </div>
         
-        <form action="/api/v1/contact-us" method="POST" id="contact-form" class="info">
+        <form class="info">
           <div class="form-group">
             <label class="sr-only" for="name">name</label>
             <input type="text" class="form-control" id="name" placeholder="Your Name">
