@@ -54,41 +54,17 @@ const internApplicationSchema = Schema({
   },
 
   dob: {
-    type: Date,
-    required: true
-},
-
-  date: {
-    type: Date,
-    default: Date.now
+    type: Date
   },
+
+  // date: {
+  //   type: Date,
+  //   default: Date.now
+  // },
 }, 
 {
   timestamps: true
 });
-
-
-//   address: {
-//     type: String,
-//     required: false
-//   },
-
-//   city: {
-//     type: String,
-//     required: false
-//   },
-
-//   password: {
-//     type: String,
-//     required: false
-//   },
-
-// username: {
-//   type: String,
-//   required: false,
-//   index: {unique: false},
-//   minlength: 3
-// }
 
 
 internApplicationSchema.plugin(uniqueValidator);
