@@ -96,8 +96,19 @@ const getAllPendingMentors = async (req, res, next) => {
 
 // Get all accepted mentor applications
 const getAllAcceptedMentors = async (req, res, next) => {
+  const queryArray = [];
+  // All query parameters
+  const params = req.query;
+  // Each query parameter should be assigned as an object and added the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+  // add this so that all accepted applications will be returned when no query param is present
+  queryArray.push({ applicationState: 'accepted' });
+  console.log('Filters:', queryArray);
   try {
-    const mentors = await Mentor.find({ applicationState: 'accepted' });
+    const mentors = await Mentor.find({ $and: queryArray});
     return responseHandler(res, 200, 'All accepted mentor applications', { mentors });
   } catch (err) {
     return next(err);
@@ -105,8 +116,19 @@ const getAllAcceptedMentors = async (req, res, next) => {
 };
 
 const getAllDeclinedMentors = async (req, res, next) => {
+  const queryArray = [];
+  // All query parameters
+  const params = req.query;
+  // Each query parameter should be assigned as an object and added the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+  // add this so that all declined applications will be returned when no query param is present
+  queryArray.push({ applicationState: 'declined' });
+  console.log('Filters:', queryArray);
   try {
-    const mentors = await Mentor.find({ applicationState: 'declined' });
+    const mentors = await Mentor.find({ $and: queryArray });
     return responseHandler(res, 200, 'All decliined mentor applications', { mentors });
   } catch (err) {
     return next(err);
