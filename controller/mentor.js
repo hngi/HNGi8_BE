@@ -53,8 +53,20 @@ const mentorApplication = async (req, res, next) => {
 };
 // Get all mentor applications
 const getAllMentors = async (req, res, next) => {
+  const queryArray = [];
+  // All query parameters
+  const params = req.query;
+  // Each query parameter should be assigned as an object and added the query array
+  Object.entries(params).forEach((param) => {
+    // eslint-disable-next-line prefer-destructuring
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+
+  console.log('Filters:', queryArray);
+  
   try {
-    const mentors = await Mentor.find({})
+    const mentors = await Mentor.find({ $and: queryArray })
       .sort({ updatedAt: 'desc' });
     return responseHandler(res, 200, 'All mentor applications', { mentors });
   } catch (err) {
