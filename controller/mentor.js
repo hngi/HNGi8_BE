@@ -71,7 +71,7 @@ const getAllPendingMentors = async (req, res, next) => {
   }
 };
 
-const getAllActiveMentors = async (req, res, next) => {
+const getAllAcceptedMentors = async (req, res, next) => {
   try {
     const mentors = await Mentor.find({ applicationState: 'accepted' });
     return responseHandler(res, 200, 'All active mentors', { mentors });
@@ -140,7 +140,7 @@ module.exports = {
   applicationValidationRules,
   mentorApplication,
   getAllMentors,
-  getAllActiveMentors,
+  getAllAcceptedMentors,
   getAllDeclinedMentors,
   getAllPendingMentors,
   acceptApplication,
