@@ -44,6 +44,10 @@ const lastInternship = (req, res) => {
   res.render('pages/hngi7', { title: 'HNGi7 Summary', currentPage: 'hngi7' });
 };
 
+const adminCreate = (req, res) => {
+  res.render('pages/admin-create', { title: 'Admin Create'});
+};
+
 module.exports = {
   internSignup,
   homePage,
@@ -54,5 +58,6 @@ module.exports = {
   lastInternship,
   contact,
   faqs,
+  adminCreate,
   viewAdmins,
 };

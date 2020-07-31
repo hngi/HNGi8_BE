@@ -10,6 +10,7 @@ const {
   lastInternship,
   contact,
   faqs,
+  adminCreate,
   viewAdmins,
 } = require('../../controller/views/index');
 
@@ -32,6 +33,8 @@ viewRouter.get('/mentors', mentors);
 viewRouter.get('/faqs', faqs);
 
 viewRouter.get('/dashboard', auth, dashboard);
+
+viewRouter.get('/admin/create', auth, adminCreate);
 
 viewRouter.get('/admins', viewAdmins);
 
