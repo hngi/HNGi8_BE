@@ -37,8 +37,19 @@ const dashboard = (req, res) => {
   });
 };
 
+const viewAdmins = (req, res) => {
+  res.render('pages/admins', {
+    title: 'Registered Admins',
+    name: req.session.name,
+  });
+};
+
 const lastInternship = (req, res) => {
   res.render('pages/hngi7', { title: 'HNGi7 Summary', currentPage: 'hngi7' });
+};
+
+const adminCreate = (req, res) => {
+  res.render('pages/admin-create', { title: 'Admin Create'});
 };
 
 module.exports = {
@@ -50,5 +61,7 @@ module.exports = {
   dashboard,
   lastInternship,
   contact,
-  faqs
+  faqs,
+  adminCreate,
+  viewAdmins,
 };
