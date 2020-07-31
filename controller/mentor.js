@@ -1,6 +1,9 @@
 const { body, validationResult } = require('express-validator');
+const mongoose = require('mongoose');
 const Mentor = require('../models/Mentor');
 const responseHandler = require('../utils/responseHandler');
+const { ErrorHandler } = require('../utils/error');
+
 // Application rules
 const applicationValidationRules = () => [
   body('firstName').isString(),
@@ -48,38 +51,128 @@ const mentorApplication = async (req, res, next) => {
     return res.redirect('/mentors/apply');
   }
 };
-
+// Get all mentor applications
 const getAllMentors = async (req, res, next) => {
+  const queryArray = [];
+  // All query parameters
+  const params = req.query;
+  // Each query parameter should be assigned as an object and added the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+  // add this so that all applications will be returned when no query param is present
+  queryArray.push({});
   try {
-    const mentors = await Mentor.find({});
-    return responseHandler(res, 200, 'All mentors', { mentors });
+    const mentors = await Mentor.find({ $and: queryArray })
+      .sort({ updatedAt: 'desc' });
+    return responseHandler(res, 200, 'All mentor applications', { mentors });
   } catch (err) {
     return next(err);
   }
 };
 
+// Get all pending mentor applications
 const getAllPendingMentors = async (req, res, next) => {
+  const queryArray = [];
+  // All query parameters
+  const params = req.query;
+  // Each query parameter should be assigned as an object and added the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+  // add this so that all pending applications will be returned when no query param is present
+  queryArray.push({ applicationState: 'pending' });
   try {
-    const mentors = await Mentor.find({ applicationState: 'pending' });
-    return responseHandler(res, 200, 'All pending mentors', { mentors });
+    const mentors = await Mentor.find({ $and: queryArray });
+    return responseHandler(res, 200, 'All pending mentor applications', { mentors });
   } catch (err) {
     return next(err);
   }
 };
 
-const getAllActiveMentors = async (req, res, next) => {
+// Get all accepted mentor applications
+const getAllAcceptedMentors = async (req, res, next) => {
+  const queryArray = [];
+  // All query parameters
+  const params = req.query;
+  // Each query parameter should be assigned as an object and added the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+  // add this so that all accepted applications will be returned when no query param is present
+  queryArray.push({ applicationState: 'accepted' });
   try {
-    const mentors = await Mentor.find({ applicationState: 'accepted' });
-    return responseHandler(res, 200, 'All active mentors', { mentors });
+    const mentors = await Mentor.find({ $and: queryArray });
+    return responseHandler(res, 200, 'All accepted mentor applications', { mentors });
   } catch (err) {
     return next(err);
   }
 };
 
 const getAllDeclinedMentors = async (req, res, next) => {
+  const queryArray = [];
+  // All query parameters
+  const params = req.query;
+  // Each query parameter should be assigned as an object and added the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+  // add this so that all declined applications will be returned when no query param is present
+  queryArray.push({ applicationState: 'declined' });
   try {
-    const mentors = await Mentor.find({ applicationState: 'declined' });
-    return responseHandler(res, 200, 'All decliined mentors', { mentors });
+    const mentors = await Mentor.find({ $and: queryArray });
+    return responseHandler(res, 200, 'All decliined mentor applications', { mentors });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+// accept a mentors application
+const acceptApplication = async (req, res, next) => {
+  const mentorId = req.params.id;
+
+  if (!mongoose.isValidObjectId(mentorId)) {
+    return next(new ErrorHandler(400, 'Invalid Id for mentor'));
+  }
+
+  try {
+    const mentor = await Mentor.findOne({ _id: mentorId });
+    if (!mentor) {
+      throw new ErrorHandler(404, 'Mentor with Id not found');
+    }
+
+    await mentor.update({ applicationState: 'accepted' });
+    return res.send({
+      status: 'success',
+      message: 'Mentor application accepted'
+    });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+// Added functionality to decline a mentors application
+const declineApplication = async (req, res, next) => {
+  const mentorId = req.params.id;
+  if (!mongoose.isValidObjectId(mentorId)) {
+    return next(new ErrorHandler(400, 'Invalid Id for mentor'));
+  }
+
+  try {
+    const mentor = await Mentor.findOne({ _id: mentorId });
+    if (!mentor) {
+      throw new ErrorHandler(404, 'Mentor with Id not found');
+    }
+
+    await mentor.update({ applicationState: 'declined' });
+    return res.send({
+      status: 'success',
+      message: 'Mentor application declined'
+    });
   } catch (err) {
     return next(err);
   }
@@ -89,7 +182,9 @@ module.exports = {
   applicationValidationRules,
   mentorApplication,
   getAllMentors,
-  getAllActiveMentors,
+  getAllAcceptedMentors,
   getAllDeclinedMentors,
-  getAllPendingMentors
+  getAllPendingMentors,
+  acceptApplication,
+  declineApplication
 };

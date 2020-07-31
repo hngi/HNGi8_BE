@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.jumbotron {
+  border-radius: 10px;
+  background: #f5f4fa;
+  margin-top: 90px;
+  margin-bottom: 61px;
+}
+
+.jumbotron-img-container {
+  position: relative;
+}
+
+.jumbotron-img-container img {
+  position: absolute;
+  top: -35px;
+}
+
+.welcome-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 64px;
+  color: #573F7B;
+}
+
+@media (max-width: 768px){
+  .welcome-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.welcome-paragraph {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5f3f7b;
+}
+
+.login-time {
+  color: #7E5AE3 !important;
+}
+
+.card {
+  width: 12.1875rem;
+  background-color: #fff;
+  margin: 0 3rem;
+}
+
+
+.card-body {
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.card h2 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 64px;
+  color: #7E5AE3;
+}
+
+.card .card-title {
+  margin: 0;
+}
+
+.card p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7E5AE3;
+}
+
+.card-flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 992px) {
+  .card-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 12.1875rem;
+    background-color: #fff;
+    margin: 0 0;
+  }
+}
+
+
+.chart-container {
+  margin-top: 64px;
+}
+
+
+#bar-chart-1 {
+  margin: 0 auto;
+  width: 85%;
+  height: 400px;
+}
+
+#bar-chart-2 {
+  width: 100%;
+  height: 400px;
+}
+
+#bar-chart-3 {
+  width: 85%;
+  height: 500px;
+}

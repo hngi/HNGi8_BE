@@ -18,17 +18,17 @@ body > header:first-of-type {
   background-color: #f5f4fa;
 }
 
-/* header > nav {
+/* body > header:first-of-type > nav {
   margin-left: auto;
 } */
 
-header h4 {
+body > header:first-of-type h4 {
   color: #9272c2;
   margin: 0;
   font-weight: 700;
 }
 
-header ul {
+body > header:first-of-type ul {
   display: flex;
   margin: 0 1rem;
   padding: 0;
@@ -37,21 +37,21 @@ header ul {
   background-color: inherit;
 }
 
-header ul li {
+body > header:first-of-type ul li {
   margin: 0 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-header ul li a {
+body > header:first-of-type ul li a {
   cursor: pointer;
   color: var(--text-color);
   margin: 0.25rem 0;
   position: relative;
 }
 
-header ul li:not(:last-of-type) a::after {
+body > header:first-of-type ul li:not(:last-of-type) a::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -65,18 +65,18 @@ header ul li:not(:last-of-type) a::after {
   transition: opacity 0.3s ease-in-out;
 }
 
-header ul li:not(:last-of-type):hover a::after,
-header ul li.active a::after {
+body > header:first-of-type ul li:not(:last-of-type):hover a::after,
+body > header:first-of-type ul li.active a::after {
   opacity: 1;
 }
 
-header ul li.active a,
-header ul li a:hover {
+body > header:first-of-type ul li.active a,
+body > header:first-of-type ul li a:hover {
   color: #573f7b;
   text-decoration: none;
 }
 
-header ul li button.btn {
+body > header:first-of-type ul li button.btn {
   border: 1px solid #9272c2;
   color: #9272c2 !important;
   margin: 0.25rem 0;
@@ -84,13 +84,13 @@ header ul li button.btn {
   transition: transform 0.3s ease-in-out;
 }
 
-header ul li button.btn:hover {
+body > header:first-of-type ul li button.btn:hover {
   background-color: #9272c2;
   color: #fff !important;
   transform: scale(1.01);
 }
 
-header ul li.dropdown > div.join-zuri {
+body > header:first-of-type ul li.dropdown > div.join-zuri {
   min-width: 5rem;
   width: 114px;
   height: max-content;
@@ -100,7 +100,7 @@ header ul li.dropdown > div.join-zuri {
   color: #9272c2;
 }
 
-header ul li.dropdown > div.join-zuri a {
+body > header:first-of-type ul li.dropdown > div.join-zuri a {
   width: 100%;
   color: #9272c2;
   padding: 0.5rem;
@@ -110,7 +110,7 @@ header ul li.dropdown > div.join-zuri a {
   margin: 0.5rem 0;
 }
 
-header ul li.dropdown > div.join-zuri a:hover {
+body > header:first-of-type ul li.dropdown > div.join-zuri a:hover {
   transition: transform 0.3s ease-in-out;
   background-color: #9272c2;
   color: #fff !important;
@@ -118,62 +118,62 @@ header ul li.dropdown > div.join-zuri a:hover {
 }
 
 @media (max-width: 1000px) {
-  header ul li.nav-item {
+  body > header:first-of-type ul li.nav-item {
     margin-bottom: 0.5rem;
   }
 }
 
 @media (max-width: 991px) {
-  header {
+  body > header:first-of-type {
     padding: 0.5rem 136px !important;
   }
 
-  header > .navbar-collapse ul {
+  body > header:first-of-type > .navbar-collapse ul {
     margin-top: 1rem;
   }
 
-  header > .navbar-collapse ul li.nav-item {
+  body > header:first-of-type > .navbar-collapse ul li.nav-item {
     margin-left: 0 !important;
     justify-content: start;
   }
 
-  header > .navbar-collapse ul li button.btn,
-  header > .navbar-collapse li.dropdown > div.join-zuri {
+  body > header:first-of-type > .navbar-collapse ul li button.btn,
+  body > header:first-of-type > .navbar-collapse li.dropdown > div.join-zuri {
     width: 100%;
   }
 
-  header ul li.dropdown > div.join-zuri a:hover,
-  header ul li button.btn:hover {
+  body > header:first-of-type ul li.dropdown > div.join-zuri a:hover,
+  body > header:first-of-type ul li button.btn:hover {
     transform: scale(1);
   }
 }
 
 @media (min-width: 1025px) {
-  header {
+  body > header:first-of-type {
     padding: 0.5rem 136px !important;
   }
 }
 
 @media (min-width: 991px) and (max-width: 1024px) {
-  header {
+  body > header:first-of-type {
     padding: 0.5rem 3.9% !important;
   }
 }
 
 @media (min-width: 769px) and (max-width: 990px) {
-  header {
+  body > header:first-of-type {
     padding: 0.5rem 5.668% !important;
   }
 }
 
 @media (max-width: 768px) {
-  header {
+  body > header:first-of-type {
     padding: 0.5rem 2.5rem !important;
   }
 }
 
 @media (max-width: 475px) {
-  header {
+  body > header:first-of-type {
     padding: 0.5rem 5% !important;
   }
 }

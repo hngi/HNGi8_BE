@@ -1,11 +1,22 @@
 <%- include('../includes/external-header')-%>
 
 <link rel="stylesheet" href="../styles/custom-css/contact-page.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
 
 <!--CONTENT-->
+
 <div class="container">
+  <div class="row hero-section">
+      <div class="col-md-6">
+        <div class="hero">
+          <p class="hero-header"> We Would Love to hear from You!</p>
+          <p class="hero-paragraph"> Let’s keep in touch</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img class="img-fluid hero-img" src="../img/hero-img.svg">
+      </div>
+    </div>
+
     <div class="row contact-page"> 
       <div class="col-lg-6">
         <div class="contactp">
@@ -45,12 +56,12 @@
         <form class="info">
           <div class="form-group">
             <label class="sr-only" for="name">name</label>
-            <input type="text" class="form-control" id="name" placeholder="Your Name">
+            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
           </div>
 
           <div class="form-group">
             <label class="sr-only" for="email">email</label>
-            <input type="text" class="form-control" id="email" placeholder="Your Email">
+            <input type="text" class="form-control" id="email" placeholder="Your Email" required>
           </div>
           <div class="form-group">
             <label class="sr-only" for="message">message</label>
