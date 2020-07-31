@@ -6,7 +6,6 @@
 
 
 .jumbotron {
-  height: 220px;
   border-radius: 10px;
   background: #f5f4fa;
   margin-top: 90px;
@@ -19,7 +18,27 @@
 
 .jumbotron-img-container img {
   position: absolute;
-  top: -95px;
+  top: -35px;
+}
+
+.welcome-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 64px;
+  color: #573F7B;
+}
+
+.welcome-paragraph {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5f3f7b;
+}
+
+.login-time {
+  color: #7E5AE3 !important;
 }
 
 .card {
@@ -56,6 +75,7 @@
 .card-flex-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .chart-container {
