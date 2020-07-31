@@ -6,11 +6,11 @@
 
 <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
-        <div class="container-fluid ml-5">
+        <div class="container-fluid ml-lg-5">
             <div class="row">
                 <div class="col-lg-8">
-                    <h2 class="welcome-title">Welcome back <span>Feranmi</span></h2>
-                    <p class="welcome-paragraph">Last Login: <span class="login-time"> 26 Sep 2020, Thursday - 5:23pm </span></p>
+                    <h2 class="welcome-title">Welcome back <span><%= name %></span></h2>
+                    <p class="welcome-paragraph">Last Login: <span class="login-time"> <%= lastVisited %></span></p>
                     <p class="welcome-paragraph">You have approved <strong>762</strong> applications. You have <strong>28</strong> more to go</p>
                 </div>
                 <div class="col-lg-4 jumbotron-img-container d-none d-lg-block">
@@ -70,7 +70,7 @@
 
 
 
-<div class="container-fluid chart-container">
+<div class="container-fluid chart-container pb-5">
     <div class="chart-1">
         <div id="bar-chart-3" class="mx-auto"></div>
     </div>

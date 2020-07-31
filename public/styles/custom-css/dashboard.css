@@ -29,6 +29,13 @@
   color: #573F7B;
 }
 
+@media (max-width: 768px){
+  .welcome-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
 .welcome-paragraph {
   font-style: normal;
   font-weight: normal;
@@ -44,10 +51,13 @@
 .card {
   width: 12.1875rem;
   background-color: #fff;
+  margin: 0 3rem;
 }
+
 
 .card-body {
   padding: 10px;
+  margin: 0 auto;
 }
 
 .card h2 {
@@ -74,30 +84,33 @@
 
 .card-flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
+
+@media (min-width: 992px) {
+  .card-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 12.1875rem;
+    background-color: #fff;
+    margin: 0 0;
+  }
+}
+
 
 .chart-container {
   margin-top: 64px;
 }
 
-/* .chart-1 {
-  overflow: scroll;
-}
-
-.chart-2 {
-  overflow: scroll;
-}
-
-.chart-3 {
-  overflow: scroll;
-} */
-
 
 #bar-chart-1 {
   margin: 0 auto;
-  width: 85%;
+  width: 100%;
   height: 400px;
 }
 
@@ -110,17 +123,9 @@
   width: 85%;
   height: 500px;
 }
-/* 
+
 @media (max-width: 768px) {
-  #bar-chart-1 {
-    width: 100%;
-  }
-
-  #bar-chart-2 {
-    width: 100%;
-  }
-
   #bar-chart-3 {
     width: 100%;
   }
-} */
+}
