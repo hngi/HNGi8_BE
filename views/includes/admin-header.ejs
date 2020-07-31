@@ -12,7 +12,7 @@
             <path
               d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
           </svg></button>
-        <h4 class="nav-item">Dashboard</h4>
+        <h4 class="nav-item"><%- locals.title? title : '' %></h4>
         <ul class="nav-links">
           <!-- bell icon -->
           <li class="nav-item d-none d-lg-block">
@@ -20,7 +20,17 @@
           </li>
           <li class="nav-item" id="notification">
             <div class="dropdown show">
-              <a class="d-flex justify-content-between align-items-center dropdown-toggle" href="#" role="button"
+              <a class="d-flex justify-content-between align-items-center" href="/notifications">
+                <svg width="22" height="33" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 7.87384C16 6.15412 15.3679 4.50484 14.2426 3.28882C13.1174 2.0728 11.5913 1.38965 10 1.38965C8.4087 1.38965 6.88258 2.0728 5.75736 3.28882C4.63214 4.50484 4 6.15412 4 7.87384C4 15.4387 1 17.6001 1 17.6001H19C19 17.6001 16 15.4387 16 7.87384Z"
+                    stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M11.7295 21.9233C11.5537 22.2509 11.3013 22.5228 10.9977 22.7117C10.6941 22.9007 10.3499 23.0002 9.99951 23.0002C9.64914 23.0002 9.30491 22.9007 9.0013 22.7117C8.69768 22.5228 8.44534 22.2509 8.26953 21.9233"
+                    stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <!--               <a class="d-flex justify-content-between align-items-center dropdown-toggle" href="#" role="button"
                 id="navDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <svg width="22" height="33" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -42,7 +52,7 @@
                       stroke="#7E5AE3" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                   Outbox</a>
-              </div>
+              </div> -->
             </div>
           </li>
         </ul>

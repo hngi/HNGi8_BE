@@ -90,9 +90,15 @@ nav div.dropdown-menu a.dropdown-item svg {
   }
 }
 
-@media (max-width: 343px) {
+@media (max-width: 600px) {
+  nav h4 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 375px) {
   .container-fluid nav h4.nav-item,
   .container nav h4.nav-item {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
