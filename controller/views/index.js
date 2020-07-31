@@ -30,7 +30,11 @@ const contact = (req, res) => {
 };
 
 const dashboard = (req, res) => {
-  res.render('pages/dashboard', { title: 'Dashboard', name: req.session.name });
+  res.render('pages/dashboard', {
+    title: 'Dashboard',
+    name: req.session.name,
+    lastVisited: new Date(req.session.lastVisited).toDateString()
+  });
 };
 
 const lastInternship = (req, res) => {
