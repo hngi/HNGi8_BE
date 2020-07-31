@@ -6,12 +6,12 @@
 
 <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+        <div class="container-fluid ml-5">
             <div class="row">
                 <div class="col-lg-8">
-                    <h2>Welcome back Feranmi</h2>
-                    <p>Last Login: 26 Sep 2020, Thursday - 5:23pm</p>
-                    <p>You have approved <strong>762</strong> applications. You have <strong>28</strong> more to go</p>
+                    <h2 class="welcome-title">Welcome back <span>Feranmi</span></h2>
+                    <p class="welcome-paragraph">Last Login: <span class="login-time"> 26 Sep 2020, Thursday - 5:23pm </span></p>
+                    <p class="welcome-paragraph">You have approved <strong>762</strong> applications. You have <strong>28</strong> more to go</p>
                 </div>
                 <div class="col-lg-4 jumbotron-img-container d-none d-lg-block">
                     <img src="https://res.cloudinary.com/dafsch2zs/image/upload/v1596175206/undraw_coding_6mjf_1_vsc86v.svg"
@@ -34,21 +34,21 @@
         <div class="card text-white mb-3">
             <div class="card-body text-center">
                 <h2 class="card-title">93</h2>
-                <p class="card-text">Registered Interns</p>
+                <p class="card-text">Approved Mentors</p>
             </div>
         </div>
 
         <div class="card text-white mb-3">
             <div class="card-body text-center">
                 <h2 class="card-title">12</h2>
-                <p class="card-text">Registered Interns</p>
+                <p class="card-text">Registered Admins</p>
             </div>
         </div>
 
         <div class="card text-white mb-3">
             <div class="card-body text-center">
                 <h2 class="card-title">5</h2>
-                <p class="card-text">Registered Interns</p>
+                <p class="card-text">Registered Sponsors</p>
             </div>
         </div>
     </div>
@@ -71,10 +71,11 @@
 
 
 <div class="container-fluid chart-container">
-        <div class="chart-1">
-            <div id="bar-chart-3" class="mx-auto"></div>
-        </div>
+    <div class="chart-1">
+        <div id="bar-chart-3" class="mx-auto"></div>
+    </div>
 </div>
 
+</div>
 <script src="/js/custom-js/dashboard.js"></script>
 <%- include('../includes/footer') %>
