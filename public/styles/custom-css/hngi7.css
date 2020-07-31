@@ -1,6 +1,6 @@
 body {
   background-image: url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Rectangle_572_pvzmxr.svg),
-    url('../img/hngi7-bg.svg'),
+    url('/img/hngi7-bg.svg'),
     url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Ellipse_29_awtaml.svg);
   background-repeat: no-repeat;
   background-attachment: fixed, scroll, fixed;
@@ -8,73 +8,220 @@ body {
   background-size: 50px, contain, 50px;
 }
 
-header:not(.nav) {
-  /* max-height: 15rem; */
+.container:nth-of-type(2) {
+  max-width: 1168px;
+}
+
+.container section {
+  width: 100%;
+  max-width: 1148px;
+  /* margin: 0 auto; */
+}
+
+.container section#sectionOne header:not(.nav) {
+  padding: 5.5rem 0 9.25rem;
+}
+
+.container section#sectionTwo {
+  margin-top: 4.375rem;
+}
+
+.container section#sectionTwo header:not(.nav) {
+  padding: 3.125rem 0;
+}
+
+.container section#sectionThree {
+  margin-top: 3.25rem;
+}
+
+.container section#sectionThree header:not(.nav) {
+  padding: 3.125rem 0;
+}
+
+.container section#sectionThree p.detail {
+  min-height: 104px;
+  max-height: max-content;
+  width: 168px;
+  text-align: center;
+  line-height: 31px;
+}
+
+.container section#sectionThree p.detail {
+  /* margin-right: 5.0625rem ; */
+  margin: 1.25rem;
+}
+
+.container section#sectionThree p.detail span {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 4.5rem;
+}
+
+.container > #sectionFour {
+  margin-top: 4.0625rem;
+  margin-bottom: 5rem;
+}
+
+.container section#sectionFour header:not(.nav) {
+  padding: 3.4375rem 0;
+}
+
+.container section header:not(.nav) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0;
 }
 
-header:not(.nav) h1 {
+.container section header:not(.nav) h1,
+.container section header:not(.nav) h2 {
   color: #573f7b;
   font-size: 2.5rem;
   font-weight: 600;
   /* margin-top: 4rem; */
 }
 
-header:not(.nav) p {
+.container section header:not(.nav) p {
   color: #27274c99;
-  font-size: 1.125rem;
-  /* margin-bottom: 4rem; */
-}
-
-main {
-  width: 100%;
-  max-width: 1148px;
-  margin: 0 auto;
-}
-
-main p {
-  color: #573f7b;
   font-size: 1.5rem;
+}
+
+.container section p {
+  color: #573f7b;
+  font-size: 1.3125rem;
   width: 100%;
+  line-height: 42.7px;
+  margin-top: 1.25rem;
 }
 
-main > p:last-of-type {
-  margin-bottom: 5rem;
+.container section a.link {
+  background: #9272c2;
+  border-radius: 5px;
+  padding: 20px 53px;
+  color: #ffffff;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  text-decoration: none;
 }
 
-main > img {
+.container section a.link:hover {
+  background: #beaee9;
+}
+
+.container section a.link:active {
+  background: #573f7b;
+}
+
+.container section a.link {
+  margin-top: 3.125rem;
+}
+
+.container > section img {
   min-width: 10rem;
-  width: 50%;
-  max-width: 400px;
+  /* width: 50%; */
+  max-width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-@media (max-width: 600px) {
-  header:not(.nav) {
+/* @media (max-width: 991px) and (min-width: 769px) {
+} */
+
+@media (max-width: 768px) {
+  .container section#sectionTwo,
+  .container section#sectionThree,
+  .container section#sectionFour {
+    margin-top: 1rem;
+  }
+
+  .container section#sectionOne header:not(.nav),
+  .container section#sectionTwo header:not(.nav),
+  .container section#sectionThree header:not(.nav),
+  .container section#sectionFour header:not(.nav) {
     padding: 2rem 0.25rem;
   }
 
-  header:not(.nav) h1 {
+  .container section header:not(.nav) h1,
+  .container section header:not(.nav) h2 {
     font-size: 2rem;
   }
 
-  header:not(.nav) p {
+  .container section header:not(.nav) p {
     font-size: 1rem;
     width: 100%;
     text-align: left;
   }
 
-  main {
+  .container section a.link {
+    padding: 10px 26px;
+    font-size: 1.25rem;
+    line-height: 36px;
+    margin-top: 2rem;
+  }
+
+  .container > section#sectionOne header:not(.nav) {
+    padding: 5.5rem 0.25rem;
+  }
+
+  .container section#sectionThree p.detail {
+    margin: 1rem;
+    width: max-content;
+  }
+}
+
+@media (max-width: 600px) {
+  /* .container section#sectionOne, */
+  .container section#sectionTwo,
+  .container section#sectionThree,
+  .container section#sectionFour {
+    margin-top: 1rem;
+  }
+
+  .container section#sectionOne header:not(.nav),
+  .container section#sectionTwo header:not(.nav),
+  .container section#sectionThree header:not(.nav),
+  .container section#sectionFour header:not(.nav) {
+    padding: 2rem 0.25rem 1rem;
+  }
+
+  .container section {
+    font-size: 1rem;
+  }
+
+  .container:nth-of-type(2) {
     width: 100%;
     padding-left: 0.25rem;
   }
 
-  main p {
+  .container:nth-of-type(2) p {
     width: 100%;
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container section header:not(.nav) h1,
+  .container section header:not(.nav) h2 {
+    font-size: 1.5rem;
+  }
+
+  .container section p {
+    text-align: center;
+  }
+
+  .container section a.link {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container section#sectionThree div.row {
+    flex-direction: column;
+    align-items: center;
   }
 }
