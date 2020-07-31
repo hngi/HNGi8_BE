@@ -54,7 +54,8 @@ const mentorApplication = async (req, res, next) => {
 
 const getAllMentors = async (req, res, next) => {
   try {
-    const mentors = await Mentor.find({});
+    const mentors = await Mentor.find({})
+      .sort({ updatedAt: 'desc' });
     return responseHandler(res, 200, 'All mentors', { mentors });
   } catch (err) {
     return next(err);
