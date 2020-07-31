@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -7,18 +9,33 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  /* font-size: 15px; */
   color: #fff;
-  /* font-weight: 300;
-  line-height: 26px; */
   text-rendering: optimizeLegibility;
+  background-image: url(../../img/hero-bg.svg);
+  background-repeat: no-repeat;
+
+  background-size: contain;
 }
 
+
+.hero-header{
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 62px;
+  color: #573F7B;
+  margin-bottom: 0px;
+}
+.hero-paragraph{
+  font-size: 24px;
+  line-height: 42px;
+  align-items: center;
+  color: #573F7B;
+  margin-bottom: 0px;
+}
 .contactp{
   position: absolute;
   top:50px;
   left: -70px;
-  /* width: 350px; */
   background-color: #9272C2;
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -27,7 +44,6 @@ body {
   padding: 15px 0;
   font-weight: 600;
   font-size: 36px;
-  /* padding-right: 40px; */
 }
 .icons{
   display: flex;
@@ -61,11 +77,11 @@ body {
 }
 .contact-page{
   position: relative;
-  width: 70%;
+  width: 90%;
   background-color: #F5F4FA;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  margin: 30px auto;
+  margin: 13% auto 10% auto;
   
 }
 .form-control {
@@ -92,6 +108,25 @@ body {
 }
 
 @media only screen and (max-width: 992px) {
+  .hero-header{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 42px;
+    color: #573F7B;
+  }
+  .hero-paragraph{
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    color: #573F7B;
+    margin-bottom: 0px;
+  }
+  .hero{
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 10px;
+    
+  }
   .contactp{
     position: static;
     background-color: #9272C2;
@@ -105,13 +140,39 @@ body {
     margin: 30px 0;
     
   }
-
+  .hero-img{
+    display: none;
+  }
   .form-heading, .contact-btn {
     text-align: center;
   }
 }
 
 @media only screen and (max-width: 578px) {
+  .hero-header{
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    color: #573F7B;
+    margin-top: 0px;
+   
+  }
+  .hero-paragraph{
+    font-size: 10px;
+    line-height: 12px;
+    align-items: center;
+    color: #573F7B;
+    margin-top: 0px;
+  }
+  .hero{
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 10px;
+    
+  }
+  .hero-img{
+    display: none;
+  }
   .header, .header-two, .form-heading {
     font-size: 25px;
   }
