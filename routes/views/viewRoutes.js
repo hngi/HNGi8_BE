@@ -34,7 +34,7 @@ viewRouter.get('/faqs', faqs);
 
 viewRouter.get('/dashboard', auth, dashboard);
 
-viewRouter.get('/admin/create', adminCreate);
+viewRouter.get('/admin/create', auth, adminCreate);
 
 viewRouter.get('/admins', viewAdmins);
 
