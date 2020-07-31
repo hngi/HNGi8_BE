@@ -63,7 +63,6 @@ const getAllMentors = async (req, res, next) => {
   });
   // add this so that all applications will be returned when no query param is present
   queryArray.push({});
-  console.log('Filters:', queryArray);
   try {
     const mentors = await Mentor.find({ $and: queryArray })
       .sort({ updatedAt: 'desc' });
@@ -85,7 +84,6 @@ const getAllPendingMentors = async (req, res, next) => {
   });
   // add this so that all pending applications will be returned when no query param is present
   queryArray.push({ applicationState: 'pending' });
-  console.log('Filters:', queryArray);
   try {
     const mentors = await Mentor.find({ $and: queryArray });
     return responseHandler(res, 200, 'All pending mentor applications', { mentors });
@@ -106,9 +104,8 @@ const getAllAcceptedMentors = async (req, res, next) => {
   });
   // add this so that all accepted applications will be returned when no query param is present
   queryArray.push({ applicationState: 'accepted' });
-  console.log('Filters:', queryArray);
   try {
-    const mentors = await Mentor.find({ $and: queryArray});
+    const mentors = await Mentor.find({ $and: queryArray });
     return responseHandler(res, 200, 'All accepted mentor applications', { mentors });
   } catch (err) {
     return next(err);
@@ -126,7 +123,6 @@ const getAllDeclinedMentors = async (req, res, next) => {
   });
   // add this so that all declined applications will be returned when no query param is present
   queryArray.push({ applicationState: 'declined' });
-  console.log('Filters:', queryArray);
   try {
     const mentors = await Mentor.find({ $and: queryArray });
     return responseHandler(res, 200, 'All decliined mentor applications', { mentors });
