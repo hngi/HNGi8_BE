@@ -3,7 +3,7 @@
 <%- include('../includes/sidenav') %>
 <link rel="stylesheet" href="/styles/custom-css/admin-create.css">
 
-<section class="raas">
+<div class="raas">
     <form action="" method="post">
         <div class="container">
             <div class="row">
@@ -24,7 +24,7 @@
                 <div class="col-sm">
                     <p class="form-label">Role</p>
                     <select class="custom-select" required>
-                        <option selected>Select Role</option>
+                        <option hidden selected>Select Role</option>
                         <option value="super admin">Super Admin</option>
                         <option value="admin">Admin</option>
                     </select>
@@ -33,6 +33,7 @@
             <input class="submit" type="submit" value="Register">
         </div>
     </form>
-</section>
+</div>
+</div>
 
 <%- include('../includes/footer') %>

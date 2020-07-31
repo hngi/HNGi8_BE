@@ -45,7 +45,6 @@ input{
 }
 .raas{
     margin-top: 81px;
-    margin-bottom: 564px;
 }
 .submit{
     margin-top: 40px;
@@ -60,6 +59,7 @@ input{
     color: #FFFFFF;
     letter-spacing: -0.28px;
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 564px;
 }
 .selected-role{
     font-style: normal;
@@ -76,7 +76,7 @@ input{
     #top{
         margin-top: 0px;
     }
-    .raas{
-        margin-bottom: 40px;
+    .submit{
+        margin-bottom: 120px;
     }
 }
