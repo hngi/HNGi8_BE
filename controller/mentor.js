@@ -51,30 +51,32 @@ const mentorApplication = async (req, res, next) => {
     return res.redirect('/mentors/apply');
   }
 };
-
+// Get all mentor applications
 const getAllMentors = async (req, res, next) => {
   try {
     const mentors = await Mentor.find({})
       .sort({ updatedAt: 'desc' });
-    return responseHandler(res, 200, 'All mentors', { mentors });
+    return responseHandler(res, 200, 'All mentor applications', { mentors });
   } catch (err) {
     return next(err);
   }
 };
 
+// Get all pending mentor applications
 const getAllPendingMentors = async (req, res, next) => {
   try {
     const mentors = await Mentor.find({ applicationState: 'pending' });
-    return responseHandler(res, 200, 'All pending mentors', { mentors });
+    return responseHandler(res, 200, 'All pending mentor applications', { mentors });
   } catch (err) {
     return next(err);
   }
 };
 
+// Get all accepted mentor applications
 const getAllAcceptedMentors = async (req, res, next) => {
   try {
     const mentors = await Mentor.find({ applicationState: 'accepted' });
-    return responseHandler(res, 200, 'All active mentors', { mentors });
+    return responseHandler(res, 200, 'All accepted mentor applications', { mentors });
   } catch (err) {
     return next(err);
   }
@@ -83,7 +85,7 @@ const getAllAcceptedMentors = async (req, res, next) => {
 const getAllDeclinedMentors = async (req, res, next) => {
   try {
     const mentors = await Mentor.find({ applicationState: 'declined' });
-    return responseHandler(res, 200, 'All decliined mentors', { mentors });
+    return responseHandler(res, 200, 'All decliined mentor applications', { mentors });
   } catch (err) {
     return next(err);
   }
