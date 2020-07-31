@@ -1,6 +1,9 @@
 const { body, validationResult } = require('express-validator');
+const mongoose = require('mongoose');
 const Mentor = require('../models/Mentor');
 const responseHandler = require('../utils/responseHandler');
+const { ErrorHandler } = require('../utils/error');
+
 // Application rules
 const applicationValidationRules = () => [
   body('firstName').isString(),
@@ -85,11 +88,60 @@ const getAllDeclinedMentors = async (req, res, next) => {
   }
 };
 
+// accept a mentors application
+const acceptApplication = async (req, res, next) => {
+  const mentorId = req.params.id;
+
+  if (!mongoose.isValidObjectId(mentorId)) {
+    return next(new ErrorHandler(400, 'Invalid Id for mentor'));
+  }
+
+  try {
+    const mentor = await Mentor.findOne({ _id: mentorId });
+    if (!mentor) {
+      throw new ErrorHandler(404, 'Mentor with Id not found');
+    }
+
+    await mentor.update({ applicationState: 'accepted' });
+    return res.send({
+      status: 'success',
+      message: 'Mentor application accepted'
+    });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+// Added functionality to decline a mentors application
+const declineApplication = async (req, res, next) => {
+  const mentorId = req.params.id;
+  if (!mongoose.isValidObjectId(mentorId)) {
+    return next(new ErrorHandler(400, 'Invalid Id for mentor'));
+  }
+
+  try {
+    const mentor = await Mentor.findOne({ _id: mentorId });
+    if (!mentor) {
+      throw new ErrorHandler(404, 'Mentor with Id not found');
+    }
+
+    await mentor.update({ applicationState: 'declined' });
+    return res.send({
+      status: 'success',
+      message: 'Mentor application declined'
+    });
+  } catch (err) {
+    return next(err);
+  }
+};
+
 module.exports = {
   applicationValidationRules,
   mentorApplication,
   getAllMentors,
   getAllActiveMentors,
   getAllDeclinedMentors,
-  getAllPendingMentors
+  getAllPendingMentors,
+  acceptApplication,
+  declineApplication
 };
