@@ -43,7 +43,7 @@ viewRouter.get('/hngi7', lastInternship);
 viewRouter.get('/test', (req, res) => {
   res.render('pages/test', {
     title: 'test page',
-    name: 'test user',
+    name: 'test user'
   });
 });
 module.exports = viewRouter;
