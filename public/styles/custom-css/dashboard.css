@@ -110,7 +110,7 @@
 
 #bar-chart-1 {
   margin: 0 auto;
-  width: 85%;
+  width: 100%;
   height: 400px;
 }
 
@@ -122,4 +122,10 @@
 #bar-chart-3 {
   width: 85%;
   height: 500px;
+}
+
+@media (max-width: 768px) {
+  #bar-chart-3 {
+    width: 100%;
+  }
 }

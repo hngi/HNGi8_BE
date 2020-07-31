@@ -20,3 +20,4 @@ all: setup install dev
 update:
 	git pull upstream develop
 	yarn install
+	yarn dev
