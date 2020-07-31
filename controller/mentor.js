@@ -84,7 +84,7 @@ const getAllPendingMentors = async (req, res, next) => {
     queryArray.push(queryObj);
   });
   // add this so that all pending applications will be returned when no query param is present
-  queryArray.push({ applicationStatus: 'pending' });
+  queryArray.push({ applicationState: 'pending' });
   console.log('Filters:', queryArray);
   try {
     const mentors = await Mentor.find({ $and: queryArray });
