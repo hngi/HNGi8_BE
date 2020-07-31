@@ -6,7 +6,8 @@ const {
 
 const {
   mentorApplication, applicationValidationRules, getAllMentors,
-  getAllDeclinedMentors, getAllActiveMentors, getAllPendingMentors
+  getAllDeclinedMentors, getAllActiveMentors, getAllPendingMentors,
+  acceptApplication, declineApplication
 } = require('../controller/mentor');
 
 const { internApply, internValidationRules } = require('../controller/internController');
@@ -23,6 +24,8 @@ router.post('/apply', internValidationRules(), internApply);
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);
 router.get('/mentors/pending', getAllPendingMentors);
 router.get('/mentors', getAllMentors);
+router.patch('/mentors/:id/accept', acceptApplication);
+router.patch('/mentors/:id/decline', declineApplication);
 router.get('/mentors/accepted', getAllActiveMentors);
 router.get('/mentors/declined', getAllDeclinedMentors);
 
