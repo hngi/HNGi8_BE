@@ -23,22 +23,22 @@ a{
 }
 .txt-box{
     position: absolute;
-    top: 190px;
+    top: 210px;
     left: 136px;
 }
 .head-txt{
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
-    line-height: 64px;
+    font-size: min(max(0.75rem, 4vw), 48px);
+    line-height: min(max(28px, 4vw), 64px); 
     color: #9272C2;
     margin-bottom: 30px;
 }
 .head-sub{
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: min(max(0.75rem, 4vw), 24px);
+    line-height: min(max(28px, 4vw), 36px); 
     letter-spacing: -0.28px;
     color: #573F7B;
     margin-bottom: 30px;
@@ -67,8 +67,8 @@ a{
 .head-txt-2{
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
-    line-height: 72px;
+    font-size: min(max(0.75rem, 4vw), 48px);
+    line-height: min(max(24px, 4vw), 72px); 
     letter-spacing: -0.28px;
     color: #573F7B;
 }
@@ -85,8 +85,8 @@ a{
 .description{
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: min(max(0.75rem, 4vw), 18px);
+    line-height: min(max(28px, 4vw), 27px); 
     text-align: left !important;
     letter-spacing: -0.28px;
     color: #573F7B;
@@ -98,7 +98,7 @@ a{
 .about-title{
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: min(max(0.75rem, 4vw), 24px);
     line-height: 36px;
     color: #573F7B;
     text-align: left;
