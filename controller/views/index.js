@@ -33,7 +33,7 @@ const dashboard = (req, res) => {
   res.render('pages/dashboard', {
     title: 'Dashboard',
     name: req.session.name,
-    lastVisited: new Date(req.session.lastVisited).toDateString()
+    lastVisited: new Date(req.session.lastVisited).toGMTString()
   });
 };
 
