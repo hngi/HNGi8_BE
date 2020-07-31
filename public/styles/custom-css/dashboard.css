@@ -29,6 +29,13 @@
   color: #573F7B;
 }
 
+@media (max-width: 768px){
+  .welcome-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
 .welcome-paragraph {
   font-style: normal;
   font-weight: normal;
