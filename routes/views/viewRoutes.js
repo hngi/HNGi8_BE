@@ -9,7 +9,8 @@ const {
   dashboard,
   lastInternship,
   contact,
-  faqs
+  faqs,
+  viewAdmins,
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
@@ -32,11 +33,14 @@ viewRouter.get('/faqs', faqs);
 
 viewRouter.get('/dashboard', auth, dashboard);
 
+viewRouter.get('/admins', viewAdmins);
+
 viewRouter.get('/hngi7', lastInternship);
 
 viewRouter.get('/test', (req, res) => {
   res.render('pages/test', {
     title: 'test page',
-    name: 'test user'});
+    name: 'test user',
+  });
 });
 module.exports = viewRouter;
