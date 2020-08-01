@@ -40,7 +40,7 @@
   top: 0;
   height: 100%;
   max-height: 100%;
-  width: 28.5%;
+  width: 30%;
   max-width: 410.5px;
   border-left: 1px solid #6c63ff;
   padding: 30.5px;
@@ -49,6 +49,7 @@
 .notifications-list {
   margin-top: 3rem;
   margin-left: 27px;
+  margin-right: min(30%, 410.5px);
   padding-bottom: 3rem;
   max-width: 634px;
 }
@@ -169,4 +170,70 @@
 
 .detailed-notification p {
   max-width: 100%;
+}
+
+@media (max-width: 991px) {
+  .notifications-list {
+    margin-left: 0;
+    max-width: 70vw;
+    margin-right: 30vw;
+  }
+
+  .detailed-notification {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .buttons button {
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .buttons .clear-all {
+    border: 1px solid#9272c2;
+    color: #9272c2;
+    margin-right: 0.5rem;
+  }
+
+  .buttons .clear-selected {
+    background-color: #9272c2;
+    color: #ffffff;
+    margin-left: 0.5rem;
+  }
+
+  .notifications-list {
+    margin-left: 0;
+    max-width: 60vw;
+    margin-right: 40vw;
+  }
+
+  .detailed-notification {
+    width: 40vw;
+  }
+
+  .notifications-list .notification:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  .notification h4,
+  .detailed-notification h4 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .notification span.time {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 8px;
+  }
+
+  .notification {
+    max-width: 100%;
+  }
+
+  .detailed-notification p {
+    font-size: 14px;
+  }
 }
