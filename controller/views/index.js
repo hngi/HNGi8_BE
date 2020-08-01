@@ -52,6 +52,10 @@ const adminCreate = (req, res) => {
   res.render('pages/admin-create', { title: 'Admin Create'});
 };
 
+const viewNotifications = (req, res) => {
+  res.render('pages/notifications', { title: 'Notifications'});
+};
+
 module.exports = {
   internSignup,
   homePage,
@@ -64,4 +68,5 @@ module.exports = {
   faqs,
   adminCreate,
   viewAdmins,
+  viewNotifications
 };
