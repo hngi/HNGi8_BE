@@ -15,7 +15,8 @@ const {
   acceptApplication, declineApplication
 } = require('../controller/mentor');
 
-const { internApply, internValidationRules } = require('../controller/internController');
+const { internApply, internValidationRules, getAllInterns,  getAllAcceptedInterns, getAllPendingInterns, getAllDeclinedInterns,
+  acceptInternApplication, declineInternApplication } = require('../controller/internController');
 
 const router = express.Router();
 
