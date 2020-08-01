@@ -26,6 +26,8 @@ router.get('/logout', logout);
 router.post('/admin/create', newAdminValidationRules(), createAdmin);
 
 router.post('/contact-us', contact);
+
+// Intern routes
 router.post('/apply', internValidationRules(), internApply);
 
 // mentor routes

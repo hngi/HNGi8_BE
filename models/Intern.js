@@ -57,6 +57,12 @@ const internApplicationSchema = Schema({
     type: Date
   },
 
+  internApplicationStatus: {
+    type: String,
+    enum: ['accepted', 'declined', 'pending'],
+    default: 'pending'
+  },
+
   // date: {
   //   type: Date,
   //   default: Date.now
