@@ -15,7 +15,8 @@ const {
   acceptApplication, declineApplication
 } = require('../controller/mentor');
 
-const { internApply, internValidationRules } = require('../controller/internController');
+const { internApply, internValidationRules, getAllInterns,  getAllAcceptedInterns, getAllPendingInterns, getAllDeclinedInterns,
+  acceptInternApplication, declineInternApplication } = require('../controller/internController');
 
 const router = express.Router();
 
@@ -26,7 +27,11 @@ router.get('/logout', logout);
 router.post('/admin/create', newAdminValidationRules(), createAdmin);
 
 router.post('/contact-us', contact);
+
+// Intern routes
 router.post('/apply', internValidationRules(), internApply);
+router.get('/apply', getAllInterns);
+
 
 // mentor routes
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);
