@@ -1,0 +1,43 @@
+<!-- <%- include('../includes/head') %> -->
+<%- include('../includes/admin-header') %>
+<%- include('../includes/sidenav') %>
+<link rel="stylesheet" href="/styles/custom-css/admin-create.css">
+
+<div class="raas">
+    <form action="" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p class="form-label">First Name</p>
+                    <input type="text" name="firstname" id="firstname" required>
+                </div>
+                <div class="col-sm">
+                    <p class="form-label">Last Name</p>
+                    <input type="text" name="lastname" id="lastname" required>
+                </div>
+            </div>
+            <div class="row" id="top">
+                <div class="col-sm">
+                    <p class="form-label">Email Address</p>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="col-sm">
+                    <p class="form-label">Role</p>
+                    <select class="custom-select" required>
+                        <option hidden selected>Select Role</option>
+                        <option value="super admin">Super Admin</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <p class="form-label">Password</p>
+                    <input type="password" name="adminpassword" id="adminpassword" required>
+                </div>
+            </div>
+            <input class="submit" type="submit" value="Register">
+        </div>
+    </form>
+</div>
+</div>
+
+<%- include('../includes/footer') %>

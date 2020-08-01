@@ -1,4 +1,5 @@
 <%- include('../includes/external-header')-%>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="/styles/custom-css/mentors.css">
 
 
@@ -24,7 +25,7 @@
 <!-- main content goes in here -->
 <div class="sec1">
     <!-- create a div to contain the description text and the left and right svgs-->
-    <div class="description">
+    <div data-aos="fade-in" data-aos-duration="1250"  class="description">
         <div class="desc-text">
             <p>Team Work, makes the dream work....</p>
             <p>At Zuri, we are not just a team because we work together, we are a team because we respect each other’s boundary and bring out the best in each other and our interns.</p>
@@ -64,21 +65,21 @@
                     <p>Design Mentor</p>
                 </div>
             </div>
-            <div class="mentor mentor4">
+            <div data-aos="fade-up" data-aos-duration="1200" class="mentor mentor4">
                 <img class="ment-img" src="./img/mentor4.png" alt="">
                 <div class="img-caption">
                     <p>Wendy Ekanem</p>
                     <p>Mobile Mentor</p>
                 </div>
             </div>
-            <div class="mentor mentor5">
+            <div data-aos="fade-up" data-aos-duration="1200" class="mentor mentor5">
                 <img class="ment-img" src="./img/mentor5.png" alt="">
                 <div class="img-caption">
                     <p>Jack Amadi</p>
                     <p>Backend Mentor</p>
                 </div>
             </div>
-            <div class="mentor mentor6">
+            <div data-aos="fade-up" data-aos-duration="1200" class="mentor mentor6">
                 <img class="ment-img" src="./img/mentor6.png" alt="">
                 <div class="img-caption">
                     <p>Jack Amadi</p>
@@ -114,6 +115,9 @@
 
     <%- include('../includes/footer')-%>
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

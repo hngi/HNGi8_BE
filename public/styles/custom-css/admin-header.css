@@ -7,12 +7,13 @@
   --sidebar-width: 18rem;
 }
 
+.container-fluid nav,
 .container nav {
   /* margin: 3rem auto 60px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 4rem;
+  min-height: 5rem;
   max-height: max-content;
   color: #7e5ae3;
   position: relative;
@@ -46,8 +47,58 @@ nav ul li {
   object-fit: cover;
 }
 
+#userName {
+  margin: 0 0.625rem 0 0;
+  color: #7e5ae3;
+}
+
+nav ul.nav-links {
+  margin-right: 0;
+}
+
+/* dropdown styling */
+.dropdown-toggle::after {
+  display: none;
+}
+
+nav div.dropdown-menu {
+  max-width: 240px;
+  background: #ffffff;
+  border: 0.5px solid #e0e0e0;
+  box-sizing: border-box;
+  box-shadow: 2px -2px 4px rgba(181, 181, 181, 0.2),
+    -2px 2px 4px rgba(181, 181, 181, 0.2);
+  transform: translateX(-100%);
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+nav div.dropdown-menu a.dropdown-item {
+  /* padding: 0.5rem 1rem; */
+  margin: 1rem 0;
+  color: #7e5ae3;
+}
+
+nav div.dropdown-menu a.dropdown-item svg {
+  /* padding: 0.25rem 0.5rem; */
+  margin: 0 1rem 0 0;
+}
+
 @media (max-width: 991px) {
   nav h4 {
     margin-left: 2.125rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav h4 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container-fluid nav h4.nav-item,
+  .container nav h4.nav-item {
+    font-size: 1rem;
   }
 }

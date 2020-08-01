@@ -4,16 +4,27 @@
 
 body {
     background-color: #Fff;
-    background-image: url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Ellipse_29_awtaml.svg),
+    /* background-image: url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Ellipse_29_awtaml.svg),
     url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Rectangle_572_pvzmxr.svg);
     background-position: bottom 80px left 0,
     top 100px right 0;
     background-attachment: fixed; 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    /* background-color: #F5F4FA; */
     /* background-image: url(/public/img/Rectangle\ 572.png),
     url(/public/img/Ellipse\ 29.png); */
 }
 
+.form-bg {
+    background-color: #F5F4FA;
+    background-image: url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Ellipse_29_awtaml.svg),
+    url(https://res.cloudinary.com/dafsch2zs/image/upload/v1595662552/Rectangle_572_pvzmxr.svg);
+    background-position: bottom -90px left 0,
+    top 100px right 0;
+    background-attachment: scroll; 
+    background-repeat: no-repeat;
+    border-bottom: 2px solid #9272C2;
+}
 
 
 section {
@@ -25,7 +36,7 @@ div.login-container {
     padding-left: 20px;
     max-width: 432px !important;
     margin: auto;
-    margin-top: 170px;
+    padding-top: 170px;
 }
 
 .logo {
@@ -36,11 +47,15 @@ div.login-container {
 input#email,
 input#password {
     margin-bottom: 30px;
-    height: 3rem !important;
+    height: 3.5rem !important;
     max-width: 392px !important;
-    border: 2px solid #9272c2 !important;
+    border: 2px solid #b5b5b5 !important;
     border-radius: 5px !important;
     background-color: #F5F4FA;
+}
+
+input::placeholder {
+    color: #B2B2B2 !important;
 }
 
 input#password {
@@ -70,7 +85,7 @@ button.submit-btn:link,
 button.submit-btn:visited,
 button.submit-btn {
     width: 238px !important;
-    height: 3rem;
+    height: 3.6875rem;
     margin-top: 30px;
     background-color: #f5f4fa;
     color: #9272C2;
@@ -90,17 +105,21 @@ button.submit-btn:focus{
 
 .mail-icon {
     position: absolute;
-    color: #9272c2;
-    right: 20px;
-    top: 12px;
-    font-size: 25px;
+    color: #b5b5b5;
+    right: 39px;
+    top: 16px;
+    font-size: 24px;
 }
 
 
 .password-icon {
     position: absolute;
-    color: #9272c2;
-    right: 20px;
-    top: 12px;
-    font-size: 25px;
+    color: #b5b5b5;
+    right: 39px;
+    top: 16px;
+    font-size: 24px;
+}
+
+footer {
+    /* background-color: #fff !important; */
 }

@@ -1,7 +1,81 @@
+<!-- <%- include('../includes/head') %> -->
 <%- include('../includes/admin-header') %>
+<%- include('../includes/sidenav') %>
+<link rel="stylesheet" href="/styles/custom-css/dashboard.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-<section>
-    <h1 class="display-1"> My New Dashboard</h1>
-</section>
+<div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid ml-lg-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="welcome-title">Welcome back <span><%= name %></span></h2>
+                    <p class="welcome-paragraph">Last Login: <span class="login-time"> <%= lastVisited %></span></p>
+                    <p class="welcome-paragraph">You have approved <strong>762</strong> applications. You have <strong>28</strong> more to go</p>
+                </div>
+                <div class="col-lg-4 jumbotron-img-container d-none d-lg-block">
+                    <img src="https://res.cloudinary.com/dafsch2zs/image/upload/v1596175206/undraw_coding_6mjf_1_vsc86v.svg"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
-<%- include('../includes/footer')-%>
+
+
+    <div class="card-flex-container">
+        <div class="card text-white mb-3">
+            <div class="card-body text-center">
+                <h2 class="card-title">12000</h2>
+                <p class="card-text">Registered Interns</p>
+            </div>
+        </div>
+
+        <div class="card text-white mb-3">
+            <div class="card-body text-center">
+                <h2 class="card-title">93</h2>
+                <p class="card-text">Approved Mentors</p>
+            </div>
+        </div>
+
+        <div class="card text-white mb-3">
+            <div class="card-body text-center">
+                <h2 class="card-title">12</h2>
+                <p class="card-text">Registered Admins</p>
+            </div>
+        </div>
+
+        <div class="card text-white mb-3">
+            <div class="card-body text-center">
+                <h2 class="card-title">5</h2>
+                <p class="card-text">Registered Sponsors</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid chart-container">
+    <div class="row">
+        <div class="col-lg-6 chart-1">
+            <div id="bar-chart-1"></div>
+        </div>
+
+
+        <div class="col-lg-6 chart-2">
+            <div id="bar-chart-2"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid chart-container pb-5">
+    <div class="chart-1">
+        <div id="bar-chart-3" class="mx-auto"></div>
+    </div>
+</div>
+
+</div>
+<script src="/js/custom-js/dashboard.js"></script>
+<%- include('../includes/footer') %>

@@ -29,6 +29,8 @@ const login = (req, res) => {
       bcrypt.compare(password, admin.password, (err, result) => {
         if (result) {
           req.session.auth = true;
+          req.session.lastVisited = req.session.visited || Date.now();
+          req.session.visited = Date.now();
           req.session.name = admin.name;
           req.session.email = admin.email;
           req.session.role = admin.role;
