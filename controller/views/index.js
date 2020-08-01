@@ -17,6 +17,10 @@ const mentorSignup = (req, res) => {
   res.render('pages/mentor-signup', { title: 'Mentor Signup' });
 };
 
+const mentorsDashboard = (req, res) => {
+  res.render('pages/dashboard-mentors', { title: 'Dashboard Mentors' });
+};
+
 const faqs = (req, res) => {
   res.render('pages/faqs', { title: 'FAQs' });
 };
