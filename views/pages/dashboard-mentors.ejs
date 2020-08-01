@@ -1,0 +1,196 @@
+<!-- <%- include('../includes/head') %> -->
+<%- include('../includes/sidenav') %>
+<link rel="stylesheet" href="/styles/custom-css/mentors-dashboard.css">
+<div class="dashB-wrapper">
+    <div class="mentors_dashboard-main">
+      <div class="row1">
+        <p>Mentors</p>
+        <div class="notif-svg">
+          <svg width="23" height="34" viewBox="0 0 23 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 17.8741C16 16.1544 15.3679 14.5051 14.2426 13.2891C13.1174 12.073 11.5913 11.3899 10 11.3899C8.4087 11.3899 6.88258 12.073 5.75736 13.2891C4.63214 14.5051 4 16.1544 4 17.8741C4 25.439 1 27.6004 1 27.6004H19C19 27.6004 16 25.439 16 17.8741Z" stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.7295 31.9233C11.5537 32.2509 11.3013 32.5228 10.9977 32.7117C10.6941 32.9007 10.3499 33.0002 9.99951 33.0002C9.64914 33.0002 9.30491 32.9007 9.0013 32.7117C8.69768 32.5228 8.44534 32.2509 8.26953 31.9233" stroke="#573F7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="19" cy="4.00592" rx="4" ry="4.00592" fill="#9272C2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="search-input">
+          <input class="input" type="text" placeholder="Search for Application" required>
+          <a class="search-icon" href="#">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 19L14.65 14.65M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" stroke="#B2B2B2" stroke-opacity="0.58" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="filter-wrap">
+          <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 0H0L8 9.46V17L12 19V9.46L20 0Z" fill="#573F7B"/>
+          </svg>
+          <p>Filter</p>
+          <svg class="drop_down-btn" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 10L12 14L16 10" stroke="#337AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <!-- <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+          </div> -->
+        </div>
+        <div class="export-wrap">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23 16.697V20.697C23 21.2274 22.7893 21.7361 22.4142 22.1112C22.0391 22.4863 21.5304 22.697 21 22.697H7C6.46957 22.697 5.96086 22.4863 5.58579 22.1112C5.21071 21.7361 5 21.2274 5 20.697V16.697M9 11.6969L14 16.6969M14 16.6969L19 11.6969M14 16.6969V4.6969" stroke="#573F7B" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Export</p>
+        </div>
+      </div>
+      <div id="rowThree" class="row3">
+        <a href="#" class="mBtn1"><button id="" class="m-btn">Approved Mentors</button></a>
+        <a href="#" class="mBtn2"><button id="" class="m-btn btn-active">Pending Mentors</button></a>
+        <a href="#" class="mBtn3"><button id="" class="m-btn">Declined Mentors</button></a>
+      </div>
+      <div class="row4 dashBoxes">
+        <div id="dashBox" class="dashBox">
+          <div class="mentor-name">
+            <a href="#ment__aside--info">David Jefferson</a>
+          </div>
+          <div class="mentor-email">
+            <p>feranmiolowo15@gmail.com</p>
+          </div>
+          <div class="status1">
+            <a href="#">Approve</a>
+          </div>
+          <div class="status2">
+            <a href="#">Decline</a>
+          </div>
+        </div>
+        <div id="dashBox" class="dashBox">
+          <div class="mentor-name">
+            <a href="#ment__aside--info">David Jefferson</a>
+          </div>
+          <div class="mentor-email">
+            <p>feranmiolowo15@gmail.com</p>
+          </div>
+          <div class="status1">
+            <a href="#">Approve</a>
+          </div>
+          <div class="status2">
+            <a href="#">Decline</a>
+          </div>
+        </div>
+        <div id="dashBox" class="dashBox">
+          <div class="mentor-name">
+            <a href="#ment__aside--info">David Jefferson</a>
+          </div>
+          <div class="mentor-email">
+            <p>feranmiolowo15@gmail.com</p>
+          </div>
+          <div class="status1">
+            <a href="#">Approve</a>
+          </div>
+          <div class="status2">
+            <a href="#">Decline</a>
+          </div>
+        </div>
+        <div id="dashBox" class="dashBox">
+          <div class="mentor-name">
+            <a href="#ment__aside--info">David Jefferson</a>
+          </div>
+          <div class="mentor-email">
+            <p>feranmiolowo15@gmail.com</p>
+          </div>
+          <div class="status1">
+            <a href="#">Approve</a>
+          </div>
+          <div class="status2">
+            <a href="#">Decline</a>
+          </div>
+        </div>
+        <div id="dashBox" class="dashBox">
+          <div class="mentor-name">
+            <a href="#ment__aside--info">David Jefferson</a>
+          </div>
+          <div class="mentor-email">
+            <p>feranmiolowo15@gmail.com</p>
+          </div>
+          <div class="status1">
+            <a href="#">Approve</a>
+          </div>
+          <div class="status2">
+            <a href="#">Decline</a>
+          </div>
+        </div>
+        
+
+        <!-- pagination goes in here -->
+        <div id="pagination" class="pagination">
+          <a class="dir" href="#">&lt;</a>
+          <a class="btn " href="#">1</a>
+          <a class="btn active" href="#">2</a>
+          <a class="btn " href="#">3</a>
+          <a class="dir" href="#">&gt;</a>
+        </div>
+      </div>    
+    </div>
+
+    <div id="ment__aside--info" class="mentors_dashboard-aside">
+      <p class="aside-title">Mentor Details</p>
+      <div class="det-wrap">
+          <div id="f-name" class="f-name">
+            <p class="mentor-det"><small>First Name:</small></p>
+            <p class="det-value"><small>David</small></p>
+            </div>
+          <div id="l-name" class="l-name">
+            <p class="mentor-det"><small>Last Name:</small></p>
+            <p class="det-value"><small>Jefferson</small></p>
+          </div>
+          <div id="dOB" class="d-o-b">
+            <p class="mentor-det"><small>Date of Birth:</small></p>
+            <p class="det-value"><small>02/05/1989</small></p>
+          </div>
+          <div id="mentGender" class="ment-gender">
+            <p class="mentor-det"><small>Gender:</small></p>
+            <p class="det-value"><small>Male</small></p>
+          </div>
+          <div id="mentPhone" class="ment-phone">
+            <p class="mentor-det"><small>Phone No:</small></p>
+            <p class="det-value"><small>+234 818 309 8992</small></p>
+          </div>
+          <div id="mentEmail" class="ment-email">
+            <p class="mentor-det"><small>Email Address:</small></p>
+            <p class="det-value"><small>feranmiolowo15@gmail.com</small></p>
+          </div>
+          <div id="mentCountry" class="ment-country">
+            <p class="mentor-det"><small>Country:</small></p>
+            <p class="det-value"><small>Nigeria</small></p>
+          </div>
+          <div id="mentState" class="ment-state">
+            <p class="mentor-det"><small>State:</small></p>
+            <p class="det-value"><small>Lagos</small></p>
+          </div>
+          <div id="mentorID" class="mentor-id">
+            <p class="mentor-det"><small>Mentor ID:</small></p>
+            <p class="det-value"><small>54567</small></p>
+          </div>
+          <div id="jobStat" class="job-stat">
+            <p class="mentor-det"><small>Job Status:</small></p>
+            <p class="det-value"><small>Employed</small></p>
+          </div>
+          <div id="cvLink" class="cv-link">
+            <p class="mentor-det"><small>CV Link:</small></p>
+            <p class="det-value"><small>None</small></p>
+          </div>
+          <div id="aboutMent" class="about-ment">
+            <p class="mentor-det"><small>About:</small></p>
+            <p class="det-value"><small>This is Me!</small></p>
+          </div>
+          <div id="regDate" class="reg-date">
+            <p class="mentor-det"><small>Reg. Date:</small></p>
+            <p class="det-value"><small>20 Sep 2020, 4:45PM</small></p>
+          </div>
+      </div>
+    </div>
+    </div>
+
+</div>
+<script src="js/custom-js/mentorsDashboard.js"></script>
+<%- include('../includes/footer') %>
