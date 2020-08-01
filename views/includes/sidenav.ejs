@@ -13,15 +13,17 @@
     <p class="role ml-4 text-white m-0">Administrator</p>
   </div>
   <ul class="sidebar__links p-0">
-    <li class="">
-      <a href="#">
+    <!-- dashboard -->
+    <li class="<%- locals.title === 'Dashboard' ? 'show':'' %>">
+      <a href="/dashboard">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
           <path
             d="M5 11H23M11 23V11M7 5H21C22.1046 5 23 5.89543 23 7V21C23 22.1046 22.1046 23 21 23H7C5.89543 23 5 22.1046 5 21V7C5 5.89543 5.89543 5 7 5Z"
             stroke="white" stroke-linecap="round" stroke-linejoin="round" /></svg>Dashboard</a>
     </li>
     <!-- users -->
-    <li class="">
+    <li
+      class="<%- locals.title.includes('Interns')? 'show':locals.title.includes('Mentors')? 'show' : locals.title.includes('Admin')? 'show' : '' %>">
       <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
           <path
             d="M19 23.4146V21.4146C19 20.3537 18.5786 19.3363 17.8284 18.5861C17.0783 17.836 16.0609 17.4146 15 17.4146H7C5.93913 17.4146 4.92172 17.836 4.17157 18.5861C3.42143 19.3363 3 20.3537 3 21.4146V23.4146M25 23.4146V21.4146C24.9993 20.5283 24.7044 19.6673 24.1614 18.9669C23.6184 18.2664 22.8581 17.7661 22 17.5446M18 5.54455C18.8604 5.76485 19.623 6.26525 20.1676 6.96686C20.7122 7.66847 21.0078 8.53138 21.0078 9.41955C21.0078 10.3077 20.7122 11.1706 20.1676 11.8722C19.623 12.5738 18.8604 13.0742 18 13.2946M15 9.41455C15 11.6237 13.2091 13.4146 11 13.4146C8.79086 13.4146 7 11.6237 7 9.41455C7 7.20541 8.79086 5.41455 11 5.41455C13.2091 5.41455 15 7.20541 15 9.41455Z"
@@ -31,11 +33,33 @@
             d="M14.6992 2.2029L12.9721 0.519531L7.34973 5.98748L1.72737 0.519531L0.000244141 2.2029L7.34973 9.36615L14.6992 2.2029Z"
             fill="#EEC5CD" /></svg></a>
       <ul class="sub-list">
-        <li class="sub-list-item"><a href="/admin/create">Admins</a></li>
-        <li class="sub-list-item"><a href="#">Interns</a></li>
-        <li class="sub-list-item"><a href="#">Mentors</a></li>
+        <li class="sub-list-item <%- locals.title.includes('Admin')? 'active' : '' %>"><a href="/admins">Admins</a></li>
+        <li class="sub-list-item <%- locals.title.includes('Intern')? 'active' : '' %>"><a href="#">Interns</a></li>
+        <li class="sub-list-item <%- locals.title.includes('Mentor')? 'active' : '' %>"><a href="#">Mentors</a></li>
       </ul>
     </li>
+    <!-- open registration -->
+    <li class="">
+      <a href="#">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.5">
+            <path
+              d="M24 13.0857V14.0057C23.9988 16.1621 23.3005 18.2604 22.0093 19.9875C20.7182 21.7147 18.9033 22.9782 16.8354 23.5896C14.7674 24.201 12.5573 24.1276 10.5345 23.3803C8.51168 22.633 6.78465 21.2518 5.61096 19.4428C4.43727 17.6338 3.87979 15.4938 4.02168 13.342C4.16356 11.1903 4.99721 9.14205 6.39828 7.5028C7.79935 5.86354 9.69279 4.72111 11.7962 4.24587C13.8996 3.77063 16.1003 3.98806 18.07 4.86572M24 6.00574L14 16.0157L11 13.0157"
+              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>Open Registration</a>
+    </li>
+    <!-- close registration -->
+    <li class="">
+      <a href="#">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.5">
+            <path d="M20 8L8 20M8 8L20 20" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+        Close Registration</a>
+    </li>
+
     <!-- logout -->
     <li>
       <a href="/api/v1/logout"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"

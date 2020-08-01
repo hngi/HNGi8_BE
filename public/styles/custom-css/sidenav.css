@@ -90,7 +90,7 @@
   background-color: #eec5cd;
 }
 
-.sidebar > ul li.active *,
+.sidebar > ul li.active > a,
 .sidebar > ul li:hover > a {
   color: #fff;
   /* fill: white; */
