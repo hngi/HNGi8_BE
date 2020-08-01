@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
   secret: sessionKey,
@@ -35,7 +35,7 @@ app.use('/api/v1', apiRouter);
 app.use('/', viewRouter);
 
 // Express error middleware
-app.use((err, req, res, next) => handleError(res, err));
+app.use((err, req, res, next) => next(handleError(res, err)));
 
 // Unknown endpoints middleware
 app.use('*', (req, res) => {

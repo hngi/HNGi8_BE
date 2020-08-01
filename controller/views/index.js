@@ -1,3 +1,5 @@
+const Admins = require('../../models/AdminLogin');
+
 const homePage = (req, res) => {
   res.render('pages/homePage', { title: 'Home', currentPage: 'home' });
 };
@@ -15,6 +17,10 @@ const internSignup = (req, res) => {
 
 const mentorSignup = (req, res) => {
   res.render('pages/mentor-signup', { title: 'Mentor Signup' });
+};
+
+const mentorsDashboard = (req, res) => {
+  res.render('pages/dashboard-mentors', { title: 'Dashboard Mentors' });
 };
 
 const faqs = (req, res) => {
@@ -37,10 +43,11 @@ const dashboard = (req, res) => {
   });
 };
 
-const viewAdmins = (req, res) => {
+const viewAdmins = async (req, res) => {
+  const admins = await Admins.find({});
   res.render('pages/admins', {
     title: 'Registered Admins',
-    name: req.session.name
+    admins
   });
 };
 
@@ -53,7 +60,7 @@ const adminCreate = (req, res) => {
 };
 
 const viewNotifications = (req, res) => {
-  res.render('pages/notifications', { title: 'Notifications'});
+  res.render('pages/notifications', { title: 'Notifications' });
 };
 
 module.exports = {
@@ -68,5 +75,6 @@ module.exports = {
   faqs,
   adminCreate,
   viewAdmins,
-  viewNotifications
+  viewNotifications,
+  mentorsDashboard
 };
