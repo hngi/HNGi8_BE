@@ -81,7 +81,7 @@ const getAllInterns = async (req, res, next) => {
 const getAllAcceptedInterns = async (req, res, next) => {
   const queryArray = [];
   const params = req.query;
-  
+
   // Query parameter is assigned as an object and added to the query array
   Object.entries(params).forEach((param) => {
     const queryObj = { [param[0]]: param[1] };
@@ -119,7 +119,25 @@ const getAllPendingInterns = async (req, res, next) => {
   }
 };
 
-
+// Get all declined intern applications
+const getAllDeclinedInterns = async (req, res, next) => {
+  const queryArray = [];
+  const params = req.query;
+  
+ // Query parameter is assigned as an object and added to the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+  // this is added to return all applications, when no query param is present
+  queryArray.push({ internApplicationStatus: 'declined' });
+  try {
+    const interns = await Intern.find({ $and: queryArray });
+    return responseHandler(res, 200, 'All declined intern applications', { interns });
+  } catch (err) {
+    return next(err);
+  }
+};
 
 
 module.exports = {
@@ -127,5 +145,6 @@ module.exports = {
   internApply,
   getAllInterns,
   getAllAcceptedInterns,
-  getAllPendingInterns
+  getAllPendingInterns,
+  getAllDeclinedInterns
 };
