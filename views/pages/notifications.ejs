@@ -12,12 +12,10 @@
     <button role="button" type="button" class="clear-selected">Clear Selected</button>
   </div>
 
-  <% contacts.forEach(function(contact){ %>
   <div class="notifications-list">
     <div class="notification unread">
       <div class="info">
         <h4>Notification One</h4>
-        <h4><%= contact.subject %> </h4>
         <span class="time">2 Feb 2020, 12:44AM</span>
       </div>
       <label class="checkbox-container">
@@ -25,9 +23,48 @@
         <span class="checkmark"></span>
       </label>
     </div>
+    <div class="notification unread">
+      <div class="info">
+        <h4>Notification Two</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" name="notificationTwo" id="notificationTwo">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="notification unread">
+      <div class="info">
+        <h4>Notification Three</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" name="notificationThree" id="notificationThree">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="notification">
+      <div class="info">
+        <h4>Notification Four</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" checked name="notificationFour" id="notificationFour">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="notification">
+      <div class="info">
+        <h4>Notification Five</h4>
+        <span class="time">2 Feb 2020, 12:44AM</span>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" checked name="notificationFive" id="notificationFive">
+        <span class="checkmark"></span>
+      </label>
+    </div>
   </div>
 </div>
-<% }) %>
 
 <div class="detailed-notification">
   <header class="d-flex justify-content-between align-items-center">
