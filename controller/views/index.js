@@ -75,5 +75,6 @@ module.exports = {
   faqs,
   adminCreate,
   viewAdmins,
-  viewNotifications
+  viewNotifications,
+  mentorsDashboard
 };
