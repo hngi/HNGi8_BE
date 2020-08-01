@@ -71,9 +71,35 @@ const contact = (req, res) => {
     res.redirect('/contact');
   });
 };
+
+const createAdmin = (req, res, next) => {
+  const {
+    firstname, lastname, email, role, adminpassword
+  } = req.body;
+  Admins.findOne({ email }).then(
+    (newAdmin) => {
+      if (!newAdmin) {
+        req.flash('error', `user with this ${email} already exits`);
+      }
+
+      bcrypt.hash(adminpassword, 10).then((hash) => {
+        const admin = new Admins({
+          name: `${lastname} ${firstname}`,
+          password: hash,
+          email,
+          role: role === 'admin' ? role : 'superAdmin'
+        });
+        admin.save().then(
+          () => { res.flash('success', `${role} Created successfully`); }
+        ).catch((error) => { req.flash('error', error); });
+      });
+    }
+  ).catch((err) => { next(err); });
+};
 module.exports = {
   homePage,
   login,
   logout,
-  contact
+  contact,
+  createAdmin
 };
