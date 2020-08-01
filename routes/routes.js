@@ -4,10 +4,6 @@ const {
   homePage, login, contact, logout, createAdmin
 } = require('../controller');
 
-// const {
-//   contact, getAllContacts
-// } = require("../controller/contactUs")
-
 const {
   mentorApplication, applicationValidationRules, getAllMentors,
   getAllDeclinedMentors, getAllAcceptedMentors, getAllPendingMentors,
@@ -26,7 +22,6 @@ router.post('/create', createAdmin);
 
 router.post('/contact-us', contact);
 router.post('/apply', internValidationRules(), internApply);
-// router.get('/notifications', getAllContacts)
 
 // mentor routes
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);
