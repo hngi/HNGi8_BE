@@ -18,7 +18,7 @@ const router = express.Router();
 router.get('/', homePage);
 router.post('/auth', login);
 router.get('/logout', logout);
-router.post('/create', createAdmin);
+router.post('/admin/create', createAdmin);
 
 router.post('/contact-us', contact);
 router.post('/apply', internValidationRules(), internApply);
