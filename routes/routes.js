@@ -29,6 +29,8 @@ router.post('/contact-us', contact);
 
 // Intern routes
 router.post('/apply', internValidationRules(), internApply);
+router.get('/apply', getAllInterns);
+
 
 // mentor routes
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);
