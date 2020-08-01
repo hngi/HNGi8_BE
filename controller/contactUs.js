@@ -1,5 +1,27 @@
 const Contacts = require("../models/Contact")
 
+// Intern Validation rules
+const contactValidationRules = () => [
+  body('name').isString(),
+  body('email').isEmail(),
+  body('subjec').isString(),
+  body('message').isString(),
+];
+
+
+// get all contacts
+const getAllContacts = (req, res) => {
+  Contacts.find({})
+    .then(contacts => {
+        res.render("notifications", {contacts: contacts})
+    })  
+    .catch(err => {
+        res.send(err)
+    })
+}
+
+
+
 // post contactUs form
 const contact = (req, res) => {
 
@@ -25,8 +47,8 @@ const contact = (req, res) => {
     res.redirect('/contact');
 });
 }; 
-
-
 module.exports = {
-        contact
+  contactValidationRules,
+       getAllContacts,
+       contact
   }

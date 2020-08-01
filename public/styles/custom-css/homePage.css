@@ -23,22 +23,22 @@ a{
 }
 .txt-box{
     position: absolute;
-    top: 190px;
+    top: 210px;
     left: 136px;
 }
 .head-txt{
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
-    line-height: 64px;
+    font-size: min(max(0.75rem, 4vw), 48px);
+    line-height: min(max(28px, 4vw), 64px); 
     color: #9272C2;
     margin-bottom: 30px;
 }
 .head-sub{
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: min(max(0.75rem, 4vw), 24px);
+    line-height: min(max(28px, 4vw), 36px); 
     letter-spacing: -0.28px;
     color: #573F7B;
     margin-bottom: 30px;
@@ -67,8 +67,8 @@ a{
 .head-txt-2{
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
-    line-height: 72px;
+    font-size: min(max(0.75rem, 4vw), 48px);
+    line-height: min(max(24px, 4vw), 72px); 
     letter-spacing: -0.28px;
     color: #573F7B;
 }
@@ -85,8 +85,8 @@ a{
 .description{
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: min(max(0.75rem, 4vw), 18px);
+    line-height: min(max(28px, 4vw), 27px); 
     text-align: left !important;
     letter-spacing: -0.28px;
     color: #573F7B;
@@ -98,8 +98,8 @@ a{
 .about-title{
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: min(max(0.75rem, 4vw), 24px);
+    line-height: min(max(28px, 4vw), 36px); 
     color: #573F7B;
     text-align: left;
     margin-left: 40px;
@@ -152,7 +152,7 @@ a{
 .benefit-title{
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: min(max(15px, 4vw), 24px);
     line-height: 36px;
     letter-spacing: -0.28px;
     color: #FFFFFF;
@@ -163,7 +163,7 @@ a{
 .benefit-sub{
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: min(max(0.75rem, 4vw), 16px);
     line-height: 24px;
     text-align: center;
     letter-spacing: -0.28px;
@@ -220,7 +220,7 @@ a{
 .cur-sub{
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: min(max(8px, 4vw), 16px);
     line-height: 32px;
     text-align: center;
     letter-spacing: -0.28px;
@@ -282,8 +282,8 @@ a{
 .men-dis{
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 37px;
+    font-size: min(max(8px, 4vw), 16px);
+    line-height: min(max(20px, 4vw), 36px); 
     text-align: center;
     letter-spacing: -0.28px;
     color: #573F7B;
@@ -378,7 +378,7 @@ a{
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     line-height: 60px;
     letter-spacing: -0.28px;
     color: #573F7B;
@@ -399,6 +399,8 @@ a{
     border-radius: 5px;
     display: block;
     margin-left: auto;
+    margin-bottom: 20%;
+    margin-top: 20px;
     margin-right: auto;
 }
 .sponsors{
@@ -432,7 +434,7 @@ a{
 .car-dis{
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: min(max(8px, 4vw), 16px);
     line-height: 37px;
     text-align: center;
     letter-spacing: -0.28px;
@@ -472,16 +474,17 @@ a{
 }
 .carousel-indicators{
     top: 110%;
+    margin-left: 10%;
 }
 .carousel-indicators li{
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     border: none;
     background: #9272C2;
     border-radius: 100px;
 }
 .carousel-indicators .active{
-    box-shadow: 0 0 3pt 2pt #573F7B;
+    box-shadow: 0 0 3pt 0pt #573F7B;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -575,13 +578,7 @@ a{
     line-height: inherit;
 }
 .faq-sub{
-    font-size: 10px;
-    font-weight: 600;
     line-height: inherit;
-}
-.car-img{
-    position: absolute;
-    left: 12%;
 }
 }
 
@@ -856,10 +853,6 @@ a{
 .head-5{
     font-size: 30px;
     margin-bottom: 10%;
-}
-.men-dis{
-    line-height: inherit;
-    font-size: 15px;
 }
  .view-more{
      padding: 10px;

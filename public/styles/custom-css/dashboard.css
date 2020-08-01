@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-
 .jumbotron {
   border-radius: 10px;
   background: #f5f4fa;
@@ -26,14 +25,7 @@
   font-weight: bold;
   font-size: 36px;
   line-height: 64px;
-  color: #573F7B;
-}
-
-@media (max-width: 768px){
-  .welcome-title {
-    font-size: 28px;
-    line-height: 34px;
-  }
+  color: #573f7b;
 }
 
 .welcome-paragraph {
@@ -45,7 +37,7 @@
 }
 
 .login-time {
-  color: #7E5AE3 !important;
+  color: #7e5ae3 !important;
 }
 
 .card {
@@ -53,7 +45,6 @@
   background-color: #fff;
   margin: 0 3rem;
 }
-
 
 .card-body {
   padding: 10px;
@@ -66,7 +57,7 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 64px;
-  color: #7E5AE3;
+  color: #7e5ae3;
 }
 
 .card .card-title {
@@ -79,7 +70,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
-  color: #7E5AE3;
+  color: #7e5ae3;
 }
 
 .card-flex-container {
@@ -88,25 +79,9 @@
   flex-wrap: wrap;
 }
 
-@media (min-width: 992px) {
-  .card-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .card {
-    width: 12.1875rem;
-    background-color: #fff;
-    margin: 0 0;
-  }
-}
-
-
 .chart-container {
   margin-top: 64px;
 }
-
 
 #bar-chart-1 {
   margin: 0 auto;
@@ -127,5 +102,30 @@
 @media (max-width: 768px) {
   #bar-chart-3 {
     width: 100%;
+  }
+
+  .welcome-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 12.1875rem;
+    background-color: #fff;
+    margin: 0 0;
+  }
+}
+
+@media (max-width:1230px) {
+  .jumbotron-img-container{
+    display: none !important;
   }
 }

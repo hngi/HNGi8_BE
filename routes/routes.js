@@ -1,8 +1,12 @@
 const express = require('express');
 
 const {
-  homePage, login, contact, logout
+  homePage, login, contact, logout, createAdmin
 } = require('../controller');
+
+const {
+  contact, getAllContacts
+} = require("../controller/contactUs")
 
 const {
   mentorApplication, applicationValidationRules, getAllMentors,
@@ -14,11 +18,15 @@ const { internApply, internValidationRules } = require('../controller/internCont
 
 const router = express.Router();
 
+// Admin routes
 router.get('/', homePage);
 router.post('/auth', login);
-router.post('/contact-us', contact);
 router.get('/logout', logout);
+router.post('/create', createAdmin);
+
+router.post('/contact-us', contact);
 router.post('/apply', internValidationRules(), internApply);
+router.get('/notifications', getAllContacts)
 
 // mentor routes
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);

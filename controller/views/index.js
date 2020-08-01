@@ -40,7 +40,7 @@ const dashboard = (req, res) => {
 const viewAdmins = (req, res) => {
   res.render('pages/admins', {
     title: 'Registered Admins',
-    name: req.session.name,
+    name: req.session.name
   });
 };
 
@@ -49,7 +49,11 @@ const lastInternship = (req, res) => {
 };
 
 const adminCreate = (req, res) => {
-  res.render('pages/admin-create', { title: 'Admin Create'});
+  res.render('pages/admin-create', { title: 'Admin Create' });
+};
+
+const viewNotifications = (req, res) => {
+  res.render('pages/notifications', { title: 'Notifications'});
 };
 
 module.exports = {
@@ -64,4 +68,5 @@ module.exports = {
   faqs,
   adminCreate,
   viewAdmins,
+  viewNotifications
 };
