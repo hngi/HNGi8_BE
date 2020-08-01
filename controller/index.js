@@ -94,7 +94,7 @@ const createAdmin = (req, res, next) => {
         ).catch((error) => { req.flash('error', error); });
       });
     }
-  ).catch((err) => { next(err)});
+  ).catch((err) => { next(err); });
 };
 module.exports = {
   homePage,
