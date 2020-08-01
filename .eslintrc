@@ -5,15 +5,19 @@
     },
     "env": {
         "node": true,
+        "browser": true,
         "commonjs": true,
         "es2020": true
     },
     "rules": {
-        "comma-dangle": ["warn","never"],
-        "linebreak-style":"off",
-        "no-unused-vars": ["error",{
-            "vars": "local",
-            "args": "none"
-            }]
+        "comma-dangle": ["warn", "never"],
+        "linebreak-style": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "vars": "local",
+                "args": "none"
+            }
+        ]
     }
 }
