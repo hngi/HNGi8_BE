@@ -1,3 +1,5 @@
+const Admins = require('../../models/AdminLogin');
+
 const homePage = (req, res) => {
   res.render('pages/homePage', { title: 'Home', currentPage: 'home' });
 };
@@ -41,10 +43,11 @@ const dashboard = (req, res) => {
   });
 };
 
-const viewAdmins = (req, res) => {
+const viewAdmins = async (req, res) => {
+  const admins = await Admins.find({});
   res.render('pages/admins', {
     title: 'Registered Admins',
-    name: req.session.name
+    admins
   });
 };
 
@@ -57,7 +60,7 @@ const adminCreate = (req, res) => {
 };
 
 const viewNotifications = (req, res) => {
-  res.render('pages/notifications', { title: 'Notifications'});
+  res.render('pages/notifications', { title: 'Notifications' });
 };
 
 module.exports = {
