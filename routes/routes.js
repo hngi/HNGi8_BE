@@ -1,7 +1,12 @@
 const express = require('express');
 
 const {
-  homePage, login, contact, logout, createAdmin
+  homePage,
+  login,
+  contact,
+  logout,
+  createAdmin,
+  newAdminValidationRules
 } = require('../controller');
 
 const {
@@ -18,7 +23,7 @@ const router = express.Router();
 router.get('/', homePage);
 router.post('/auth', login);
 router.get('/logout', logout);
-router.post('/admin/create', createAdmin);
+router.post('/admin/create', newAdminValidationRules(), createAdmin);
 
 router.post('/contact-us', contact);
 router.post('/apply', internValidationRules(), internApply);

@@ -1,6 +1,7 @@
 /* eslint-disable new-cap */
 /* eslint-disable no-console */
 const { isEmpty, isEmail } = require('validator');
+const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const Admins = require('../models/AdminLogin');
 const contactModel = require('../models/Contact');
@@ -8,6 +9,14 @@ const contactModel = require('../models/Contact');
 const homePage = (req, res) => {
   res.json('Home page');
 };
+
+const newAdminValidationRules = () => [
+  body('firstName').isString(),
+  body('lastName').isString(),
+  body('email').isEmail(),
+  body('adminpassword').isLength({ min: 5 }),
+  body('role').isString()
+];
 
 // Admin Login
 const login = (req, res) => {
@@ -76,10 +85,17 @@ const createAdmin = (req, res, next) => {
   const {
     firstname, lastname, email, role, adminpassword
   } = req.body;
+  const errors = validationResult(req);
+  const err = errors.array();
+  err.forEach((er) => {
+    const message = `${er.msg} in ${er.param}`;
+    req.flash('error', message);
+  });
   Admins.findOne({ email }).then(
     (newAdmin) => {
       if (!newAdmin) {
         req.flash('error', `user with this ${email} already exits`);
+        return;
       }
 
       bcrypt.hash(adminpassword, 10).then((hash) => {
@@ -102,5 +118,6 @@ module.exports = {
   login,
   logout,
   contact,
-  createAdmin
+  createAdmin,
+  newAdminValidationRules
 };
