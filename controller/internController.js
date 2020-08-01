@@ -77,20 +77,43 @@ const getAllInterns = async (req, res, next) => {
   }
 };
 
-// Get all accepted mentor applications
+// Get all accepted intern applications
 const getAllAcceptedInterns = async (req, res, next) => {
   const queryArray = [];
   const params = req.query;
+  
   // Query parameter is assigned as an object and added to the query array
   Object.entries(params).forEach((param) => {
     const queryObj = { [param[0]]: param[1] };
     queryArray.push(queryObj);
   });
+
   // this is added to return all applications, when no query param is present
   queryArray.push({ internApplicationStatus: 'accepted' });
   try {
     const interns = await Intern.find({ $and: queryArray });
     return responseHandler(res, 200, 'All accepted intern applications', { interns });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+// Get all pending intern applications
+const getAllPendingInterns = async (req, res, next) => {
+  const queryArray = [];
+  const params = req.query;
+
+  // Query parameter is assigned as an object and added to the query array
+  Object.entries(params).forEach((param) => {
+    const queryObj = { [param[0]]: param[1] };
+    queryArray.push(queryObj);
+  });
+
+  // this is added to return all applications, when no query param is present
+  queryArray.push({ internApplicationStatus: 'pending' });
+  try {
+    const interns = await Intern.find({ $and: queryArray });
+    return responseHandler(res, 200, 'All pending intern applications', { interns });
   } catch (err) {
     return next(err);
   }
@@ -103,5 +126,6 @@ module.exports = {
   internValidationRules,
   internApply,
   getAllInterns,
-  getAllAcceptedInterns
+  getAllAcceptedInterns,
+  getAllPendingInterns
 };

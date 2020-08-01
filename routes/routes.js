@@ -32,6 +32,7 @@ router.post('/contact-us', contact);
 router.post('/apply', internValidationRules(), internApply);
 router.get('/apply', getAllInterns);
 router.get('/apply/accepted', getAllAcceptedInterns);
+router.get('/apply/pending', getAllPendingInterns);
 
 // mentor routes
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);
