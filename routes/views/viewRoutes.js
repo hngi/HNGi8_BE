@@ -11,6 +11,7 @@ const {
   contact,
   faqs,
   adminCreate,
+  mentorsDashboard,
   viewAdmins,
   viewNotifications,
   internDashboard,
@@ -31,6 +32,8 @@ viewRouter.get('/contact', contact);
 viewRouter.get('/mentors/apply', mentorSignup);
 
 viewRouter.get('/mentors', mentors);
+
+viewRouter.get('/mentorsDashboard', mentorsDashboard);
 
 viewRouter.get('/faqs', faqs);
 
