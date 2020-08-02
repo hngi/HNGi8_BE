@@ -1,7 +1,12 @@
 const express = require('express');
 
 const {
-  homePage, login, contact, logout, createAdmin
+  homePage,
+  login,
+  contact,
+  logout,
+  createAdmin,
+  newAdminValidationRules
 } = require('../controller');
 
 const {
@@ -10,7 +15,8 @@ const {
   acceptApplication, declineApplication
 } = require('../controller/mentor');
 
-const { internApply, internValidationRules } = require('../controller/internController');
+const { internApply, internValidationRules, getAllInterns,  getAllAcceptedInterns, getAllPendingInterns, getAllDeclinedInterns,
+  acceptInternApplication, declineInternApplication } = require('../controller/internController');
 
 const router = express.Router();
 
@@ -18,10 +24,15 @@ const router = express.Router();
 router.get('/', homePage);
 router.post('/auth', login);
 router.get('/logout', logout);
-router.post('/create', createAdmin);
+router.post('/admin/create', newAdminValidationRules(), createAdmin);
 
 router.post('/contact-us', contact);
+
+// Intern routes
 router.post('/apply', internValidationRules(), internApply);
+router.get('/apply', getAllInterns);
+router.get('/apply/accepted', getAllAcceptedInterns);
+router.get('/apply/pending', getAllPendingInterns);
 
 // mentor routes
 router.post('/mentors/apply', applicationValidationRules(), mentorApplication);

@@ -18,6 +18,7 @@ const {
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
+const AdminLogin = require('../../models/AdminLogin');
 
 const viewRouter = express.Router();
 
@@ -41,9 +42,9 @@ viewRouter.get('/dashboard', auth, dashboard);
 
 viewRouter.get('/admin/create', auth, adminCreate);
 
-viewRouter.get('/admins', viewAdmins);
+viewRouter.get('/admins', auth, viewAdmins);
 
-viewRouter.get('/notifications', viewNotifications);
+viewRouter.get('/notifications', auth, viewNotifications);
 
 viewRouter.get('/hngi7', lastInternship);
 

@@ -20,94 +20,18 @@
       </tr>
     </thead>
     <tbody>
+      <% admins.forEach(list => { %>
       <tr>
-        <td>1</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
+        <td><%= list.id.substring(list.id.length-5) %></td>
+        <td><%= list.name.split(" ")[0] %> <strong class="lastName"><%= list.name.split(" ")[1] %> </strong></td>
+        <td><%= list.email %></td>
+        <td><%= list.role %> </td>
         <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
+          <a href="/view-admin?name=<%= list.name %>" class="viewDetails">View</a>
+          <a href="/delete-admin?name=<%= list.name %>" class="deleteAdmin">Delete</a>
         </td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
-        <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
-        <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
-        <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
-        <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
-        <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
-        <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>David <strong class="lastName">Jefferson</strong></td>
-        <td>david@jefferson.com</td>
-        <td>Admin</td>
-        <td>
-          <a href="#" class="viewDetails">View</a>
-          <a href="#" class="updateDetails">Update</a>
-          <a href="#" class="deleteAdmin">Delete</a>
-        </td>
-      </tr>
+      <% }) %>
     </tbody>
   </table>
 </div>
