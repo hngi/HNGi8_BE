@@ -14,7 +14,7 @@ const {
   mentorsDashboard,
   viewAdmins,
   viewNotifications,
-  interns,
+  internDashboard,
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
@@ -49,7 +49,7 @@ viewRouter.get('/notifications', auth, viewNotifications);
 
 viewRouter.get('/hngi7', lastInternship);
 
-viewRouter.get('/interns', interns);
+viewRouter.get('/interns', internDashboard);
 
 
 viewRouter.get('/test', (req, res) => {

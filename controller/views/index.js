@@ -35,8 +35,8 @@ const contact = (req, res) => {
   res.render('pages/contact', { title: 'Contact', currentPage: 'contact' });
 };
 
-const interns = (req, res) => {
-  res.render('pages/interns', { title: 'Intern Dashboard', currentPage: 'internDashboard' });
+const internDashboard = (req, res) => {
+  res.render('pages/internDashboard', { title: 'Interns', currentPage: 'interns' });
 };
 
 const dashboard = (req, res) => {
@@ -81,5 +81,5 @@ module.exports = {
   viewAdmins,
   viewNotifications,
   mentorsDashboard,
-  interns,
+  internDashboard,
 };
