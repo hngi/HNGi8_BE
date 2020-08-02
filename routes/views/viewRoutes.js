@@ -14,10 +14,11 @@ const {
   mentorsDashboard,
   viewAdmins,
   viewNotifications,
-  internDashboard,
+  interns,
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
+
 const AdminLogin = require('../../models/AdminLogin');
 
 const viewRouter = express.Router();
@@ -48,7 +49,7 @@ viewRouter.get('/notifications', auth, viewNotifications);
 
 viewRouter.get('/hngi7', lastInternship);
 
-viewRouter.get('/interns', internDashboard);
+viewRouter.get('/interns', interns);
 
 
 viewRouter.get('/test', (req, res) => {

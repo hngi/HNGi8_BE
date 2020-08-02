@@ -1,4 +1,5 @@
 @import url(' <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">');
+
 * {
   padding: 0;
   margin: 0;
@@ -34,6 +35,9 @@ body {
   color: #7E5AE3;
 
 }
+.export-img{
+  cursor: pointer;
+}
 .tabs{
   margin-top: 40px;
 }
@@ -62,6 +66,10 @@ body {
   margin-bottom: 20px;
   align-items: center;
   padding: 0px;
+}
+.drop{
+  background-color: transparent;
+  border: none;
 }
 .bgOne{
   margin-top: 30px;
@@ -162,7 +170,6 @@ body {
     font-size: 16px;
     line-height: 25px;
     text-decoration: none;
-    /* margin-left: 30px; */
   }
   .deactivate{
     color:#F8444F;
@@ -201,15 +208,7 @@ body {
     border: 0.5px solid #B5B5B5;
     box-sizing: border-box;
   }
-  .ap{
-    margin: auto;
-  }
-  .pe{
-    margin: auto;
-  }
-  .de{
-    margin: 20px auto;
-  }
+
   .filter{
     font-weight: 400;
     font-size: 16px;
@@ -217,6 +216,10 @@ body {
     color: #7E5AE3;
     margin: auto;
   
+  }
+  .btn{
+    margin-bottom: 20px;
+    width: 150px;
   }
   .export{
     font-weight: 400;
@@ -228,10 +231,73 @@ body {
   .form-control{
     border: 2px solid #B5B5B5;
     border-radius: 5px;
-    width: 200px;
+    width: 270px;
     padding-right: 0px;
     margin: auto;
     
+  }
+}
+  
+
+@media only screen and (max-width: 534px) {
+  .tab-text{
+    color: #9272C2;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 15px;
+    background: #FFFFFF;
+    border: 0.5px solid #B5B5B5;
+    box-sizing: border-box;
+  }
+  .fe{
+    
+    margin-bottom: 30px;
+  }
+
+ 
+  .pe{
+    margin: auto;
+    padding: auto !important;
+
+  } 
+  .de{
+    margin: auto;
+    padding: auto;
+  }
+  .filter{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #7E5AE3;
+    margin: 20px auto;
+  
+  }
+  .nav-pills{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .export{
+    font-weight: 400;
+    font-size: 16px;
+    color: #7E5AE3;
+  }
+  .btn{
+    margin-bottom: 20px;
+    width: 175px;
+  }
+
+  .form-control{
+    border: 2px solid #B5B5B5;
+    border-radius: 5px;
+    width: 250px;
+    padding-right: 0px;
+    margin: auto;
+    
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
   }
   
 }
