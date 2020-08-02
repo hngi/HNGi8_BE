@@ -1,0 +1,360 @@
+<%- include('../includes/admin-header') %>
+<%- include('../includes/sidenav') %>
+
+    <link rel="stylesheet" href="../styles/bootstrap-css/bootstrap.css">
+    <link rel="stylesheet" href="../styles/custom-css/intern-dashboard.css">
+    
+    <link rel="stylesheet" href="../styles/bootstrap-js/jquery.js">
+    <link rel="stylesheet" href="../styles/bootstrap-js/popper.js">
+    <link rel="stylesheet" href="../styles/bootstrap-js/bootstrap.js">
+    
+
+     <!--CONTENT-->
+    
+     <div class="container">
+        <div class="row fe">
+          <div class="col-sm-6">
+            <!-- Search form -->
+            <input class="form-control" type="text" placeholder="Search For Application" aria-label="Search">
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-6 text-center filter">
+                <img src="img/filter.svg">
+                    Filter
+                  <button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Gender</a>
+                    <a class="dropdown-item" href="#">Age</a>
+                    <a class="dropdown-item" href="#">Location</a>
+                    <a class="dropdown-item" href="#">Job Status</a>
+                  </div>
+              </div>
+              <div class="col-sm-6 text-center export">
+                <img src="img/export.svg" class="btn">
+                Export
+              </div>
+            </div>
+        
+          </div>
+        </div>
+          
+          <div class="row tabs">
+            <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">
+              <li class="nav-item ap">
+                <button class="nav-link active btn tab-text" id="pills-approved-interns-tab" data-toggle="pill" href="#pills-approved-interns" role="tab" aria-controls="pills-approved-interns" aria-selected="true">Approved Interns</button>
+              </li>
+              <li class="nav-item pe">
+                <button class="nav-link btn ml-3 tab-text" id="pills-pending-interns-tab" data-toggle="pill" href="#pills-pending-interns" role="tab" aria-controls="pills-pending-interns" aria-selected="false">Pending Interns</button>
+              </li>
+              <li class="nav-item de">
+                <button class="nav-link btn ml-3 tab-text" id="pills-declined-interns-tab" data-toggle="pill" href="#pills-declined-interns" role="tab" aria-controls="pills-declined-interns" aria-selected="false">Declined Interns</button>
+              </li>
+            </ul>
+          </div>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active " id="pills-approved-interns" role="tabpanel" aria-labelledby="pills-approved-interns-tab">
+               
+                <div class="row bg bgOne">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="link">View</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Deactivate</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="link">View</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Deactivate</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="link">View</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Deactivate</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="link">View</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Deactivate</a>
+                  </div>
+                </div>
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="link">View</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Deactivate</a>
+                  </div>
+                </div>
+                  <div class="row pagination">
+                    <div>
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <img src="./img/prev.svg">
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link  paginate" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <img src="./img/next.svg">
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                  
+              </div>
+              <div class="tab-pane fade " id="pills-pending-interns" role="tabpanel" aria-labelledby="pills-pending-interns-tab">
+                <div class="row bg bgOne">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Decline</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Decline</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Decline</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Decline</a>
+                  </div>
+                </div>
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Decline</a>
+                  </div>
+                </div>
+                  <div class="row pagination">
+                    <div>
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <img src="./img/prev.svg">
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link  paginate" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <img src="./img/next.svg">
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="tab-pane fade" id="pills-declined-interns" role="tabpanel" aria-labelledby="pills-declined-interns-tab">
+                <div class="row bg bgOne">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Delete</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Delete</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Delete</a>
+                  </div>
+                </div>
+        
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Delete</a>
+                  </div>
+                </div>
+                <div class="row bg">
+                  <div class="col-md-3 text-center">
+                    <p class="name">David Jefferson</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p class="email">feranmiolowo15@gmail.com</p>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <a href="#" class="approve">Approve</a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="#" class="deactivate">Delete</a>
+                  </div>
+                </div>
+                  <div class="row pagination">
+                    <div>
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <img src="./img/prev.svg">
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link paginate" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <img src="./img/next.svg">
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+              </div>
+
+              </div>
+        </div>
+
+
+<%- include('../includes/footer') %>
