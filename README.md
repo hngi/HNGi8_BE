@@ -15,3 +15,8 @@
 
 ### Linting your code:
 * run `yarn lint:fix` to fix all auto-fixable problems 
+
+### Project URLs
+Live - https://zuri-live.herokuapp.com/
+Test - https://zuri-test.herokuapp.com/
+
