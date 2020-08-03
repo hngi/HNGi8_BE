@@ -13,10 +13,12 @@ const {
   adminCreate,
   mentorsDashboard,
   viewAdmins,
-  viewNotifications
+  viewNotifications,
+  internDashboard,
 } = require('../../controller/views/index');
 
 const { mentors } = require('../../controller/views');
+
 const AdminLogin = require('../../models/AdminLogin');
 
 const viewRouter = express.Router();
@@ -47,17 +49,8 @@ viewRouter.get('/notifications', auth, viewNotifications);
 
 viewRouter.get('/hngi7', lastInternship);
 
-viewRouter.get('/delete-admin', auth, async (req, res) => {
-  const apiName = req.query.name;
-  await AdminLogin.deleteOne({ name: apiName });
-  req.flash('success', 'API Disapproved');
-});
+viewRouter.get('/interns', internDashboard);
 
-viewRouter.get('/view-admin', auth, async (req, res) => {
-  const { name } = req.query;
-  const admin = await AdminLogin.find({ name });
-  req.flash('success', ...admin);
-});
 
 viewRouter.get('/test', (req, res) => {
   res.render('pages/test', {
