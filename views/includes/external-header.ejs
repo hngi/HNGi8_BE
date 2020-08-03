@@ -4,34 +4,36 @@
 
 <body>
   <header class="nav navbar navbar-expand-lg navbar-light">
-    <a href="/" class="navbar-brand"><img src="../img/icons/zuri-logo.svg" alt="zuri logo" /></a>
-    <!-- <nav> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse" id="navbarNav">
-      <ul class="navbar-nav nav-links ml-auto mr-0">
-        <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'home'? 'active': '' : '' %>"><a
-            href="/">Home</a></li>
-        <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'hngi7'? 'active': '' : '' %>"><a
-            href="/hngi7">HNGi7</a></li>
-        <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'mentors'? 'active': '' : '' %>"><a
-            href="/mentors">Mentors</a></li>
-        <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'contact'? 'active': '' : '' %>"><a
-            href="/contact">Contact</a></li>
-        <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'login'? 'active': '' : '' %>"><a
-            href="/login">Login</a></li>
-        <li class="nav-item ml-3 mr-0 dropdown d-flex flex-column">
-          <button class="nav-link btn px-3 py-1 dropdown-toggle" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Join Zuri</button>
-
-          <div class="dropdown-menu join-zuri my-2 text-center" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/apply">Intern</a>
-            <a class="dropdown-item" href="/mentors/apply">Mentor</a>
-          </div>
-        </li>
-      </ul>
+    <div class="container">
+      <a href="/" class="navbar-brand"><img src="../img/icons/zuri-logo.svg" alt="zuri logo" /></a>
+      <!-- <nav> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarNav">
+        <ul class="navbar-nav nav-links ml-auto mr-0">
+          <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'home'? 'active': '' : '' %>"><a
+              href="/">Home</a></li>
+          <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'hngi7'? 'active': '' : '' %>"><a
+              href="/hngi7">HNGi7</a></li>
+          <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'mentors'? 'active': '' : '' %>"><a
+              href="/mentors">Mentors</a></li>
+          <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'contact'? 'active': '' : '' %>"><a
+              href="/contact">Contact</a></li>
+          <li class="nav-item mx-3 <%- locals.currentPage? currentPage === 'login'? 'active': '' : '' %>"><a
+              href="/login">Login</a></li>
+          <li class="nav-item ml-3 mr-0 dropdown d-flex flex-column">
+            <button class="nav-link btn px-3 py-1 dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Join Zuri</button>
+  
+            <div class="dropdown-menu join-zuri my-2 text-center" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/apply">Intern</a>
+              <a class="dropdown-item" href="/mentors/apply">Mentor</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- </nav> -->
     </div>
-    <!-- </nav> -->
   </header>
