@@ -225,3 +225,11 @@ body {
     align-items: center !important;
   }
 }
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  body > .container {
+    margin: auto;
+    padding: 0px 136px;
+    max-width: 100%;
+  }
+}

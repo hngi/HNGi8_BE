@@ -9,13 +9,25 @@
 
 body > header:first-of-type {
   /* margin: 3rem auto 60px; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   min-height: 5rem;
   max-height: max-content;
   color: var(--text-color);
   background-color: #f5f4fa;
+}
+
+body > header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  /* flex-wrap: ; */
+}
+
+body > header > .container > button.navbar-toggler {
+  position: absolute;
+  right: 0;
+  top: 1.2rem;
+  transform: translateY(-50%);
 }
 
 /* body > header:first-of-type > nav {
@@ -124,21 +136,22 @@ body > header:first-of-type ul li.dropdown > div.join-zuri a:hover {
 }
 
 @media (max-width: 991px) {
-  body > header:first-of-type {
-    padding: 0.5rem 136px !important;
-  }
-
-  body > header:first-of-type > .navbar-collapse ul {
+  body > header:first-of-type > .container > .navbar-collapse ul {
     margin-top: 1rem;
   }
 
-  body > header:first-of-type > .navbar-collapse ul li.nav-item {
+  body > header:first-of-type > .container > .navbar-collapse ul li.nav-item {
     margin-left: 0 !important;
     justify-content: start;
   }
 
-  body > header:first-of-type > .navbar-collapse ul li button.btn,
-  body > header:first-of-type > .navbar-collapse li.dropdown > div.join-zuri {
+  body > header:first-of-type > .container > .navbar-collapse ul li button.btn,
+  body
+    > header:first-of-type
+    > .container
+    > .navbar-collapse
+    li.dropdown
+    > div.join-zuri {
     width: 100%;
   }
 
@@ -150,30 +163,13 @@ body > header:first-of-type ul li.dropdown > div.join-zuri a:hover {
 
 @media (min-width: 1025px) {
   body > header:first-of-type {
+    padding: 0;
+    margin: 0;
+  }
+
+  body > header:first-of-type > .container {
     padding: 0.5rem 136px !important;
-  }
-}
-
-@media (min-width: 991px) and (max-width: 1024px) {
-  body > header:first-of-type {
-    padding: 0.5rem 3.9% !important;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 990px) {
-  body > header:first-of-type {
-    padding: 0.5rem 5.668% !important;
-  }
-}
-
-@media (max-width: 768px) {
-  body > header:first-of-type {
-    padding: 0.5rem 2.5rem !important;
-  }
-}
-
-@media (max-width: 475px) {
-  body > header:first-of-type {
-    padding: 0.5rem 5% !important;
+    margin: 0;
+    max-width: 100%;
   }
 }
